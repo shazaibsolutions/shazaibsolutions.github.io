@@ -84,7 +84,8 @@
       height:100%;
       object-fit: cover;
       object-position: center;
-      transform: scaleX(-1); /* makes you face the text */
+      /* FIX: flip the OTHER side so eyes feel toward text */
+      transform: scaleX(1);
       filter: contrast(1.02) saturate(1.02);
     }
 
@@ -238,7 +239,7 @@
           <div class="kicker">Inbound lead reliability for B2B SaaS</div>
           <h1>Production-grade inbound lead automation for B2B SaaS. Built in 7–10 days.</h1>
           <p>
-            I design and implement reliable lead operations pipelines using Make + HubSpot — handling deduplication, routing,
+            I design and implement reliable lead ops pipelines using Make + HubSpot — handling deduplication, routing,
             alerts, logging, and failure recovery.
           </p>
 
@@ -343,13 +344,13 @@
           <div class="proof-cap">Google Sheets lead log</div>
         </div>
 
-        <!-- Replaced error PNG tile with clean text tile -->
+        <!-- No error PNG: clean text tile -->
         <div class="card-soft d-flex align-items-center" style="border-radius:var(--radius);">
           <div>
             <div class="icon-dot mb-2"><i class="fa-solid fa-triangle-exclamation"></i></div>
             <div class="fw-bold mb-1">Failure handling (implemented)</div>
             <div style="color:var(--muted);font-weight:700;">
-              Dedicated error routes, failure Slack alerts, and logging so issues are visible immediately.
+              Dedicated error routes, failure Slack alerts, and logs so issues are visible immediately.
             </div>
           </div>
         </div>
@@ -378,9 +379,6 @@
             <a class="btn btn-primary btn-primary-accent w-100" href="assets/Proof_Summary.pdf" target="_blank" rel="noopener">
               View Proof Summary (PDF)
             </a>
-            <div class="subnote" style="margin-top:.75rem;">
-              If this button shows any “upload PDF…” text: make sure the file exists exactly at <strong>assets/Proof_Summary.pdf</strong>.
-            </div>
           </div>
         </div>
       </div>
@@ -490,7 +488,6 @@
             <a class="btn btn-primary btn-primary-accent w-100" href="https://wa.me/923117335449" target="_blank" rel="noopener">
               Message on WhatsApp
             </a>
-            <div class="subnote mt-2">WhatsApp: +923117335449</div>
           </div>
         </div>
 
@@ -537,7 +534,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Lightbox modal wiring (your file was truncated; completed safely)
+    // Lightbox modal wiring
     const proofModalEl = document.getElementById('proofModal');
     const proofModalTitle = document.getElementById('proofModalTitle');
     const proofModalImg = document.getElementById('proofModalImg');
@@ -554,7 +551,6 @@
       proofModalImg.alt = title;
     });
 
-    // Clear image on close (reduces memory + avoids flicker)
     proofModalEl.addEventListener('hidden.bs.modal', function () {
       proofModalImg.src = '';
     });
