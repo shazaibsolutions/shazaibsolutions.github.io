@@ -92,13 +92,12 @@
     }
 
     .hero-photo img{
-      width: 100%;
-      height: auto;
-      display:block;
-      border-radius: 22px;
-      object-fit: contain;           /* FIT instead of crop */
-      /* FIX: flip so you look toward the text (right side) */
-       transform: scaleX(1); /* no flip */;
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 22px;
+  object-fit: contain;
+  transform: var(--photoFlip, scaleX(1));
     }
 
     .hero-copy{
