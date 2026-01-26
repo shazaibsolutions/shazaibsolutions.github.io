@@ -58,35 +58,47 @@
       .hero-shell{grid-template-columns:1fr;min-height:auto;}
     }
 
+    /* LEFT PANEL (keep position same, but make image FIT + not huge) */
     .hero-photo{
-      position:relative;
-      background:#f8fafc;
+      background:#fff;
       border-right: 1px solid var(--line);
-      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 2.25rem;
       min-height: 600px;
     }
     @media (max-width: 992px){
       .hero-photo{
         border-right:0;
         border-bottom:1px solid var(--line);
-        min-height:420px;
+        min-height: 460px;
+        padding: 1.5rem;
       }
     }
-    .hero-photo::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(90deg, rgba(255,255,255,.00), rgba(255,255,255,.12), rgba(255,255,255,.24));
-      pointer-events:none;
+
+    /* Clean frame like screenshot */
+    .photo-frame{
+      width: 100%;
+      max-width: 620px;              /* controls overall size */
+      border-radius: 28px;
+      background: #ffffff;
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 18px 55px rgba(2,6,23,.10);
+      padding: 1.15rem;              /* whitespace around image */
     }
+    @media (max-width: 992px){
+      .photo-frame{max-width: 560px;}
+    }
+
     .hero-photo img{
-      position:absolute; inset:0;
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      object-position: center;
-      /* FIX: flip the OTHER side so eyes feel toward text */
-      transform: scaleX(1);
-      filter: contrast(1.02) saturate(1.02);
+      width: 100%;
+      height: auto;
+      display:block;
+      border-radius: 22px;
+      object-fit: contain;           /* FIT instead of crop */
+      /* FIX: flip so you look toward the text (right side) */
+      transform: scaleX(-1);
     }
 
     .hero-copy{
@@ -97,6 +109,7 @@
     @media (max-width: 992px){
       .hero-copy{padding: 2.5rem 1.4rem;}
     }
+
     .kicker{
       text-transform: uppercase;
       letter-spacing: .14em;
@@ -231,7 +244,9 @@
   <header class="hero">
     <div class="hero-shell">
       <div class="hero-photo">
-        <img src="assets/img/myyyyyy.png" alt="Shazaib — Lead Ops Reliability Sprint">
+        <div class="photo-frame">
+          <img src="assets/img/myyyyyy.png" alt="Shazaib — Lead Ops Reliability Sprint">
+        </div>
       </div>
 
       <div class="hero-copy">
@@ -344,7 +359,6 @@
           <div class="proof-cap">Google Sheets lead log</div>
         </div>
 
-        <!-- No error PNG: clean text tile -->
         <div class="card-soft d-flex align-items-center" style="border-radius:var(--radius);">
           <div>
             <div class="icon-dot mb-2"><i class="fa-solid fa-triangle-exclamation"></i></div>
@@ -534,7 +548,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Lightbox modal wiring
     const proofModalEl = document.getElementById('proofModal');
     const proofModalTitle = document.getElementById('proofModalTitle');
     const proofModalImg = document.getElementById('proofModalImg');
