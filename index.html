@@ -45,7 +45,7 @@
 
     /* HERO */
     .hero{
-      padding-top: 5.2rem; /* fixed nav offset */
+      padding-top: 5.2rem;
       background:#fff;
     }
     .hero-shell{
@@ -58,7 +58,6 @@
       .hero-shell{grid-template-columns:1fr;min-height:auto;}
     }
 
-    /* LEFT PANEL */
     .hero-photo{
       background:#fff;
       border-right: 1px solid var(--line);
@@ -217,6 +216,19 @@
       border:1px solid rgba(229,231,235,.9);
       display:block;
     }
+
+    .btn-ghost{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:var(--ink);
+      font-weight:900;
+      border-radius:999px;
+      padding:.85rem 1.05rem;
+      box-shadow: var(--shadow);
+      text-decoration:none;
+    }
+    .btn-ghost:hover{opacity:.92;}
   </style>
 </head>
 
@@ -240,11 +252,9 @@
           <li class="nav-item"><a class="nav-link px-lg-3" href="#packages">Packages</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#contact">Contact</a></li>
 
-          <!-- Gmail compose (works even if mailto isn't configured) -->
+          <!-- Email CTA: Gmail compose (works even if mailto isn't configured) -->
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-cta"
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Demo%20Request&body=Hi%20Shazaib%2C%0A%0AI%27d%20like%20to%20see%20the%20demo%20and%20discuss%20installation.%0A%0AAgency%20name%3A%0ATeam%20size%3A%0AInbox%20(Gmail%2FOutlook)%3A%0ACRM%20(if%20any)%3A%0ALead%20sources%20(form%2Finbox%2FCSV)%3A%0A"
-               target="_blank" rel="noopener">
+            <a class="btn btn-cta js-email-cta" href="#" target="_blank" rel="noopener">
               Email to Book
             </a>
           </li>
@@ -258,7 +268,11 @@
     <div class="hero-shell">
       <div class="hero-photo">
         <div class="photo-frame">
-          <img src="./assets/img/myyyyyy.png" alt="Shazaib — Recruitment Follow-Up Revenue Rescue System">
+          <img
+            src="./assets/img/myyyyyy.png"
+            onerror="this.onerror=null;this.src='./asset/img/myyyyyy.png';"
+            alt="Shazaib — Recruitment Follow-Up Revenue Rescue System"
+          >
         </div>
       </div>
 
@@ -272,9 +286,7 @@
             The owner gets a daily summary so nothing slips.
           </p>
 
-          <a class="btn btn-primary btn-primary-accent"
-             href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Demo%20Request"
-             target="_blank" rel="noopener">
+          <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
             Email for Demo
           </a>
 
@@ -333,9 +345,7 @@
 
       <!-- CTA after section -->
       <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent"
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Install%20Request"
-           target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
           Email to Get This Installed
         </a>
       </div>
@@ -363,6 +373,20 @@
               allowfullscreen>
             </iframe>
           </div>
+
+          <!-- Hard fallback if iframe shows “unavailable” -->
+          <div class="mt-3 d-flex gap-2 flex-wrap">
+            <a class="btn-ghost" href="https://youtu.be/aehS-OuCa70" target="_blank" rel="noopener">
+              Watch on YouTube
+            </a>
+            <a class="btn-ghost js-email-cta" href="#" target="_blank" rel="noopener">
+              Email to Book
+            </a>
+          </div>
+
+          <div style="color:var(--muted);font-weight:700;margin-top:.7rem;">
+            If the embedded video doesn’t load in your browser, use “Watch on YouTube”.
+          </div>
         </div>
 
         <div class="col-lg-4">
@@ -383,7 +407,10 @@
         <div class="col-md-6">
           <div class="card-soft">
             <div class="fw-bold mb-2">1) Lead lands in the pipeline</div>
-            <img class="shot-img" src="./assets/img/step-1-lead-in-sheet.png" alt="New lead captured in sheet" loading="lazy" />
+            <img class="shot-img"
+              src="./assets/img/step-1-lead-in-sheet.png"
+              onerror="this.onerror=null;this.src='./asset/img/step-1-lead-in-sheet.png';"
+              alt="New lead captured in sheet" loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               A new enquiry is captured instantly with status and timestamp.
             </div>
@@ -393,7 +420,10 @@
         <div class="col-md-6">
           <div class="card-soft">
             <div class="fw-bold mb-2">2) Automation runs (Python)</div>
-            <img class="shot-img" src="./assets/img/step-2-python-run.png" alt="Python automation run" loading="lazy" />
+            <img class="shot-img"
+              src="./assets/img/step-2-python-run.png"
+              onerror="this.onerror=null;this.src='./asset/img/step-2-python-run.png';"
+              alt="Python automation run" loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               Python validates, dedupes, and triggers first-touch + follow-up scheduling.
             </div>
@@ -403,7 +433,10 @@
         <div class="col-md-6">
           <div class="card-soft">
             <div class="fw-bold mb-2">3) First-touch email is sent</div>
-            <img class="shot-img" src="./assets/img/step-3-email-sent.png" alt="First-touch email sent" loading="lazy" />
+            <img class="shot-img"
+              src="./assets/img/step-3-email-sent.png"
+              onerror="this.onerror=null;this.src='./asset/img/step-3-email-sent.png';"
+              alt="First-touch email sent" loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               The lead gets a reply fast. Follow-ups are queued only if there’s no response.
             </div>
@@ -413,7 +446,10 @@
         <div class="col-md-6">
           <div class="card-soft">
             <div class="fw-bold mb-2">4) Reply detected → status updates</div>
-            <img class="shot-img" src="./assets/img/step-4-reply-status-updated.png" alt="Reply detected and sheet updated" loading="lazy" />
+            <img class="shot-img"
+              src="./assets/img/step-4-reply-status-updated.png"
+              onerror="this.onerror=null;this.src='./asset/img/step-4-reply-status-updated.png';"
+              alt="Reply detected and sheet updated" loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               When someone replies, the sequence stops instantly and the pipeline updates to “Replied”.
             </div>
@@ -423,9 +459,7 @@
 
       <!-- CTA after section -->
       <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent"
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Demo%20Question"
-           target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
           Email Me About the Demo
         </a>
       </div>
@@ -461,9 +495,7 @@
 
       <!-- CTA after section -->
       <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent"
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Pricing%20and%20Fit"
-           target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
           Email for Pricing & Fit
         </a>
       </div>
@@ -523,9 +555,7 @@
 
       <!-- CTA after section -->
       <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent"
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Start%20This%20Week"
-           target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
           Email to Start This Week
         </a>
       </div>
@@ -543,11 +573,13 @@
         <div class="col-lg-7">
           <div class="card-soft">
             <div class="fw-bold mb-2" style="font-size:1.15rem;">Primary CTA</div>
-            <a class="btn btn-primary btn-primary-accent w-100"
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Install%20Request&body=Hi%20Shazaib%2C%0A%0AI%27d%20like%20to%20install%20the%20Recruitment%20Follow-Up%20Revenue%20Rescue%20System.%0A%0AAgency%20name%3A%0ATeam%20size%3A%0AInbox%20(Gmail%2FOutlook)%3A%0ACRM%20(if%20any)%3A%0ALead%20sources%20(form%2Finbox%2FCSV)%3A%0A"
-               target="_blank" rel="noopener">
+            <a class="btn btn-primary btn-primary-accent w-100 js-email-cta" href="#" target="_blank" rel="noopener">
               Email to Book
             </a>
+
+            <div style="color:var(--muted);font-weight:700;margin-top:.75rem;">
+              If the button doesn’t open mail on your device, it opens Gmail compose in a new tab.
+            </div>
           </div>
         </div>
 
@@ -566,9 +598,7 @@
 
       <!-- CTA after section -->
       <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent"
-           href="https://mail.google.com/mail/?view=cm&fs=1&to=shazaibsolutions@gmail.com&su=Recruitment%20Follow-Up%20System%20—%20Quick%20Question"
-           target="_blank" rel="noopener">
+        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
           Email a Quick Question
         </a>
       </div>
@@ -590,5 +620,37 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // One reliable CTA everywhere (Gmail compose). Still email, just doesn't depend on mailto setup.
+    (function(){
+      const EMAIL = "shazaibsolutions@gmail.com";
+      const SUBJECT = "Recruitment Follow-Up System — Demo Request";
+      const BODY =
+`Hi Shazaib,
+
+I’d like to see the demo and discuss installation.
+
+Agency name:
+Team size:
+Inbox (Gmail/Outlook):
+CRM (if any):
+Lead sources (form/inbox/CSV):
+
+Thanks,`;
+
+      const gmail = "https://mail.google.com/mail/?view=cm&fs=1"
+        + "&to=" + encodeURIComponent(EMAIL)
+        + "&su=" + encodeURIComponent(SUBJECT)
+        + "&body=" + encodeURIComponent(BODY);
+
+      document.querySelectorAll(".js-email-cta").forEach(a => {
+        a.href = gmail;
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+    })();
+  </script>
+
 </body>
 </html>
