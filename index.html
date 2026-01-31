@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Lead Ops Reliability Sprint — Production-grade inbound lead automation</title>
+  <title>Recruitment Follow-Up Revenue Rescue System — Installed in 72 hours</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Production-grade inbound lead automation for B2B SaaS. Fixed-scope Make + HubSpot workflow with deduplication, routing, Slack alerts, logging, and failure recovery." />
+  <meta name="description" content="Recruitment follow-up automation installed in 72 hours. Instant first-touch reply, 3-step follow-up sequence, stop-on-reply, and a daily owner summary so no lead is ignored." />
 
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -58,7 +58,7 @@
       .hero-shell{grid-template-columns:1fr;min-height:auto;}
     }
 
-    /* LEFT PANEL (keep position same, but make image FIT + not huge) */
+    /* LEFT PANEL */
     .hero-photo{
       background:#fff;
       border-right: 1px solid var(--line);
@@ -77,27 +77,26 @@
       }
     }
 
-    /* Clean frame like screenshot */
     .photo-frame{
       width: 100%;
-      max-width: 620px;              /* controls overall size */
+      max-width: 620px;
       border-radius: 28px;
       background: #ffffff;
       border: 1px solid rgba(229,231,235,.9);
       box-shadow: 0 18px 55px rgba(2,6,23,.10);
-      padding: 1.15rem;              /* whitespace around image */
+      padding: 1.15rem;
     }
     @media (max-width: 992px){
       .photo-frame{max-width: 560px;}
     }
 
     .hero-photo img{
-  width: 100%;
-  height: auto;
-  display:block;
-  border-radius: 22px;
-  object-fit: contain;
-  transform: var(--photoFlip, scaleX(1));
+      width: 100%;
+      height: auto;
+      display:block;
+      border-radius: 22px;
+      object-fit: contain;
+      transform: var(--photoFlip, scaleX(1));
     }
 
     .hero-copy{
@@ -173,21 +172,6 @@
       margin-bottom:.75rem;
     }
 
-    /* Proof grid */
-    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-    @media (max-width:992px){.proof-grid{grid-template-columns:repeat(2,1fr);}}
-    @media (max-width:576px){.proof-grid{grid-template-columns:1fr;}}
-    .proof-tile{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(229,231,235,.9);
-      box-shadow: var(--shadow);
-      background:#fff;
-      cursor:pointer;
-    }
-    .proof-tile img{width:100%;height:230px;object-fit:cover;display:block;}
-    .proof-cap{padding:.9rem 1rem;border-top:1px solid rgba(229,231,235,.8);color:var(--muted);font-weight:800;}
-
     /* Outcomes */
     .metric{font-weight:900;font-size:2rem;letter-spacing:-.02em;margin-bottom:.35rem;}
     .metric-sub{color:var(--muted);font-weight:700;margin:0;}
@@ -209,7 +193,30 @@
     .footer-min a{color:#475569;font-weight:900;text-decoration:none;}
     .footer-min a:hover{color:var(--ink);}
 
-    .modal-img{width:100%;height:auto;border-radius:14px;border:1px solid rgba(229,231,235,.9);}
+    /* Video embed */
+    .video-wrap{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border:1px solid rgba(229,231,235,.9);
+      box-shadow: var(--shadow);
+      background:#000;
+    }
+    .video-wrap iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+
+    /* Storyboard images */
+    .shot-img{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(229,231,235,.9);
+      display:block;
+    }
   </style>
 </head>
 
@@ -218,7 +225,7 @@
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="#page-top">Lead Ops Reliability Sprint</a>
+      <a class="navbar-brand" href="#page-top">Follow-Up Revenue Rescue</a>
 
       <button class="navbar-toggler text-uppercase fw-bold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -228,11 +235,14 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link px-lg-3" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#proof">Proof</a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3" href="#demo">Demo</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#packages">Packages</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-cta" href="https://wa.me/923117335449" target="_blank" rel="noopener">Book via WhatsApp</a>
+            <a class="btn btn-cta"
+               href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Demo%20Request">
+              Email to Book
+            </a>
           </li>
         </ul>
       </div>
@@ -244,24 +254,26 @@
     <div class="hero-shell">
       <div class="hero-photo">
         <div class="photo-frame">
-          <img src="assets/img/myyyyyy.png" alt="Shazaib — Lead Ops Reliability Sprint">
+          <img src="assets/img/myyyyyy.png" alt="Shazaib — Recruitment Follow-Up Revenue Rescue System">
         </div>
       </div>
 
       <div class="hero-copy">
         <div>
-          <div class="kicker">Inbound lead reliability for B2B SaaS</div>
-          <h1>Production-grade inbound lead automation for B2B SaaS. Built in 7–10 days.</h1>
+          <div class="kicker">Recruitment follow-up reliability</div>
+          <h1>No candidate or client lead is ignored. Auto follow-ups that stop on reply. Installed in 72 hours.</h1>
           <p>
-            I design and implement reliable lead ops pipelines using Make + HubSpot — handling deduplication, routing,
-            alerts, logging, and failure recovery.
+            I install a recruitment follow-up system that captures every inbound lead, replies within 60 seconds,
+            runs a short follow-up sequence, and instantly stops the sequence when someone replies.
+            The owner gets a daily summary so nothing slips.
           </p>
 
-          <a class="btn btn-primary btn-primary-accent" href="https://wa.me/923117335449" target="_blank" rel="noopener">
-            Book via WhatsApp
+          <a class="btn btn-primary btn-primary-accent"
+             href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Interested&body=Hi%20Shazaib%2C%0A%0AI%27d%20like%20to%20see%20the%20demo%20and%20discuss%20installation.%0A%0AAgency%20name%3A%0ATeam%20size%3A%0AInbox%20(Gmail%2FOutlook)%3A%0ACRM%20(if%20any)%3A%0ALead%20sources%20(form%2Finbox%2FCSV)%3A%0A">
+            Email for Demo
           </a>
 
-          <div class="subnote">Fixed scope. Fixed pricing. One workflow. No noise.</div>
+          <div class="subnote">Fixed scope. Fast delivery. Built around your inbox workflow.</div>
         </div>
       </div>
     </div>
@@ -271,119 +283,143 @@
   <section class="section-pad" id="about">
     <div class="container">
       <div class="kicker">About</div>
-      <div class="section-title">What I build</div>
+      <div class="section-title">What I install</div>
 
       <p class="section-sub">
-        I specialize in one thing only: inbound lead reliability.
-        Every implementation follows the same production pattern:
-        <strong>Inbound → Validate → Deduplicate → HubSpot → Slack → Logs → Failure Alerts</strong>.
+        Recruitment agencies leak revenue when follow-up is inconsistent.
+        This system enforces a simple standard:
+        <strong>Capture → First-touch SLA → Follow-ups → Stop-on-reply → Daily owner brief</strong>.
       </p>
       <p class="section-sub">
-        This ensures no duplicate contacts, instant visibility, CRM accuracy, and zero silent failures.
-        I don’t offer general automation. I deliver one hardened workflow that becomes your source of truth.
+        You keep your current tools. I implement the workflow so it runs reliably and doesn’t spam people when they reply.
       </p>
 
       <div class="row g-4 mt-2">
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="icon-dot"><i class="fa-solid fa-fingerprint"></i></div>
-            <div class="fw-bold" style="font-size:1.15rem;">Deduplication</div>
+            <div class="icon-dot"><i class="fa-solid fa-inbox"></i></div>
+            <div class="fw-bold" style="font-size:1.15rem;">Capture + Pipeline</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Email-based HubSpot search ensures zero duplicate leads.
+              Every new candidate or client enquiry is captured and logged into a single tracker with status and timestamp.
             </div>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="icon-dot"><i class="fa-solid fa-bolt"></i></div>
-            <div class="fw-bold" style="font-size:1.15rem;">Real-time Alerts</div>
+            <div class="icon-dot"><i class="fa-solid fa-stopwatch"></i></div>
+            <div class="fw-bold" style="font-size:1.15rem;">60-Second First Touch</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Every lead creation or update instantly appears in Slack.
+              Instant acknowledgement within 60 seconds so leads don’t go cold while the team is busy.
             </div>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="icon-dot"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="fw-bold" style="font-size:1.15rem;">Audit + Failure Safety</div>
+            <div class="icon-dot"><i class="fa-solid fa-hand"></i></div>
+            <div class="fw-bold" style="font-size:1.15rem;">Stop-on-Reply</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Sheets logging + error routes + failure alerts prevent silent data loss.
+              Follow-ups stop immediately when someone replies — prevents awkward spam and protects reputation.
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CTA after section -->
+      <div class="mt-4">
+        <a class="btn btn-primary btn-primary-accent"
+           href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Install%20Request">
+          Email to Get This Installed
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- PROOF -->
-  <section class="section-pad" id="proof" style="background:#fbfdff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <!-- DEMO -->
+  <section class="section-pad" id="demo" style="background:#fbfdff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="container">
-      <div class="kicker">Proof</div>
-      <div class="section-title">Real Implementation (Demo)</div>
+      <div class="kicker">Demo</div>
+      <div class="section-title">Watch the system run end-to-end</div>
       <p class="section-sub">
-        Below is a full working Lead Ops Reliability Sprint implementation.
+        The demo shows: inbound lead captured → first-touch sent → follow-ups scheduled → reply detected → sequence stopped → daily owner summary.
       </p>
-
-      <div class="proof-grid mt-4">
-        <div class="proof-tile" data-bs-toggle="modal" data-bs-target="#proofModal"
-             data-title="Make automation canvas (full flow)" data-src="assets/img/Full%20Flow.png">
-          <img src="assets/img/Full%20Flow.png" alt="Make flow"/>
-          <div class="proof-cap">Make automation canvas (full flow)</div>
-        </div>
-
-        <div class="proof-tile" data-bs-toggle="modal" data-bs-target="#proofModal"
-             data-title="HubSpot contact created + updated" data-src="assets/img/contact_activity.png">
-          <img src="assets/img/contact_activity.png" alt="HubSpot activity"/>
-          <div class="proof-cap">HubSpot contact created + updated</div>
-        </div>
-
-        <div class="proof-tile" data-bs-toggle="modal" data-bs-target="#proofModal"
-             data-title="HubSpot contact profile" data-src="assets/img/contact_profile.png">
-          <img src="assets/img/contact_profile.png" alt="HubSpot profile"/>
-          <div class="proof-cap">HubSpot contact profile</div>
-        </div>
-
-        <div class="proof-tile" data-bs-toggle="modal" data-bs-target="#proofModal"
-             data-title="Slack “Created” alert" data-src="assets/img/created_message.png">
-          <img src="assets/img/created_message.png" alt="Slack created"/>
-          <div class="proof-cap">Slack “Created” alert</div>
-        </div>
-
-        <div class="proof-tile" data-bs-toggle="modal" data-bs-target="#proofModal"
-             data-title="Google Sheets lead log" data-src="assets/img/lead_logs.png">
-          <img src="assets/img/lead_logs.png" alt="Lead logs"/>
-          <div class="proof-cap">Google Sheets lead log</div>
-        </div>
-
-        <div class="card-soft d-flex align-items-center" style="border-radius:var(--radius);">
-          <div>
-            <div class="icon-dot mb-2"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <div class="fw-bold mb-1">Failure handling (implemented)</div>
-            <div style="color:var(--muted);font-weight:700;">
-              Dedicated error routes, failure Slack alerts, and logs so issues are visible immediately.
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="row g-4 mt-4">
         <div class="col-lg-8">
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+              title="Recruitment Follow-Up Revenue Rescue System Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
           <div class="card-soft">
-            <div class="fw-bold mb-2">Implementation details</div>
+            <div class="fw-bold mb-2">What you’ll notice</div>
             <ul style="margin:0;color:var(--muted);font-weight:700;">
-              <li>Idempotent routing (create vs update)</li>
-              <li>CRM as source of truth</li>
-              <li>Slack notifications (created + updated)</li>
-              <li>Persistent logging</li>
-              <li>Failure detection + alerts (no silent failures)</li>
+              <li>First-touch under 60 seconds</li>
+              <li>3-step follow-up sequence</li>
+              <li>Reply stops follow-ups instantly</li>
+              <li>Owner gets a daily summary</li>
             </ul>
           </div>
         </div>
       </div>
 
+      <!-- Storyboard screenshots -->
+      <div class="row g-4 mt-4">
+        <div class="col-md-6">
+          <div class="card-soft">
+            <div class="fw-bold mb-2">1) Lead lands in the pipeline</div>
+            <img class="shot-img" src="assets/img/step-1-lead-in-sheet.png" alt="New lead captured in sheet" />
+            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
+              A new enquiry is captured instantly with status and timestamp.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-soft">
+            <div class="fw-bold mb-2">2) Automation runs (Python)</div>
+            <img class="shot-img" src="assets/img/step-2-python-run.png" alt="Python automation run" />
+            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
+              Python validates, dedupes, and triggers first-touch + follow-up scheduling.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-soft">
+            <div class="fw-bold mb-2">3) First-touch email is sent</div>
+            <img class="shot-img" src="assets/img/step-3-email-sent.png" alt="First-touch email sent" />
+            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
+              The lead gets a reply fast. Follow-ups are queued only if there’s no response.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card-soft">
+            <div class="fw-bold mb-2">4) Reply detected → status updates</div>
+            <img class="shot-img" src="assets/img/step-4-reply-status-updated.png" alt="Reply detected and sheet updated" />
+            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
+              When someone replies, the sequence stops instantly and the pipeline updates to “Replied”.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA after section -->
+      <div class="mt-4">
+        <a class="btn btn-primary btn-primary-accent"
+           href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Demo%20Question">
+          Email Me About the Demo
+        </a>
+      </div>
     </div>
   </section>
 
@@ -391,27 +427,35 @@
   <section class="section-pad" id="outcomes">
     <div class="container">
       <div class="kicker">Outcomes</div>
-      <div class="section-title">What this sprint guarantees</div>
+      <div class="section-title">What this system guarantees</div>
 
       <div class="row g-4 mt-2">
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="metric">0</div>
-            <p class="metric-sub"><strong>duplicate contacts</strong> (email dedupe)</p>
+            <div class="metric">&lt;60s</div>
+            <p class="metric-sub"><strong>first-touch SLA</strong> for new enquiries</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="metric">Instant</div>
-            <p class="metric-sub"><strong>Slack alerts</strong> for every lead</p>
+            <div class="metric">3-step</div>
+            <p class="metric-sub"><strong>follow-up sequence</strong> (Day 0 / Day 2 / Day 5)</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card-soft">
-            <div class="metric">100%</div>
-            <p class="metric-sub"><strong>lead visibility</strong> via logs + failure alerts</p>
+            <div class="metric">Stops</div>
+            <p class="metric-sub"><strong>on reply</strong> so you never spam leads</p>
           </div>
         </div>
+      </div>
+
+      <!-- CTA after section -->
+      <div class="mt-4">
+        <a class="btn btn-primary btn-primary-accent"
+           href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Pricing%20and%20Fit">
+          Email for Pricing & Fit
+        </a>
       </div>
     </div>
   </section>
@@ -425,13 +469,14 @@
       <div class="row g-4 mt-2">
         <div class="col-lg-4">
           <div class="card-soft">
-            <div class="fw-bold">Basic</div>
-            <div class="price">$2,500</div>
+            <div class="fw-bold">Starter</div>
+            <div class="price">$800</div>
             <ul style="color:var(--muted);font-weight:700;">
-              <li>Webhook intake</li>
-              <li>HubSpot create/update</li>
-              <li>Slack alerts</li>
-              <li>Google Sheets logging</li>
+              <li>1 lead source (form/inbox/CSV)</li>
+              <li>Pipeline tracker (Google Sheet)</li>
+              <li>Instant first-touch reply</li>
+              <li>3-step follow-up sequence</li>
+              <li>Stop-on-reply</li>
             </ul>
           </div>
         </div>
@@ -439,38 +484,39 @@
         <div class="col-lg-4">
           <div class="card-soft card-highlight">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="fw-bold">Default</div>
+              <div class="fw-bold">Pro</div>
               <div class="badge-rec"><i class="fa-solid fa-star"></i> Recommended</div>
             </div>
-            <div class="price">$3,500</div>
+            <div class="price">$1,200</div>
             <ul style="color:var(--muted);font-weight:700;">
-              <li>Everything in Basic</li>
-              <li>Error handling</li>
-              <li>Failure Slack alerts</li>
-              <li>Production testing</li>
-              <li>Delivery in 7–10 days</li>
+              <li>Everything in Starter</li>
+              <li>2 lead sources</li>
+              <li>Routing (candidate vs client)</li>
+              <li>Daily owner summary</li>
+              <li>Delivery in 72 hours</li>
             </ul>
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="card-soft">
-            <div class="fw-bold">Hardened</div>
-            <div class="price">$5,000</div>
+            <div class="fw-bold">Monitoring</div>
+            <div class="price">$300<span style="font-size:1rem;font-weight:900;color:var(--muted);">/mo</span></div>
             <ul style="color:var(--muted);font-weight:700;">
-              <li>Everything in Default</li>
-              <li>Field validation</li>
-              <li>Retry logic</li>
-              <li>Structured error logs</li>
-              <li>Deployment checklist</li>
-              <li>7-day post-launch support</li>
+              <li>Monitoring + quick fixes</li>
+              <li>Small edits to sequences</li>
+              <li>Monthly performance snapshot</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="mt-4" style="color:var(--muted);font-weight:900;">
-        One workflow only. No scope creep. Signal-based clients only.
+      <!-- CTA after section -->
+      <div class="mt-4">
+        <a class="btn btn-primary btn-primary-accent"
+           href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Start%20This%20Week">
+          Email to Start This Week
+        </a>
       </div>
     </div>
   </section>
@@ -479,15 +525,16 @@
   <section class="section-pad" id="contact">
     <div class="container">
       <div class="kicker">Contact</div>
-      <div class="section-title">Start with a single workflow</div>
-      <p class="section-sub">If you need reliable inbound lead operations — start here.</p>
+      <div class="section-title">Let’s install it in 72 hours</div>
+      <p class="section-sub">Email me with your agency name, team size, and what inbox/CRM you use.</p>
 
       <div class="row g-4 mt-2">
         <div class="col-lg-7">
           <div class="card-soft">
             <div class="fw-bold mb-2" style="font-size:1.15rem;">Primary CTA</div>
-            <a class="btn btn-primary btn-primary-accent w-100" href="https://wa.me/923117335449" target="_blank" rel="noopener">
-              Message on WhatsApp
+            <a class="btn btn-primary btn-primary-accent w-100"
+               href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Install%20Request&body=Hi%20Shazaib%2C%0A%0AI%27d%20like%20to%20install%20the%20Recruitment%20Follow-Up%20Revenue%20Rescue%20System.%0A%0AAgency%20name%3A%0ATeam%20size%3A%0AInbox%20(Gmail%2FOutlook)%3A%0ACRM%20(if%20any)%3A%0ALead%20sources%20(form%2Finbox%2FCSV)%3A%0A">
+              Email to Book
             </a>
           </div>
         </div>
@@ -498,8 +545,19 @@
             <a href="mailto:shazaibsolutions@gmail.com" style="font-weight:900;color:var(--ink);text-decoration:none;">
               shazaibsolutions@gmail.com
             </a>
+            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
+              WhatsApp: +923117335449
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- CTA after section -->
+      <div class="mt-4">
+        <a class="btn btn-primary btn-primary-accent"
+           href="mailto:shazaibsolutions@gmail.com?subject=Recruitment%20Follow-Up%20System%20—%20Quick%20Question">
+          Email a Quick Question
+        </a>
       </div>
     </div>
   </section>
@@ -508,8 +566,8 @@
   <footer class="footer-min">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-2">
       <div>
-        <div style="font-weight:900;color:var(--ink);">Lead Ops Reliability Sprint</div>
-        <div>Built with Make + HubSpot + Slack + Google Sheets</div>
+        <div style="font-weight:900;color:var(--ink);">Recruitment Follow-Up Revenue Rescue System</div>
+        <div>Capture → SLA reply → Follow-ups → Stop-on-reply → Daily owner summary</div>
       </div>
       <div class="d-flex gap-3">
         <a href="#page-top">Privacy</a>
@@ -518,42 +576,6 @@
     </div>
   </footer>
 
-  <!-- PROOF MODAL -->
-  <div class="modal fade" id="proofModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content" style="border-radius:18px; overflow:hidden;">
-        <div class="modal-header" style="border:0;">
-          <div class="fw-bold" id="proofModalTitle"></div>
-          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <img id="proofModalImg" class="modal-img" src="" alt="Proof image">
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const proofModalEl = document.getElementById('proofModal');
-    const proofModalTitle = document.getElementById('proofModalTitle');
-    const proofModalImg = document.getElementById('proofModalImg');
-
-    proofModalEl.addEventListener('show.bs.modal', function (event) {
-      const trigger = event.relatedTarget;
-      if (!trigger) return;
-
-      const title = trigger.getAttribute('data-title') || 'Proof';
-      const src = trigger.getAttribute('data-src');
-
-      proofModalTitle.textContent = title;
-      proofModalImg.src = src || '';
-      proofModalImg.alt = title;
-    });
-
-    proofModalEl.addEventListener('hidden.bs.modal', function () {
-      proofModalImg.src = '';
-    });
-  </script>
 </body>
 </html>
