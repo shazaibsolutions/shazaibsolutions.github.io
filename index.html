@@ -1,15 +1,47 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Recruitment Follow-Up Revenue Rescue System — Installed in 72 hours</title>
+  <title>Recruitment Follow-Up Automation (UK) — Installed in 72 hours</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Recruitment follow-up automation installed in 72 hours. Instant first-touch reply, 3-step follow-up sequence, stop-on-reply, and a daily owner summary so no lead is ignored." />
+  <meta name="description" content="UK recruitment follow-up automation installed in 72 hours. <60s first-touch, 3-step follow-up, stop-on-reply, and daily owner summary so no lead is ignored." />
 
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <!-- SEO -->
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://shazaibsolutions.github.io/" />
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:title" content="Recruitment Follow-Up Automation (UK) — Installed in 72 hours" />
+  <meta property="og:description" content="Stop revenue leakage from missed follow-ups. <60s first-touch, stop-on-reply, daily owner summary." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shazaibsolutions.github.io/" />
+  <!-- Optional: add a real OG image later -->
+  <!-- <meta property="og:image" content="https://shazaibsolutions.github.io/assets/img/og-image.png" /> -->
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
   <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Simple schema (no fake claims) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Recruitment Follow-Up Automation",
+    "areaServed": "GB",
+    "provider": {
+      "@type": "Person",
+      "name": "Shazaib Ali"
+    },
+    "serviceType": "Email follow-up automation installation for recruitment agencies",
+    "description": "Installed in 72 hours. Captures inbound leads, sends fast first-touch, runs a follow-up sequence, stops on reply, and sends daily owner summary."
+  }
+  </script>
 
   <style>
     :root{
@@ -27,7 +59,6 @@
     #mainNav{
       background: #0b0f14 !important;
       border-bottom: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: none;
     }
     #mainNav .navbar-brand{color:#fff !important;font-weight:900;letter-spacing:.02em;}
     #mainNav .nav-link{color:rgba(255,255,255,.72) !important;font-weight:800;}
@@ -41,23 +72,35 @@
       font-weight:900;
       box-shadow: 0 14px 30px rgba(29,155,240,.25);
       white-space: nowrap;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
     }
+    #mainNav .btn-cta-secondary{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      padding:.55rem .95rem;
+      color:#fff !important;
+      font-weight:900;
+      white-space: nowrap;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    #mainNav .btn-cta-secondary:hover{border-color:rgba(255,255,255,.35);}
 
     /* HERO */
-    .hero{
-      padding-top: 5.2rem;
-      background:#fff;
-    }
+    .hero{padding-top: 5.2rem;background:#fff;}
     .hero-shell{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
-      min-height: 600px;
+      min-height: 640px;
       border-bottom: 1px solid var(--line);
     }
-    @media (max-width: 992px){
-      .hero-shell{grid-template-columns:1fr;min-height:auto;}
-    }
-
+    @media (max-width: 992px){.hero-shell{grid-template-columns:1fr;min-height:auto;}}
     .hero-photo{
       background:#fff;
       border-right: 1px solid var(--line);
@@ -65,17 +108,11 @@
       align-items:center;
       justify-content:center;
       padding: 2.25rem;
-      min-height: 600px;
+      min-height: 640px;
     }
     @media (max-width: 992px){
-      .hero-photo{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-        min-height: 460px;
-        padding: 1.5rem;
-      }
+      .hero-photo{border-right:0;border-bottom:1px solid var(--line);min-height: 420px;padding: 1.25rem;}
     }
-
     .photo-frame{
       width: 100%;
       max-width: 620px;
@@ -85,10 +122,6 @@
       box-shadow: 0 18px 55px rgba(2,6,23,.10);
       padding: 1.15rem;
     }
-    @media (max-width: 992px){
-      .photo-frame{max-width: 560px;}
-    }
-
     .hero-photo img{
       width: 100%;
       height: auto;
@@ -98,15 +131,8 @@
       transform: var(--photoFlip, scaleX(1));
     }
 
-    .hero-copy{
-      display:flex;
-      align-items:center;
-      padding: 4rem 3.2rem;
-    }
-    @media (max-width: 992px){
-      .hero-copy{padding: 2.5rem 1.4rem;}
-    }
-
+    .hero-copy{display:flex;align-items:center;padding: 4rem 3.2rem;}
+    @media (max-width: 992px){.hero-copy{padding: 2.25rem 1.25rem;}}
     .kicker{
       text-transform: uppercase;
       letter-spacing: .14em;
@@ -120,7 +146,7 @@
       font-weight: 900;
       letter-spacing: -.03em;
       line-height: 1.05;
-      font-size: clamp(2.25rem, 4.2vw, 3.4rem);
+      font-size: clamp(2.15rem, 4.2vw, 3.35rem);
       margin:0 0 1rem;
       color: var(--ink);
     }
@@ -128,10 +154,12 @@
       color: var(--muted);
       font-size: 1.08rem;
       line-height: 1.65;
-      margin:0 0 1.35rem;
+      margin:0 0 1.2rem;
       font-weight:700;
       max-width: 62ch;
     }
+
+    .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem;}
     .btn-primary-accent{
       background: var(--accent);
       border:0;
@@ -139,18 +167,30 @@
       padding: .9rem 1.1rem;
       font-weight: 900;
       box-shadow: 0 18px 40px rgba(29,155,240,.22);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
     }
     .btn-primary-accent:hover{opacity:.92;}
-    .subnote{
-      margin-top:.85rem;
-      color:#64748b;
-      font-weight:800;
-      font-size:.95rem;
+    .btn-ghost{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:var(--ink);
+      font-weight:900;
+      border-radius:999px;
+      padding:.85rem 1.05rem;
+      box-shadow: var(--shadow);
+      text-decoration:none;
     }
+    .btn-ghost:hover{opacity:.92;}
+    .subnote{margin-top:.85rem;color:#64748b;font-weight:800;font-size:.95rem;}
 
     /* Sections */
     .section-pad{padding: 5rem 0;}
-    @media (max-width: 992px){.section-pad{padding: 3.8rem 0;}}
+    @media (max-width: 992px){.section-pad{padding: 3.6rem 0;}}
     .section-title{font-weight:900;letter-spacing:-.01em;font-size:2rem;margin:.35rem 0 1rem;}
     .section-sub{color:var(--muted);font-weight:700;max-width:75ch;}
 
@@ -171,6 +211,36 @@
       margin-bottom:.75rem;
     }
 
+    /* Trust bar */
+    .trustbar{
+      margin-top: 1.1rem;
+      padding-top: 1.1rem;
+      border-top:1px solid rgba(229,231,235,.9);
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: .9rem;
+    }
+    @media (max-width: 992px){.trustbar{grid-template-columns:1fr;}}
+    .trust-item{display:flex;gap:.65rem;align-items:flex-start;color: var(--muted);font-weight:800;line-height:1.35;}
+    .trust-item i{color:var(--accent);margin-top:.2rem;}
+
+    /* How it works */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    @media (max-width: 1200px){.steps{grid-template-columns: repeat(2, minmax(0,1fr));}}
+    @media (max-width: 576px){.steps{grid-template-columns:1fr;}}
+    .step-num{
+      font-weight:900;color:#fff;background:var(--accent);
+      width:34px;height:34px;border-radius:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      margin-bottom:.75rem;
+      box-shadow: 0 14px 30px rgba(29,155,240,.20);
+    }
+
     /* Outcomes */
     .metric{font-weight:900;font-size:2rem;letter-spacing:-.02em;margin-bottom:.35rem;}
     .metric-sub{color:var(--muted);font-weight:700;margin:0;}
@@ -186,13 +256,9 @@
       border:2px solid rgba(29,155,240,.35);
       box-shadow: 0 22px 55px rgba(29,155,240,.14);
     }
+    .fineprint{color:#64748b;font-weight:800;font-size:.92rem;margin-top:.9rem;}
 
-    /* Footer */
-    .footer-min{border-top:1px solid var(--line);padding:2rem 0;color:#64748b;font-weight:700;}
-    .footer-min a{color:#475569;font-weight:900;text-decoration:none;}
-    .footer-min a:hover{color:var(--ink);}
-
-    /* Video embed */
+    /* Video */
     .video-wrap{
       position: relative;
       width: 100%;
@@ -203,13 +269,9 @@
       box-shadow: var(--shadow);
       background:#000;
     }
-    .video-wrap iframe{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      border:0;
-    }
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
-    /* Storyboard images */
+    /* Images */
     .shot-img{
       width:100%;
       border-radius:14px;
@@ -217,18 +279,13 @@
       display:block;
     }
 
-    .btn-ghost{
-      display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid rgba(229,231,235,.9);
-      background:#fff;
-      color:var(--ink);
-      font-weight:900;
-      border-radius:999px;
-      padding:.85rem 1.05rem;
-      box-shadow: var(--shadow);
-      text-decoration:none;
-    }
-    .btn-ghost:hover{opacity:.92;}
+    /* Footer */
+    .footer-min{border-top:1px solid var(--line);padding:2rem 0;color:#64748b;font-weight:700;}
+    .footer-min a{color:#475569;font-weight:900;text-decoration:none;}
+    .footer-min a:hover{color:var(--ink);}
+
+    /* Accessibility */
+    a:focus, button:focus{outline: 3px solid rgba(29,155,240,.35); outline-offset: 2px;}
   </style>
 </head>
 
@@ -247,15 +304,24 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link px-lg-3" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3" href="#how">How it works</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#demo">Demo</a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3" href="#proof">Proof</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#outcomes">Outcomes</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#packages">Packages</a></li>
           <li class="nav-item"><a class="nav-link px-lg-3" href="#contact">Contact</a></li>
 
-          <!-- Email CTA: Gmail compose (works even if mailto isn't configured) -->
+          <!-- Primary CTA -->
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
             <a class="btn btn-cta js-email-cta" href="#" target="_blank" rel="noopener">
-              Email to Book
+              Book demo (email)
+            </a>
+          </li>
+
+          <!-- Secondary CTA -->
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-cta-secondary" href="#demo">
+              See demo
             </a>
           </li>
         </ul>
@@ -271,26 +337,45 @@
           <img
             src="./assets/img/myyyyyy.png"
             onerror="this.onerror=null;this.src='./asset/img/myyyyyy.png';"
-            alt="Shazaib — Recruitment Follow-Up Revenue Rescue System"
+            alt="Recruitment Follow-Up Automation preview"
+            loading="eager"
           >
         </div>
       </div>
 
       <div class="hero-copy">
         <div>
-          <div class="kicker">Recruitment follow-up reliability</div>
-          <h1>No candidate or client lead is ignored. Auto follow-ups that stop on reply. Installed in 72 hours.</h1>
+          <!-- (1) UK-targeted value prop -->
+          <div class="kicker">For UK recruitment agencies</div>
+          <h1>Stop follow-up revenue leakage. <span style="white-space:nowrap;">&lt;60s</span> first-touch, stop-on-reply, installed in 72 hours.</h1>
+
           <p>
-            I install a recruitment follow-up system that captures every inbound lead, replies within 60 seconds,
-            runs a short follow-up sequence, and instantly stops the sequence when someone replies.
-            The owner gets a daily summary so nothing slips.
+            I install a follow-up system that captures every inbound enquiry, replies fast,
+            follows up only when there’s no response, and stops instantly on reply.
+            You also get a daily owner summary so nothing slips.
           </p>
 
-          <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-            Email for Demo
-          </a>
+          <!-- (2) Strong CTAs -->
+          <div class="hero-actions">
+            <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+              Get a demo (email)
+            </a>
+            <a class="btn-ghost" href="#demo">
+              Watch demo
+            </a>
+            <a class="btn-ghost js-wa-cta" href="#" target="_blank" rel="noopener" aria-label="WhatsApp after contact">
+              WhatsApp (after contact)
+            </a>
+          </div>
 
-          <div class="subnote">Fixed scope. Fast delivery. Built around your inbox workflow.</div>
+          <div class="subnote">Fixed scope. Fast delivery. Built around your current inbox/CRM.</div>
+
+          <!-- (3) Trust anchors (no fake claims) -->
+          <div class="trustbar" aria-label="Trust and risk reducers">
+            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Stop-on-reply prevents unwanted follow-ups after a response.</span></div>
+            <div class="trust-item"><i class="fa-solid fa-clipboard-check"></i><span>Fixed scope + handover notes (templates + tracker).</span></div>
+            <div class="trust-item"><i class="fa-solid fa-clock"></i><span>72h delivery once access + templates are provided.</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -303,8 +388,8 @@
       <div class="section-title">What I install</div>
 
       <p class="section-sub">
-        Recruitment agencies leak revenue when follow-up is inconsistent.
-        This system enforces a simple standard:
+        Recruitment agencies lose money when follow-up is inconsistent.
+        This system enforces one standard:
         <strong>Capture → First-touch SLA → Follow-ups → Stop-on-reply → Daily owner brief</strong>.
       </p>
       <p class="section-sub">
@@ -317,7 +402,7 @@
             <div class="icon-dot"><i class="fa-solid fa-inbox"></i></div>
             <div class="fw-bold" style="font-size:1.15rem;">Capture + Pipeline</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Every new candidate or client enquiry is captured and logged into a single tracker with status and timestamp.
+              Every candidate/client enquiry is captured and logged with status + timestamp.
             </div>
           </div>
         </div>
@@ -325,9 +410,9 @@
         <div class="col-md-4">
           <div class="card-soft">
             <div class="icon-dot"><i class="fa-solid fa-stopwatch"></i></div>
-            <div class="fw-bold" style="font-size:1.15rem;">60-Second First Touch</div>
+            <div class="fw-bold" style="font-size:1.15rem;">Fast First Touch</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Instant acknowledgement within 60 seconds so leads don’t go cold while the team is busy.
+              Immediate acknowledgement (target under 60 seconds) so leads don’t go cold.
             </div>
           </div>
         </div>
@@ -337,28 +422,84 @@
             <div class="icon-dot"><i class="fa-solid fa-hand"></i></div>
             <div class="fw-bold" style="font-size:1.15rem;">Stop-on-Reply</div>
             <div style="color:var(--muted);margin-top:.35rem;font-weight:700;">
-              Follow-ups stop immediately when someone replies — prevents awkward spam and protects reputation.
+              Follow-ups stop instantly on reply — avoids awkward spam, protects your brand.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA after section -->
-      <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-          Email to Get This Installed
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+          Email to scope it
+        </a>
+        <a class="btn-ghost" href="#how">
+          See how it works
         </a>
       </div>
     </div>
   </section>
 
-  <!-- DEMO -->
-  <section class="section-pad" id="demo" style="background:#fbfdff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <!-- (4) HOW IT WORKS -->
+  <section class="section-pad" id="how" style="background:#fbfdff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="kicker">How it works</div>
+      <div class="section-title">Four steps to “no lead left behind”</div>
+      <p class="section-sub">
+        Lightweight install. No tool replacement. We connect your lead sources + inbox/CRM and enforce follow-up reliability.
+      </p>
+
+      <div class="steps">
+        <div class="card-soft">
+          <div class="step-num">1</div>
+          <div class="fw-bold">Connect lead sources</div>
+          <div style="color:var(--muted);margin-top:.4rem;font-weight:700;">
+            Form, shared inbox, CSV, or CRM notifications — every enquiry gets captured.
+          </div>
+        </div>
+
+        <div class="card-soft">
+          <div class="step-num">2</div>
+          <div class="fw-bold">Approve templates + rules</div>
+          <div style="color:var(--muted);margin-top:.4rem;font-weight:700;">
+            You approve messages. I add dedupe + stop-on-reply guardrails.
+          </div>
+        </div>
+
+        <div class="card-soft">
+          <div class="step-num">3</div>
+          <div class="fw-bold">Install + test</div>
+          <div style="color:var(--muted);margin-top:.4rem;font-weight:700;">
+            Test leads end-to-end: capture → send → follow-up → reply detection → stop.
+          </div>
+        </div>
+
+        <div class="card-soft">
+          <div class="step-num">4</div>
+          <div class="fw-bold">Go live + daily summary</div>
+          <div style="color:var(--muted);margin-top:.4rem;font-weight:700;">
+            Owner gets a daily brief. Team works from one reliable pipeline.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+          Email for fit check
+        </a>
+        <a class="btn-ghost" href="#packages">
+          View packages
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- (6) DEMO -->
+  <section class="section-pad" id="demo">
     <div class="container">
       <div class="kicker">Demo</div>
-      <div class="section-title">Watch the system run end-to-end</div>
+      <div class="section-title">Watch it run end-to-end</div>
       <p class="section-sub">
-        The demo shows: inbound lead captured → first-touch sent → follow-ups scheduled → reply detected → sequence stopped → daily owner summary.
+        Demo flow: lead captured → first-touch sent → follow-ups scheduled → reply detected → sequence stopped → daily owner summary.
       </p>
 
       <div class="row g-4 mt-4">
@@ -366,7 +507,7 @@
           <div class="video-wrap">
             <iframe
               src="https://www.youtube-nocookie.com/embed/aehS-OuCa70?rel=0"
-              title="Recruitment Follow-Up Revenue Rescue System Demo"
+              title="Recruitment Follow-Up Automation Demo"
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -374,35 +515,41 @@
             </iframe>
           </div>
 
-          <!-- Hard fallback if iframe shows “unavailable” -->
           <div class="mt-3 d-flex gap-2 flex-wrap">
             <a class="btn-ghost" href="https://youtu.be/aehS-OuCa70" target="_blank" rel="noopener">
               Watch on YouTube
             </a>
-            <a class="btn-ghost js-email-cta" href="#" target="_blank" rel="noopener">
-              Email to Book
+            <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+              Email for demo
             </a>
           </div>
 
           <div style="color:var(--muted);font-weight:700;margin-top:.7rem;">
-            If the embedded video doesn’t load in your browser, use “Watch on YouTube”.
+            If the embedded video doesn’t load, use “Watch on YouTube”.
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="card-soft">
-            <div class="fw-bold mb-2">What you’ll notice</div>
+            <div class="fw-bold mb-2">What to look for</div>
             <ul style="margin:0;color:var(--muted);font-weight:700;">
-              <li>First-touch under 60 seconds</li>
+              <li>Fast first-touch acknowledgement</li>
               <li>3-step follow-up sequence</li>
-              <li>Reply stops follow-ups instantly</li>
+              <li>Reply stops follow-ups immediately</li>
               <li>Owner gets a daily summary</li>
             </ul>
+          </div>
+
+          <div class="card-soft mt-3">
+            <div class="fw-bold mb-2">Compatibility</div>
+            <div style="color:var(--muted);font-weight:700;">
+              Works with Gmail/Google Workspace. Outlook/365 can be scoped depending on setup.
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Storyboard screenshots -->
+      <!-- Storyboard screenshots (keep, but lazy-load for speed) -->
       <div class="row g-4 mt-4">
         <div class="col-md-6">
           <div class="card-soft">
@@ -410,9 +557,10 @@
             <img class="shot-img"
               src="./assets/img/step-1-lead-in-sheet.png"
               onerror="this.onerror=null;this.src='./asset/img/step-1-lead-in-sheet.png';"
-              alt="New lead captured in sheet" loading="lazy">
+              alt="New lead captured in tracker"
+              loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
-              A new enquiry is captured instantly with status and timestamp.
+              New enquiry captured instantly with status and timestamp.
             </div>
           </div>
         </div>
@@ -423,9 +571,10 @@
             <img class="shot-img"
               src="./assets/img/step-2-python-run.png"
               onerror="this.onerror=null;this.src='./asset/img/step-2-python-run.png';"
-              alt="Python automation run" loading="lazy">
+              alt="Python automation processing lead"
+              loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
-              Python validates, dedupes, and triggers first-touch + follow-up scheduling.
+              Validates, dedupes, triggers first-touch, schedules follow-ups.
             </div>
           </div>
         </div>
@@ -436,9 +585,10 @@
             <img class="shot-img"
               src="./assets/img/step-3-email-sent.png"
               onerror="this.onerror=null;this.src='./asset/img/step-3-email-sent.png';"
-              alt="First-touch email sent" loading="lazy">
+              alt="First-touch email sent"
+              loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
-              The lead gets a reply fast. Follow-ups are queued only if there’s no response.
+              Lead gets an acknowledgement fast. Follow-ups only if no reply.
             </div>
           </div>
         </div>
@@ -449,18 +599,81 @@
             <img class="shot-img"
               src="./assets/img/step-4-reply-status-updated.png"
               onerror="this.onerror=null;this.src='./asset/img/step-4-reply-status-updated.png';"
-              alt="Reply detected and sheet updated" loading="lazy">
+              alt="Reply detected and pipeline updated"
+              loading="lazy">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
-              When someone replies, the sequence stops instantly and the pipeline updates to “Replied”.
+              Sequence stops on reply and pipeline updates to “Replied”.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (3) PROOF / SOCIAL PROOF (ethical) -->
+  <section class="section-pad" id="proof" style="background:#fbfdff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="kicker">Proof</div>
+      <div class="section-title">What you can trust (without fake testimonials)</div>
+      <p class="section-sub">
+        I’m building UK case studies now. Until then, here’s what I provide to reduce buyer risk: clear deliverables, guardrails, and a working demo.
+      </p>
+
+      <div class="row g-4 mt-2">
+        <div class="col-lg-4">
+          <div class="card-soft">
+            <div class="fw-bold">Risk reducer</div>
+            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
+              Stop-on-reply + dedupe guardrails (prevents spam and double-sends).
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-soft">
+            <div class="fw-bold">Clear handover</div>
+            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
+              Tracker + templates + simple operating notes so your team can run it.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-soft">
+            <div class="fw-bold">Pilot offer (optional)</div>
+            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
+              First 2 UK agencies get discounted install in exchange for a written testimonial after delivery (only if satisfied).
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA after section -->
-      <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-          Email Me About the Demo
+      <!-- Example outcomes (explicitly labeled as examples, not testimonials) -->
+      <div class="row g-4 mt-3">
+        <div class="col-lg-6">
+          <div class="card-soft">
+            <div class="fw-bold">Example outcome (illustrative)</div>
+            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
+              “If you reply within minutes instead of hours, you reduce lead drop-off and improve booking rates.”
+            </div>
+            <div class="fineprint">This is an example outcome, not a client quote.</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card-soft">
+            <div class="fw-bold">Example outcome (illustrative)</div>
+            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
+              “Stop-on-reply prevents awkward follow-ups after a response and protects reputation.”
+            </div>
+            <div class="fineprint">This is an example outcome, not a client quote.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+          Email to discuss pilot
+        </a>
+        <a class="btn-ghost" href="#packages">
+          Pricing
         </a>
       </div>
     </div>
@@ -470,13 +683,13 @@
   <section class="section-pad" id="outcomes">
     <div class="container">
       <div class="kicker">Outcomes</div>
-      <div class="section-title">What this system guarantees</div>
+      <div class="section-title">What this system enforces</div>
 
       <div class="row g-4 mt-2">
         <div class="col-md-4">
           <div class="card-soft">
             <div class="metric">&lt;60s</div>
-            <p class="metric-sub"><strong>first-touch SLA</strong> for new enquiries</p>
+            <p class="metric-sub"><strong>first-touch target</strong> for new enquiries</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -488,38 +701,46 @@
         <div class="col-md-4">
           <div class="card-soft">
             <div class="metric">Stops</div>
-            <p class="metric-sub"><strong>on reply</strong> so you never spam leads</p>
+            <p class="metric-sub"><strong>on reply</strong> so you don’t message people after they respond</p>
           </div>
         </div>
       </div>
 
-      <!-- CTA after section -->
-      <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-          Email for Pricing & Fit
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+          Email for fit check
+        </a>
+        <a class="btn-ghost" href="#contact">
+          Contact
         </a>
       </div>
     </div>
   </section>
 
-  <!-- PACKAGES -->
+  <!-- (5) PACKAGES in GBP + value context -->
   <section class="section-pad" id="packages" style="background:#fbfdff;border-top:1px solid var(--line);">
     <div class="container">
       <div class="kicker">Packages</div>
-      <div class="section-title">Fixed-scope packages</div>
+      <div class="section-title">Fixed-scope packages (GBP)</div>
+      <p class="section-sub">
+        You’re buying outcomes: consistent follow-up, stop-on-reply guardrails, and a daily owner view.
+        If this saves your team even 5–10 hours/month and recovers missed leads, it pays for itself.
+      </p>
 
       <div class="row g-4 mt-2">
         <div class="col-lg-4">
           <div class="card-soft">
             <div class="fw-bold">Starter</div>
-            <div class="price">$800</div>
+            <div class="price">£699</div>
             <ul style="color:var(--muted);font-weight:700;">
               <li>1 lead source (form/inbox/CSV)</li>
-              <li>Pipeline tracker (Google Sheet)</li>
-              <li>Instant first-touch reply</li>
+              <li>Tracker (Google Sheet)</li>
+              <li>Fast first-touch acknowledgement</li>
               <li>3-step follow-up sequence</li>
-              <li>Stop-on-reply</li>
+              <li>Stop-on-reply + dedupe</li>
+              <li>Handover notes + templates</li>
             </ul>
+            <div class="fineprint"><strong>Not included:</strong> CRM deep integration, Outlook/365 complex setups.</div>
           </div>
         </div>
 
@@ -529,78 +750,119 @@
               <div class="fw-bold">Pro</div>
               <div class="badge-rec"><i class="fa-solid fa-star"></i> Recommended</div>
             </div>
-            <div class="price">$1,200</div>
+            <div class="price">£999</div>
             <ul style="color:var(--muted);font-weight:700;">
               <li>Everything in Starter</li>
               <li>2 lead sources</li>
               <li>Routing (candidate vs client)</li>
               <li>Daily owner summary</li>
-              <li>Delivery in 72 hours</li>
+              <li>Delivery in 72 hours (after access + templates)</li>
+              <li>Basic deliverability guardrails</li>
             </ul>
+            <div class="fineprint"><strong>Not included:</strong> paid email tools, marketing platforms.</div>
           </div>
         </div>
 
         <div class="col-lg-4">
           <div class="card-soft">
             <div class="fw-bold">Monitoring</div>
-            <div class="price">$300<span style="font-size:1rem;font-weight:900;color:var(--muted);">/mo</span></div>
+            <div class="price">£249<span style="font-size:1rem;font-weight:900;color:var(--muted);">/mo</span></div>
             <ul style="color:var(--muted);font-weight:700;">
               <li>Monitoring + quick fixes</li>
               <li>Small edits to sequences</li>
               <li>Monthly performance snapshot</li>
             </ul>
+            <div class="fineprint">Optional. Recommended if you want ongoing stability.</div>
           </div>
         </div>
       </div>
 
-      <!-- CTA after section -->
-      <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-          Email to Start This Week
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
+          Email to start this week
+        </a>
+        <a class="btn-ghost" href="#privacy">
+          Privacy notes
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- (7) CONTACT (professional without paid email) -->
   <section class="section-pad" id="contact">
     <div class="container">
       <div class="kicker">Contact</div>
       <div class="section-title">Let’s install it in 72 hours</div>
-      <p class="section-sub">Email me with your agency name, team size, and what inbox/CRM you use.</p>
+      <p class="section-sub">Email me with your agency name, team size, inbox/CRM, and lead sources.</p>
 
       <div class="row g-4 mt-2">
         <div class="col-lg-7">
           <div class="card-soft">
             <div class="fw-bold mb-2" style="font-size:1.15rem;">Primary CTA</div>
-            <a class="btn btn-primary btn-primary-accent w-100 js-email-cta" href="#" target="_blank" rel="noopener">
-              Email to Book
+            <a class="btn-primary-accent w-100 js-email-cta" href="#" target="_blank" rel="noopener">
+              Email to book demo
             </a>
-
             <div style="color:var(--muted);font-weight:700;margin-top:.75rem;">
-              If the button doesn’t open mail on your device, it opens Gmail compose in a new tab.
+              Email opens Gmail compose (works even if mailto isn’t configured).
             </div>
           </div>
         </div>
 
         <div class="col-lg-5">
           <div class="card-soft">
-            <div class="fw-bold mb-2" style="font-size:1.15rem;">Email</div>
-            <a href="mailto:shazaibsolutions@gmail.com" style="font-weight:900;color:var(--ink);text-decoration:none;">
-              shazaibsolutions@gmail.com
-            </a>
-            <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
-              WhatsApp: +923117335449
+            <div class="fw-bold mb-2" style="font-size:1.15rem;">Details</div>
+
+            <div style="color:var(--muted);font-weight:700;">
+              Email:<br>
+              <a href="mailto:shazaibsolutions@gmail.com" style="font-weight:900;color:var(--ink);text-decoration:none;">
+                shazaibsolutions@gmail.com
+              </a>
+            </div>
+
+            <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
+              LinkedIn:<br>
+              <a class="js-linkedin" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
+                Add your LinkedIn URL here
+              </a>
+            </div>
+
+            <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
+              WhatsApp (after email contact):<br>
+              <a class="js-wa-cta" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
+                +92 311 733 5449
+              </a>
+            </div>
+
+            <div class="fineprint">
+              Tip: put your LinkedIn on the page. It substitutes for “business email” trust.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA after section -->
-      <div class="mt-4">
-        <a class="btn btn-primary btn-primary-accent js-email-cta" href="#" target="_blank" rel="noopener">
-          Email a Quick Question
-        </a>
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a class="btn-ghost" href="#demo">Watch demo</a>
+        <a class="btn-ghost" href="#packages">Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- (8) Privacy / GDPR notes -->
+  <section class="section-pad" id="privacy" style="background:#fbfdff;border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="kicker">Privacy</div>
+      <div class="section-title">Data handling (plain English)</div>
+      <p class="section-sub">
+        The system runs inside your own tools. I only access what’s necessary to install, test, and hand over.
+        If requested, access can be removed after delivery.
+      </p>
+      <div class="card-soft mt-3">
+        <div class="fw-bold">Notes</div>
+        <ul style="margin:.65rem 0 0;color:var(--muted);font-weight:700;">
+          <li>No selling of data. No third-party sharing.</li>
+          <li>Stop-on-reply prevents messaging after a response.</li>
+          <li>You approve templates and cadence.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -613,19 +875,23 @@
         <div>Capture → SLA reply → Follow-ups → Stop-on-reply → Daily owner summary</div>
       </div>
       <div class="d-flex gap-3">
-        <a href="#page-top">Privacy</a>
+        <a href="#privacy">Privacy</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <script>
-    // One reliable CTA everywhere (Gmail compose). Still email, just doesn't depend on mailto setup.
+    // Reliable CTA: Gmail compose (no paid tools needed)
     (function(){
       const EMAIL = "shazaibsolutions@gmail.com";
-      const SUBJECT = "Recruitment Follow-Up System — Demo Request";
+
+      // IMPORTANT: put your real LinkedIn profile URL here (free trust signal)
+      const LINKEDIN_URL = "#";
+
+      const SUBJECT = "Recruitment Follow-Up Automation — Demo Request";
       const BODY =
 `Hi Shazaib,
 
@@ -633,6 +899,7 @@ I’d like to see the demo and discuss installation.
 
 Agency name:
 Team size:
+UK timezone availability:
 Inbox (Gmail/Outlook):
 CRM (if any):
 Lead sources (form/inbox/CSV):
@@ -646,6 +913,23 @@ Thanks,`;
 
       document.querySelectorAll(".js-email-cta").forEach(a => {
         a.href = gmail;
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+
+      document.querySelectorAll(".js-linkedin").forEach(a => {
+        a.href = LINKEDIN_URL;
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+
+      // WhatsApp should be secondary: used after they’ve engaged (email/LinkedIn)
+      const WHATSAPP_NUMBER_E164 = "+923117335449";
+      const waNumber = WHATSAPP_NUMBER_E164.replace(/[^\d+]/g,'').replace('+','');
+      const waLink = "https://wa.me/" + waNumber
+        + "?text=" + encodeURIComponent("Hi Shazaib — I saw your follow-up automation page. I’ve emailed you; can we coordinate a demo time?");
+      document.querySelectorAll(".js-wa-cta").forEach(a => {
+        a.href = waLink;
         a.target = "_blank";
         a.rel = "noopener";
       });
