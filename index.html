@@ -39,7 +39,9 @@
     "name":"Shazaib Ali",
     "url":"https://shazaibsolutions.github.io/",
     "jobTitle":"Web Developer",
-    "sameAs":[]
+    "sameAs":[
+      "https://shorturl.at/nNl4z"
+    ]
   }
   </script>
 
@@ -315,8 +317,8 @@
           </li>
 
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-ghost-nav js-resume" href="#" target="_blank" rel="noopener">
-              Resume
+            <a class="btn btn-ghost-nav js-linkedin" href="#" target="_blank" rel="noopener">
+              LinkedIn
             </a>
           </li>
         </ul>
@@ -330,10 +332,10 @@
       <div class="hero-left">
         <div class="photo-frame">
           <img
-             src="./assets/img/myyyyyy.png"
-  alt="Shazaib Ali"
-  loading="eager"
-  onerror="this.onerror=null;this.src='./assets/img/myyyyyy.png';"
+            src="./assets/img/myyyyyy.png"
+            alt="Shazaib Ali"
+            loading="eager"
+            onerror="this.onerror=null;this.src='./assets/img/myyyyyy.png';"
           >
         </div>
       </div>
@@ -355,7 +357,6 @@
 
           <div class="hero-actions mt-3">
             <a class="btn btn-primary-accent" href="#projects">View projects</a>
-            <a class="btn btn-ghost js-github" href="#" target="_blank" rel="noopener">GitHub</a>
             <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
           </div>
 
@@ -491,7 +492,7 @@
             </div>
             <div class="d-flex gap-2 flex-wrap">
               <a class="btn btn-ghost" href="#top">Live</a>
-              <a class="btn btn-ghost js-github" href="#" target="_blank" rel="noopener">Code</a>
+              <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -515,7 +516,7 @@
 
       <div class="mt-4 d-flex gap-2 flex-wrap">
         <a class="btn btn-primary-accent js-contact-cta" href="#">Contact me</a>
-        <a class="btn btn-ghost js-resume" href="#" target="_blank" rel="noopener">Download resume</a>
+        <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -579,7 +580,7 @@
               src="./assets/img/step-1-lead-in-sheet.png"
               alt="Lead captured in tracker"
               loading="lazy"
-              onerror="this.onerror=null;this.src='./assets/img/placeholder-shot.png';">
+              onerror="this.onerror=null;this.src='./assets/img/step-1-lead-in-sheet.png';">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               Every enquiry captured with status + timestamp.
             </div>
@@ -592,7 +593,7 @@
               src="./assets/img/step-2-python-run.png"
               alt="Automation processing lead"
               loading="lazy"
-              onerror="this.onerror=null;this.src='./assets/img/placeholder-shot.png';">
+              onerror="this.onerror=null;this.src='./assets/img/step-2-python-run.png';">
             <div style="color:var(--muted);font-weight:700;margin-top:.6rem;">
               Validates, schedules follow-ups, and enforces stop-on-reply.
             </div>
@@ -636,14 +637,12 @@
               </a>
             </div>
 
-
             <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
               LinkedIn:<br>
               <a class="js-linkedin" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
                 https://shorturl.at/nNl4z
               </a>
             </div>
-
 
             <div class="mt-3" style="color:#64748b;font-weight:800;font-size:.92rem;">
               Tip: real GitHub + LinkedIn links = instant trust.
@@ -673,11 +672,11 @@
 
   <script>
     (function(){
-      // ===== CONFIG (update these) =====
+      // ===== CONFIG =====
       const CONFIG = {
         name: "Shazaib Ali",
         email: "shazaibsolutions@gmail.com",
-        linkedin: "",   https://shorturl.at/nNl4z"
+        linkedin: "https://shorturl.at/nNl4z",
         whatsappE164: "+923117335449",
         demoYoutube: "https://youtu.be/aehS-OuCa70"
       };
@@ -711,6 +710,7 @@ Budget range:
 Details:
 
 Thanks,`;
+
       const gmail = "https://mail.google.com/mail/?view=cm&fs=1"
         + "&to=" + encodeURIComponent(CONFIG.email)
         + "&su=" + encodeURIComponent(SUBJECT)
@@ -720,12 +720,7 @@ Thanks,`;
       setHrefAll(".js-linkedin", CONFIG.linkedin, true);
       setHrefAll(".js-demo", CONFIG.demoYoutube, true);
 
-      // WhatsApp
-      const waNum = (CONFIG.whatsappE164 || "").replace(/[^\d+]/g,'').replace('+','');
-      const waLink = waNum ? ("https://wa.me/" + waNum + "?text=" + encodeURIComponent("Hi Shazaib — I saw your portfolio. Can we discuss a project?")) : "";
-      setHrefAll(".js-wa", waLink, true);
-
-      // Demo iframe embed (no blank issues)
+      // Demo iframe embed
       const iframe = document.querySelector(".js-demo-iframe");
       if (iframe && CONFIG.demoYoutube) {
         const idMatch = CONFIG.demoYoutube.match(/(?:youtu\.be\/|v=)([a-zA-Z0-9_-]{6,})/);
