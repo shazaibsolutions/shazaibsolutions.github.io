@@ -316,8 +316,9 @@
             </a>
           </li>
 
+          <!-- IMPORTANT: LinkedIn is NOT detached; hardcoded href + JS still sets it -->
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-ghost-nav js-linkedin" href="#" target="_blank" rel="noopener">
+            <a class="btn btn-ghost-nav js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">
               LinkedIn
             </a>
           </li>
@@ -343,7 +344,6 @@
       <div class="hero-right">
         <div>
           <div class="kicker">Python Automation</div>
-          <!-- OPTION A (selected) -->
           <h1>Python automation specialist building reliable workflows that save time.</h1>
 
           <p>
@@ -359,7 +359,8 @@
 
           <div class="hero-actions mt-3">
             <a class="btn btn-primary-accent" href="#projects">View automation projects</a>
-            <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <!-- Hardcoded href to avoid detached link -->
+            <a class="btn btn-ghost js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">LinkedIn</a>
           </div>
 
           <div class="subnote">
@@ -496,7 +497,8 @@
             </div>
             <div class="d-flex gap-2 flex-wrap">
               <a class="btn btn-ghost js-contact-cta" href="#">Request details</a>
-              <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+              <!-- Hardcoded href to avoid detached link -->
+              <a class="btn btn-ghost js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -520,7 +522,8 @@
 
       <div class="mt-4 d-flex gap-2 flex-wrap">
         <a class="btn btn-primary-accent js-contact-cta" href="#">Contact me</a>
-        <a class="btn btn-ghost js-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- Hardcoded href to avoid detached link -->
+        <a class="btn btn-ghost js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -624,7 +627,7 @@
             <a class="btn btn-primary-accent w-100 js-contact-cta" href="#">
               Email me
             </a>
-            </div>
+            <!-- Removed: "Opens Gmail compose..." -->
           </div>
         </div>
 
@@ -641,11 +644,13 @@
 
             <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
               LinkedIn:<br>
-              <a class="js-linkedin" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
+              <!-- Hardcoded href so it never detaches -->
+              <a class="js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
                 https://shorturl.at/nNl4z
               </a>
             </div>
-            </div>
+
+            <!-- Removed: "Tip: add a real GitHub link..." -->
           </div>
         </div>
       </div>
@@ -718,7 +723,10 @@ Thanks,`;
         + "&body=" + encodeURIComponent(BODY);
 
       setHrefAll(".js-contact-cta", gmail, true);
+
+      // LinkedIn: keep JS setter, but links are ALSO hardcoded in HTML so they never detach.
       setHrefAll(".js-linkedin", CONFIG.linkedin, true);
+
       setHrefAll(".js-demo", CONFIG.demoYoutube, true);
 
       // Demo iframe embed
