@@ -636,12 +636,6 @@
               </a>
             </div>
 
-            <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
-              GitHub:<br>
-              <a class="js-github" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
-                Add your GitHub URL
-              </a>
-            </div>
 
             <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
               LinkedIn:<br>
@@ -650,12 +644,6 @@
               </a>
             </div>
 
-            <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
-              WhatsApp (optional):<br>
-              <a class="js-wa" href="#" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
-                +92 311 733 5449
-              </a>
-            </div>
 
             <div class="mt-3" style="color:#64748b;font-weight:800;font-size:.92rem;">
               Tip: real GitHub + LinkedIn links = instant trust.
@@ -689,9 +677,7 @@
       const CONFIG = {
         name: "Shazaib Ali",
         email: "shazaibsolutions@gmail.com",
-        github: "",     // e.g. "https://github.com/shazaibsolutions"
-        linkedin: "",   // e.g. "https://www.linkedin.com/in/yourprofile/"
-        resume: "",     // e.g. "https://drive.google.com/..."
+        linkedin: "",   // e.g. "https://www.linkedin.com/in/muhammad-shahzaib-ai-automation-for-coaches-uk-canada/"
         whatsappE164: "+923117335449",
         demoYoutube: "https://youtu.be/aehS-OuCa70"
       };
@@ -731,8 +717,6 @@ Thanks,`;
         + "&body=" + encodeURIComponent(BODY);
 
       setHrefAll(".js-contact-cta", gmail, true);
-      setHrefAll(".js-resume", CONFIG.resume, true);
-      setHrefAll(".js-github", CONFIG.github, true);
       setHrefAll(".js-linkedin", CONFIG.linkedin, true);
       setHrefAll(".js-demo", CONFIG.demoYoutube, true);
 
