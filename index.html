@@ -443,19 +443,6 @@
       background: #050505;
     }
 
-    .asset-name {
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      background: rgba(0,0,0,0.76);
-      border: 1px solid var(--line);
-      color: var(--gray-2);
-      padding: 8px 10px;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-    }
-
     .pills {
       display: flex;
       flex-wrap: wrap;
@@ -505,6 +492,46 @@
 
     .reveal { opacity: 0; transform: translateY(20px); transition: 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
+    }
+
+    .image-modal.active {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: min(96vw, 1300px);
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: #050505;
+      border: 1px solid var(--line);
+    }
+
+    .modal-close {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      background: var(--orange);
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+    }
 
     @media (max-width: 980px) {
       .hero-grid,
@@ -574,7 +601,7 @@
 
         <div class="profile-visual-wrap reveal">
           <div class="profile-visual">
-            <img src="assets/shazaib-profile.png" alt="Shazaib profile picture" />
+            <img src="assets/shazaib-profile.png" alt="" />
             <div class="profile-note">
               <div class="profile-note-inner">
                 <h3>Shazaib AI Studio</h3>
@@ -596,9 +623,7 @@
           </div>
           <a class="btn" href="#n8n">See Systems</a>
         </div>
-        <div class="big-image">
-          <img src="assets/hero-automation-visual.png" alt="AI automation network dashboard visual" />
-        </div>
+        <a class="big-image image-open" href="assets/hero-automation-visual.png"><img src="assets/hero-automation-visual.png" alt="" /></a>
       </div>
     </section>
 
@@ -617,8 +642,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/n8n-ai-workflow-01.png" alt="n8n AI workflow sample one" /><span class="asset-name">n8n-ai-workflow-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/n8n-ai-workflow-02.png" alt="n8n AI workflow sample two" /><span class="asset-name">n8n-ai-workflow-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/n8n-ai-workflow-01.png"><img src="assets/n8n-ai-workflow-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/n8n-ai-workflow-02.png"><img src="assets/n8n-ai-workflow-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -638,8 +663,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/ai-email-automation-01.png" alt="AI email automation sample one" /><span class="asset-name">ai-email-automation-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/ai-email-automation-02.png" alt="AI email automation sample two" /><span class="asset-name">ai-email-automation-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/ai-email-automation-01.png"><img src="assets/ai-email-automation-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/ai-email-automation-02.png"><img src="assets/ai-email-automation-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -659,8 +684,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/document-extraction-01.png" alt="Document extraction sample one" /><span class="asset-name">document-extraction-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/document-extraction-02.png" alt="Document extraction sample two" /><span class="asset-name">document-extraction-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/document-extraction-01.png"><img src="assets/document-extraction-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/document-extraction-02.png"><img src="assets/document-extraction-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -680,8 +705,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/lead-crm-automation-01.png" alt="Lead CRM automation sample one" /><span class="asset-name">lead-crm-automation-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/lead-crm-automation-02.png" alt="Lead CRM automation sample two" /><span class="asset-name">lead-crm-automation-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/lead-crm-automation-01.png"><img src="assets/lead-crm-automation-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/lead-crm-automation-02.png"><img src="assets/lead-crm-automation-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -701,8 +726,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/shopify-automation-01.png" alt="Shopify automation sample one" /><span class="asset-name">shopify-automation-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/shopify-automation-02.png" alt="Shopify automation sample two" /><span class="asset-name">shopify-automation-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/shopify-automation-01.png"><img src="assets/shopify-automation-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/shopify-automation-02.png"><img src="assets/shopify-automation-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -722,8 +747,8 @@
           </div>
         </div>
         <div class="portfolio-images">
-          <div class="portfolio-image"><img src="assets/ai-agent-workflow-01.png" alt="AI agent workflow sample one" /><span class="asset-name">ai-agent-workflow-01.png</span></div>
-          <div class="portfolio-image"><img src="assets/ai-agent-workflow-02.png" alt="AI agent workflow sample two" /><span class="asset-name">ai-agent-workflow-02.png</span></div>
+          <a class="portfolio-image image-open" href="assets/ai-agent-workflow-01.png"><img src="assets/ai-agent-workflow-01.png" alt="" /></a>
+          <a class="portfolio-image image-open" href="assets/ai-agent-workflow-02.png"><img src="assets/ai-agent-workflow-02.png" alt="" /></a>
         </div>
       </div>
     </section>
@@ -735,10 +760,15 @@
           <h2>Have a workflow you want to automate?</h2>
           <p>Send your current process, tools and desired output. I’ll help map the best automation setup before building.</p>
         </div>
-        <a class="btn btn-orange" href="mailto:shazaibsolutions@gmail.com?subject=AI%20Automation%20Project%20Inquiry&body=Hi%20Shazaib%2C%0A%0AI%20want%20to%20discuss%20an%20automation%20workflow%20for%20my%20business.%0A%0AMy%20current%20process%3A%0ATools%20I%20use%3A%0AWhat%20I%20want%20to%20automate%3A%0A%0AThanks.">Contact Shazaib</a>
+        <a class="btn btn-orange email-link" href="mailto:shazaibsolutions@gmail.com?subject=AI%20Automation%20Project%20Inquiry&body=Hi%20Shazaib%2C%0A%0AI%20want%20to%20discuss%20an%20automation%20workflow%20for%20my%20business.%0A%0AMy%20current%20process%3A%0ATools%20I%20use%3A%0AWhat%20I%20want%20to%20automate%3A%0A%0AThanks.">Contact Shazaib</a>
       </div>
     </section>
   </main>
+
+  <div class="image-modal" id="imageModal" aria-hidden="true">
+    <button class="modal-close" type="button" id="modalClose" aria-label="Close image">×</button>
+    <img id="modalImage" src="" alt="" />
+  </div>
 
   <footer>
     <div class="page footer-inner">
@@ -757,6 +787,40 @@
       });
     }, { threshold: 0.12 });
     revealItems.forEach((item) => observer.observe(item));
+
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalClose = document.getElementById("modalClose");
+
+    document.querySelectorAll(".image-open").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        modalImage.src = link.getAttribute("href");
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      modalImage.src = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("active")) closeModal();
+    });
+
+    document.querySelectorAll(".email-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        window.location.href = link.href;
+      });
+    });
   </script>
 </body>
 </html>
