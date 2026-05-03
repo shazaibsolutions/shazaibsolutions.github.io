@@ -1,709 +1,1182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Shazaib Ali — CRM → Google Ads Revenue Tracking (Offline Conversions) + Monitoring</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Shazaib Ali — I implement CRM → Google Ads closed-won/offline conversion tracking + monitoring so campaigns optimize for real revenue (not just form submissions). Fixed-scope sprint, fast delivery." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shazaib AI Studio — AI Workflow Automation</title>
+  <meta name="description" content="Shazaib AI Studio builds AI workflow automation systems using n8n, Python, OpenAI and business tools." />
 
-  <!-- SEO -->
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://shazaibsolutions.github.io/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Shazaib Ali — CRM → Google Ads Revenue Tracking + Monitoring" />
-  <meta property="og:description" content="Closed-won/offline conversions from CRM to Google Ads + monitoring, so campaigns optimize for revenue—not just leads. Fixed-scope sprint." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://shazaibsolutions.github.io/" />
-
-  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
-  <!-- FontAwesome -->
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
-
-  <!-- Optional existing stylesheet -->
-  <link href="css/styles.css" rel="stylesheet" />
-
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Shazaib Ali",
-    "url":"https://shazaibsolutions.github.io/",
-    "jobTitle":"Revenue Tracking & Automation Specialist",
-    "sameAs":[
-      "https://shorturl.at/nNl4z"
-    ]
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --accent:#1d9bf0;
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e5e7eb;
-      --shadow: 0 16px 50px rgba(2,6,23,.10);
-      --radius: 18px;
-      --bgSoft:#fbfdff;
+    :root {
+      --bg: #050606;
+      --bg-soft: #0b0d0c;
+      --card: #101311;
+      --card-2: #151915;
+      --text: #f3f5ef;
+      --muted: #9fa79d;
+      --line: rgba(255, 255, 255, 0.10);
+      --green: #b6ff3d;
+      --green-2: #78ff8a;
+      --green-soft: rgba(182, 255, 61, 0.12);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
     }
 
-    html{scroll-behavior:smooth;}
-    body{
-      background:#fff;
-      color:var(--ink);
-      font-family: Lato, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* NAV */
-    #mainNav{
-      background: #0b0f14 !important;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    #mainNav .navbar-brand{
-      color:#fff !important;
-      font-weight:900;
-      letter-spacing:.02em;
-      font-family:Montserrat, sans-serif;
-    }
-    #mainNav .nav-link{
-      color:rgba(255,255,255,.72) !important;
-      font-weight:800;
-    }
-    #mainNav .nav-link:hover{color:#fff !important;}
-    #mainNav .btn-cta{
-      background: var(--accent);
-      border:0;
-      border-radius: 999px;
-      padding:.55rem .95rem;
-      color:#fff !important;
-      font-weight:900;
-      box-shadow: 0 14px 30px rgba(29,155,240,.25);
-      white-space: nowrap;
-    }
-    #mainNav .btn-ghost-nav{
-      background: transparent;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius: 999px;
-      padding:.55rem .95rem;
-      color:#fff !important;
-      font-weight:900;
-      white-space: nowrap;
-    }
-    #mainNav .btn-ghost-nav:hover{border-color:rgba(255,255,255,.35);}
-
-    /* GLOBAL */
-    .kicker{
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 900;
-      font-size: .78rem;
-      color: var(--muted);
-      margin-bottom: .85rem;
-      font-family: Montserrat, sans-serif;
-    }
-    .section-pad{padding: 5rem 0;}
-    @media (max-width: 992px){.section-pad{padding: 3.6rem 0;}}
-    .section-title{
-      font-weight:900;
-      letter-spacing:-.01em;
-      font-size:2rem;
-      margin:.35rem 0 1rem;
-      font-family:Montserrat, sans-serif;
-    }
-    .section-sub{color:var(--muted);font-weight:700;max-width:78ch;}
-
-    .card-soft{
-      border:1px solid rgba(229,231,235,.9);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      background:#fff;
-      padding:1.35rem;
-      height:100%;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:.45rem;
-      border:1px solid rgba(229,231,235,.9);
-      border-radius:999px;
-      padding:.45rem .7rem;
-      font-weight:900;
-      color:var(--ink);
-      background:#fff;
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(182, 255, 61, 0.13), transparent 34%),
+        radial-gradient(circle at 80% 8%, rgba(120, 255, 138, 0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
     }
-    .pill i{color:var(--accent);}
 
-    .btn-primary-accent{
-      background: var(--accent) !important;
-      border:0 !important;
-      border-radius: 999px !important;
-      padding: .9rem 1.1rem !important;
-      font-weight: 900 !important;
-      box-shadow: 0 18px 40px rgba(29,155,240,.22);
-      color:#fff !important;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .btn-ghost{
-      border:1px solid rgba(229,231,235,.9) !important;
-      background:#fff !important;
-      color:var(--ink) !important;
-      font-weight:900 !important;
-      border-radius:999px !important;
-      padding:.85rem 1.05rem !important;
-      box-shadow: var(--shadow);
-      text-decoration:none !important;
-    }
-    .btn-ghost:hover{transform: translateY(-1px);}
 
-    /* HERO */
-    .hero{padding-top: 5.2rem;background:#fff;}
-    .hero-shell{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 640px;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(5, 6, 6, 0.78);
       border-bottom: 1px solid var(--line);
     }
-    @media (max-width: 992px){.hero-shell{grid-template-columns:1fr;min-height:auto;}}
 
-    .hero-left{
-      border-right: 1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 2.25rem;
-      min-height: 640px;
-    }
-    @media (max-width: 992px){
-      .hero-left{border-right:0;border-bottom:1px solid var(--line);min-height: 420px;padding: 1.25rem;}
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .photo-frame{
-      width: 100%;
-      max-width: 520px;
-      border-radius: 28px;
-      background: #ffffff;
-      border: 1px solid rgba(229,231,235,.9);
-      box-shadow: 0 18px 55px rgba(2,6,23,.10);
-      padding: 1.15rem;
-    }
-    .hero-left img{
-      width: 100%;
-      height: auto;
-      display:block;
-      border-radius: 22px;
-      object-fit: cover;
-      background:#f8fafc;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 20px;
     }
 
-    .hero-right{display:flex;align-items:center;padding: 4rem 3.2rem;}
-    @media (max-width: 992px){.hero-right{padding: 2.25rem 1.25rem;}}
-
-    .hero h1{
-      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: #071006;
+      display: grid;
+      place-items: center;
       font-weight: 900;
-      letter-spacing: -.03em;
-      line-height: 1.05;
-      font-size: clamp(2.1rem, 4.2vw, 3.35rem);
-      margin:0 0 1rem;
-      color: var(--ink);
+      box-shadow: 0 0 30px rgba(182, 255, 61, 0.24);
     }
-    .hero p{
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
       color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.65;
-      margin:0 0 1.2rem;
-      font-weight:700;
-      max-width: 62ch;
-    }
-    .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem;}
-    .subnote{margin-top:.9rem;color:#64748b;font-weight:800;font-size:.95rem;}
-
-    .trustbar{
-      margin-top: 1.1rem;
-      padding-top: 1.1rem;
-      border-top:1px solid rgba(229,231,235,.9);
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: .9rem;
-    }
-    @media (max-width: 992px){.trustbar{grid-template-columns:1fr;}}
-    .trust-item{display:flex;gap:.65rem;align-items:flex-start;color: var(--muted);font-weight:800;line-height:1.35;}
-    .trust-item i{color:var(--accent);margin-top:.2rem;}
-
-    /* PROJECTS */
-    .project-title{font-weight:900;font-size:1.15rem;margin:0 0 .45rem;font-family:Montserrat, sans-serif;}
-    .project-sub{color:var(--muted);font-weight:700;margin:0 0 .75rem;line-height:1.5;}
-    .tagrow{display:flex;gap:.5rem;flex-wrap:wrap;}
-    .tag{
-      font-weight:900;
-      font-size:.82rem;
-      color:#0f172a;
-      background: rgba(29,155,240,.10);
-      border:1px solid rgba(29,155,240,.18);
-      padding:.35rem .55rem;
-      border-radius:999px;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    /* FEATURED */
-    .featured{
-      background: var(--bgSoft);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .nav-links a:hover {
+      color: var(--text);
     }
-    .video-wrap{
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid var(--line);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #071006;
+      border-color: transparent;
+      box-shadow: 0 12px 50px rgba(182, 255, 61, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 70px rgba(182, 255, 61, 0.26);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 84px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(182, 255, 61, 0.08);
+      border: 1px solid rgba(182, 255, 61, 0.22);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 18px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(52px, 8vw, 104px);
+      line-height: 0.88;
+      letter-spacing: -0.085em;
+      font-weight: 900;
+      max-width: 760px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #f5fff0, var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 26px 0 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .stat strong {
+      font-size: 24px;
+      letter-spacing: -0.04em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .hero-visual {
       position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border:1px solid rgba(229,231,235,.9);
+      min-height: 610px;
+      border-radius: 42px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 5%, rgba(182, 255, 61, 0.14), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       box-shadow: var(--shadow);
-      background:#000;
-    }
-    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-
-    .shot-img{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(229,231,235,.9);
-      display:block;
-      background:#f8fafc;
+      overflow: hidden;
     }
 
-    /* FOOTER */
-    .footer-min{border-top:1px solid var(--line);padding:2rem 0;color:#64748b;font-weight:700;}
-    .footer-min a{color:#475569;font-weight:900;text-decoration:none;}
-    .footer-min a:hover{color:var(--ink);}
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 90%);
+    }
 
-    /* Accessibility */
-    a:focus, button:focus{outline: 3px solid rgba(29,155,240,.35); outline-offset: 2px;}
+    .orbit {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      border: 1px dashed rgba(182, 255, 61, 0.28);
+      animation: rotate 26s linear infinite;
+    }
+
+    .orbit.two {
+      width: 520px;
+      height: 520px;
+      animation-duration: 38s;
+      animation-direction: reverse;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    @keyframes rotate {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .workflow-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #1c2418, #090b09);
+      border: 1px solid rgba(182,255,61,0.32);
+      box-shadow: 0 0 90px rgba(182,255,61,0.18), inset 0 0 38px rgba(182,255,61,0.06);
+      text-align: center;
+      z-index: 3;
+    }
+
+    .workflow-core b {
+      display: block;
+      color: var(--green);
+      font-size: 42px;
+      letter-spacing: -0.08em;
+    }
+
+    .workflow-core span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 5px;
+    }
+
+    .tool-card {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(15, 18, 15, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      animation: float 5.5s ease-in-out infinite;
+    }
+
+    .tool-card:nth-child(even) { animation-delay: -1.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      border: 1px solid rgba(182,255,61,0.25);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .tool-card b {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .tool-card span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .tc-1 { left: 42px; top: 90px; }
+    .tc-2 { right: 52px; top: 132px; }
+    .tc-3 { left: 48px; bottom: 148px; }
+    .tc-4 { right: 48px; bottom: 112px; }
+    .tc-5 { left: 50%; transform: translateX(-50%); bottom: 36px; }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 66px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      max-width: 780px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+      max-width: 430px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card, .project-card, .process-card {
+      position: relative;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      padding: 26px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .service-card::after, .project-card::after, .process-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -40% -30%;
+      height: 160px;
+      background: radial-gradient(circle, rgba(182,255,61,0.13), transparent 62%);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover, .project-card:hover, .process-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(182,255,61,0.32);
+    }
+
+    .service-card:hover::after, .project-card:hover::after, .process-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid rgba(182,255,61,0.25);
+      font-size: 22px;
+      margin-bottom: 36px;
+    }
+
+    h3 {
+      font-size: 23px;
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 14px;
+    }
+
+    .card-text {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 11px;
+      font-weight: 800;
+      color: #dce7d4;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 420px;
+      padding: 0;
+    }
+
+    .project-image {
+      height: 255px;
+      background: #0f120f;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.92;
+    }
+
+    .project-placeholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(182,255,61,0.12), transparent 34%),
+        linear-gradient(135deg, #0d100d, #171d16);
+    }
+
+    .mini-flow {
+      width: 82%;
+      display: grid;
+      gap: 13px;
+    }
+
+    .mini-node {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .mini-node span {
+      color: var(--green);
+    }
+
+    .project-content {
+      padding: 26px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .process-card {
+      padding: 24px;
+      min-height: 220px;
+    }
+
+    .step-num {
+      color: var(--green);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 42px;
+    }
+
+    .tools-wrap {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .tool-pill {
+      min-height: 86px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 900;
+      color: #e8ede3;
+      transition: 0.25s ease;
+    }
+
+    .tool-pill:hover {
+      color: var(--green);
+      border-color: rgba(182,255,61,0.3);
+      transform: translateY(-4px);
+    }
+
+    .about-box {
+      border-radius: 42px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(182,255,61,0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      padding: 54px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .avatar-box {
+      min-height: 420px;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(182,255,61,0.10), transparent),
+        #0c0f0c;
+      border: 1px solid rgba(182,255,61,0.18);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .avatar-box::before {
+      content: "SA";
+      font-size: 150px;
+      font-weight: 900;
+      letter-spacing: -0.1em;
+      color: rgba(182,255,61,0.08);
+      position: absolute;
+    }
+
+    .avatar-card {
+      position: relative;
+      z-index: 2;
+      width: 78%;
+      border-radius: 28px;
+      padding: 26px;
+      background: rgba(5,6,6,0.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .avatar-card h3 {
+      font-size: 30px;
+    }
+
+    .cta {
+      padding: 120px 0 70px;
+    }
+
+    .cta-box {
+      border-radius: 48px;
+      padding: 70px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(182,255,61,0.22), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      border: 1px solid rgba(182,255,61,0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      margin: 0 auto;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 640px;
+      margin: 22px auto 30px;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-box,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid,
+      .tools-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 18px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .stats,
+      .services-grid,
+      .process-grid,
+      .tools-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 480px;
+        border-radius: 30px;
+      }
+
+      .tool-card {
+        padding: 11px 12px;
+      }
+
+      .tc-1 { left: 18px; top: 60px; }
+      .tc-2 { right: 18px; top: 108px; }
+      .tc-3 { left: 18px; bottom: 135px; }
+      .tc-4 { right: 18px; bottom: 96px; }
+      .tc-5 { bottom: 28px; }
+
+      .workflow-core {
+        width: 150px;
+        height: 150px;
+      }
+
+      .workflow-core b {
+        font-size: 34px;
+      }
+
+      .orbit {
+        width: 300px;
+        height: 300px;
+      }
+
+      .orbit.two {
+        width: 390px;
+        height: 390px;
+      }
+
+      .about-box,
+      .cta-box {
+        padding: 34px 22px;
+        border-radius: 32px;
+      }
+    }
   </style>
 </head>
+<body>
+  <div class="noise"></div>
 
-<body id="top">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Shazaib AI Studio home">
+        <span class="brand-mark">S</span>
+        <span>Shazaib AI Studio</span>
+      </a>
 
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#top">Shazaib Ali</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+      </nav>
 
-      <button class="navbar-toggler text-uppercase fw-bold text-white" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu <i class="fas fa-bars ms-1"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#projects">Offer</a></li>
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#featured">Demo</a></li>
-          <li class="nav-item"><a class="nav-link px-lg-3" href="#contact">Contact</a></li>
-
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-cta js-demo" href="#" target="_blank" rel="noopener">
-              Watch demo
-            </a>
-          </li>
-
-          <!-- NOTE: Replace with your real LinkedIn URL when ready -->
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a class="btn btn-ghost-nav js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-shell">
-      <div class="hero-left">
-        <div class="photo-frame">
-          <img
-            src="./assets/img/myyyyyy.png"
-            alt="Shazaib Ali"
-            loading="eager"
-            onerror="this.onerror=null;this.src='./assets/img/myyyyyy.png';"
-          >
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div>
-          <div class="kicker">Revenue tracking sprint</div>
-          <h1>CRM → Google Ads closed-won tracking (offline conversions) + monitoring.</h1>
-
-          <p>
-            I connect your CRM (HubSpot/Pipedrive/Zoho/etc.) to Google Ads so campaigns optimize for
-            <strong>real closed-won outcomes</strong> (not just form submissions). Includes basic monitoring so tracking
-            doesn’t silently break.
-          </p>
-
-          <div class="d-flex gap-2 flex-wrap">
-            <span class="pill"><i class="fa-solid fa-tag"></i> Fixed scope</span>
-            <span class="pill"><i class="fa-solid fa-clock"></i> 5–7 days</span>
-            <span class="pill"><i class="fa-solid fa-sterling-sign"></i> £1,200</span>
-          </div>
-
-          <div class="hero-actions mt-3">
-            <a class="btn btn-primary-accent js-demo" href="#" target="_blank" rel="noopener">Watch 2-min demo</a>
-            <a class="btn btn-ghost js-contact-cta" href="#" rel="noopener">Email to book</a>
-          </div>
-
-          <div class="subnote">
-            If you’re an agency: I can deliver this as a white-label implementation for your accounts.
-          </div>
-
-          <div class="trustbar" aria-label="Highlights">
-            <div class="trust-item"><i class="fa-solid fa-list-check"></i><span>Clear scope + fast handover notes.</span></div>
-            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Guardrails: dedupe, safe retries, validation.</span></div>
-            <div class="trust-item"><i class="fa-solid fa-bell"></i><span>Monitoring: daily heartbeat + alerts if data stops.</span></div>
-          </div>
-        </div>
-      </div>
+      <a class="btn btn-primary" href="#contact">Start a Project</a>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section class="section-pad" id="about">
-    <div class="container">
-      <div class="kicker">About</div>
-      <div class="section-title">What I do (simple)</div>
-      <p class="section-sub">
-        I’m Shazaib Ali. I implement <strong>revenue tracking pipelines</strong> that connect marketing click data to
-        CRM outcomes, so ad platforms can optimize toward closed-won results. I also add monitoring and clean handover notes.
-      </p>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="dot"></span> AI Workflow Automation Studio</div>
+          <h1>Automation systems for <span class="gradient-text">real business</span> workflows.</h1>
+          <p class="hero-text">
+            Shazaib AI Studio builds practical AI automation systems using n8n, Python, OpenAI and business tools — helping teams reduce manual work, connect apps and keep operations moving.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">View Work</a>
+            <a class="btn btn-secondary" href="#services">Explore Services</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>AI</strong>
+              <span>Email, document and workflow intelligence</span>
+            </div>
+            <div class="stat">
+              <strong>n8n</strong>
+              <span>Clean, connected workflow automation</span>
+            </div>
+            <div class="stat">
+              <strong>API</strong>
+              <span>Business tools connected with logic</span>
+            </div>
+          </div>
+        </div>
 
-      <div class="row g-4 mt-2">
-        <div class="col-md-4">
-          <div class="card-soft">
-            <div class="fw-bold">Primary outcome</div>
-            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
-              Google Ads receives closed-won/offline conversions from your CRM.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-soft">
-            <div class="fw-bold">Reliability</div>
-            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
-              Monitoring + alerts so tracking doesn’t quietly stop for days.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card-soft">
-            <div class="fw-bold">Delivery</div>
-            <div style="color:var(--muted);font-weight:700;margin-top:.35rem;">
-              Fixed scope, fast turnaround, and clear handover notes for agencies/teams.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-visual reveal" aria-label="AI automation workflow visual">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
 
-  <!-- SKILLS -->
-  <section class="section-pad" id="skills" style="background:var(--bgSoft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="container">
-      <div class="kicker">Skills</div>
-      <div class="section-title">Implementation stack</div>
-      <p class="section-sub">
-        Practical tools for building dependable tracking + integrations.
-      </p>
+          <div class="workflow-core">
+            <div>
+              <b>AI</b>
+              <span>Automation Core</span>
+            </div>
+          </div>
 
-      <div class="row g-4 mt-2">
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="fw-bold mb-2">Python</div>
-            <div class="tagrow">
-              <span class="tag">Python</span><span class="tag">APIs</span><span class="tag">Logging</span><span class="tag">Retries</span>
-              <span class="tag">Validation</span>
-            </div>
+          <div class="tool-card tc-1">
+            <div class="tool-icon">n8n</div>
+            <div><b>Workflow Logic</b><span>Triggers + actions</span></div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="fw-bold mb-2">Google stack</div>
-            <div class="tagrow">
-              <span class="tag">Google Ads</span><span class="tag">GTM/Tags</span><span class="tag">Sheets</span><span class="tag">Google APIs</span>
-              <span class="tag">OAuth</span>
-            </div>
+          <div class="tool-card tc-2">
+            <div class="tool-icon">GPT</div>
+            <div><b>OpenAI</b><span>Classify + summarize</span></div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="fw-bold mb-2">CRM workflows</div>
-            <div class="tagrow">
-              <span class="tag">HubSpot</span><span class="tag">Pipedrive</span><span class="tag">Zoho</span><span class="tag">Webhooks</span>
-              <span class="tag">Dedupe</span>
-            </div>
+          <div class="tool-card tc-3">
+            <div class="tool-icon">Py</div>
+            <div><b>Python</b><span>Custom processing</span></div>
+          </div>
+          <div class="tool-card tc-4">
+            <div class="tool-icon">CRM</div>
+            <div><b>Business Tools</b><span>Sheets, Slack, Shopify</span></div>
+          </div>
+          <div class="tool-card tc-5">
+            <div class="tool-icon">API</div>
+            <div><b>Integrations</b><span>Webhooks + data sync</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS / OFFER -->
-  <section class="section-pad" id="projects">
-    <div class="container">
-      <div class="kicker">Offer</div>
-      <div class="section-title">Revenue Tracking Sprint (fixed scope)</div>
-      <p class="section-sub">
-        A focused implementation to connect CRM closed-won outcomes to Google Ads offline conversions + basic monitoring.
-      </p>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Services</div>
+            <h2>Focused AI automation services that solve clear workflow problems.</h2>
+          </div>
+          <p class="section-desc">
+            No generic AI promises. Each service is built around a practical business workflow: emails, documents, CRMs, Shopify operations and connected tools.
+          </p>
+        </div>
 
-      <div class="row g-4 mt-2">
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="project-title">Sprint — £1,200</div>
-            <div class="project-sub">
-              CRM → Google Ads closed-won conversion upload + monitoring (5–7 days).
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">⚡</div>
+            <h3>n8n AI Workflow Automation</h3>
+            <p class="card-text">Custom n8n workflows that connect apps, move data, trigger actions and add AI where it actually helps.</p>
+            <div class="chips"><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">APIs</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✉️</div>
+            <h3>AI Email Automation</h3>
+            <p class="card-text">Gmail or Outlook workflows that classify emails, extract details, draft replies, log data and send alerts.</p>
+            <div class="chips"><span class="chip">Gmail</span><span class="chip">n8n</span><span class="chip">Sheets</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">📄</div>
+            <h3>Document & Data Extraction</h3>
+            <p class="card-text">AI workflows that extract structured data from PDFs, invoices, forms, resumes and business documents.</p>
+            <div class="chips"><span class="chip">PDF</span><span class="chip">AI</span><span class="chip">Excel</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🎯</div>
+            <h3>Lead & CRM Automation</h3>
+            <p class="card-text">Lead capture, AI qualification, CRM updates, follow-up reminders and team notifications in one workflow.</p>
+            <div class="chips"><span class="chip">CRM</span><span class="chip">Slack</span><span class="chip">AI Scoring</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🛒</div>
+            <h3>Shopify Automation</h3>
+            <p class="card-text">Order tracking, inventory alerts, product data sync, sales reports and supplier notifications for e-commerce.</p>
+            <div class="chips"><span class="chip">Shopify</span><span class="chip">Inventory</span><span class="chip">Reports</span></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🧠</div>
+            <h3>AI Agent Workflows</h3>
+            <p class="card-text">Task-specific AI agents for research, summaries, routing, decisions and multi-step business operations.</p>
+            <div class="chips"><span class="chip">Agents</span><span class="chip">LangGraph</span><span class="chip">CrewAI</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Featured Work</div>
+            <h2>Workflow samples designed to look and feel like real business systems.</h2>
+          </div>
+          <p class="section-desc">
+            Replace the placeholder visuals with your generated project images inside the assets folder when ready.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-image">
+              <!-- Replace with: assets/ai-email-automation.png -->
+              <div class="project-placeholder">
+                <div class="mini-flow">
+                  <div class="mini-node">Gmail Inbox <span>01</span></div>
+                  <div class="mini-node">n8n Workflow <span>02</span></div>
+                  <div class="mini-node">OpenAI Classifier <span>03</span></div>
+                  <div class="mini-node">Sheets + Slack <span>04</span></div>
+                </div>
+              </div>
             </div>
-            <div class="tagrow mb-3">
-              <span class="tag">Offline conversions</span><span class="tag">CRM mapping</span><span class="tag">Monitoring</span>
+            <div class="project-content">
+              <div class="project-meta"><span>Case Study</span><span>01</span></div>
+              <h3>AI Email Automation with Gmail, n8n & OpenAI</h3>
+              <p class="card-text">A workflow that classifies incoming emails, extracts important details, creates reply drafts and sends alerts to the team.</p>
+              <div class="chips"><span class="chip">Gmail</span><span class="chip">OpenAI</span><span class="chip">Google Sheets</span><span class="chip">Slack</span></div>
             </div>
-            <div class="fw-bold">Includes</div>
-            <ul class="mb-0" style="color:var(--muted);font-weight:700;">
-              <li>Click ID / lead data capture check</li>
-              <li>CRM fields + mapping</li>
-              <li>Closed-won trigger → upload</li>
-              <li>Daily heartbeat + alert</li>
-              <li>Handover notes + 7-day support</li>
-            </ul>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <!-- Replace with: assets/document-extraction.png -->
+              <div class="project-placeholder">
+                <div class="mini-flow">
+                  <div class="mini-node">PDF / Invoice <span>01</span></div>
+                  <div class="mini-node">AI Extraction <span>02</span></div>
+                  <div class="mini-node">Clean Data Table <span>03</span></div>
+                  <div class="mini-node">Export to Sheet <span>04</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>Workflow</span><span>02</span></div>
+              <h3>AI Document Data Extraction</h3>
+              <p class="card-text">A document automation flow for extracting structured information from invoices, forms and PDFs.</p>
+              <div class="chips"><span class="chip">PDF</span><span class="chip">Python</span><span class="chip">AI</span><span class="chip">Sheets</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <!-- Replace with: assets/lead-crm-automation.png -->
+              <div class="project-placeholder">
+                <div class="mini-flow">
+                  <div class="mini-node">Lead Form <span>01</span></div>
+                  <div class="mini-node">AI Qualification <span>02</span></div>
+                  <div class="mini-node">CRM Update <span>03</span></div>
+                  <div class="mini-node">Follow-up Alert <span>04</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>System</span><span>03</span></div>
+              <h3>Lead Qualification & CRM Automation</h3>
+              <p class="card-text">A smart lead workflow that scores inquiries, updates the CRM and creates follow-up actions automatically.</p>
+              <div class="chips"><span class="chip">CRM</span><span class="chip">AI Score</span><span class="chip">n8n</span><span class="chip">Slack</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <!-- Replace with: assets/shopify-automation.png -->
+              <div class="project-placeholder">
+                <div class="mini-flow">
+                  <div class="mini-node">Shopify Orders <span>01</span></div>
+                  <div class="mini-node">n8n / Python <span>02</span></div>
+                  <div class="mini-node">Inventory Sheet <span>03</span></div>
+                  <div class="mini-node">Low Stock Alert <span>04</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>Automation</span><span>04</span></div>
+              <h3>Shopify Inventory & Order Automation</h3>
+              <p class="card-text">An e-commerce workflow for syncing orders, tracking inventory and sending stock alerts before issues happen.</p>
+              <div class="chips"><span class="chip">Shopify</span><span class="chip">Inventory</span><span class="chip">Python</span><span class="chip">Alerts</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Process</div>
+            <h2>A clear build process from messy workflow to working automation.</h2>
+          </div>
+          <p class="section-desc">Every project starts by understanding the workflow first, then building only what is practical and useful.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <div class="step-num">01</div>
+            <h3>Discover</h3>
+            <p class="card-text">Understand the manual task, tools involved and what result should happen.</p>
+          </article>
+          <article class="process-card reveal">
+            <div class="step-num">02</div>
+            <h3>Map</h3>
+            <p class="card-text">Turn the workflow into clear triggers, conditions, actions and outputs.</p>
+          </article>
+          <article class="process-card reveal">
+            <div class="step-num">03</div>
+            <h3>Build</h3>
+            <p class="card-text">Create the n8n, Python and AI logic needed to connect everything.</p>
+          </article>
+          <article class="process-card reveal">
+            <div class="step-num">04</div>
+            <h3>Test</h3>
+            <p class="card-text">Check real scenarios, data paths, errors and final outputs.</p>
+          </article>
+          <article class="process-card reveal">
+            <div class="step-num">05</div>
+            <h3>Deliver</h3>
+            <p class="card-text">Provide the workflow, documentation and a simple walkthrough.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Tool Stack</div>
+            <h2>Built with modern automation and AI tools.</h2>
           </div>
         </div>
 
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="project-title">Optional add-on</div>
-            <div class="project-sub">
-              Enhanced conversions / match-rate improvements (quoted after audit).
-            </div>
-            <div class="tagrow mb-3">
-              <span class="tag">Enhanced</span><span class="tag">Match rate</span><span class="tag">Quality</span>
-            </div>
-            <div style="color:var(--muted);font-weight:700;">
-              Best when you want stronger attribution and cleaner optimization signals.
+        <div class="tools-wrap reveal">
+          <div class="tool-pill">n8n</div>
+          <div class="tool-pill">Python</div>
+          <div class="tool-pill">OpenAI</div>
+          <div class="tool-pill">Gmail</div>
+          <div class="tool-pill">Google Sheets</div>
+          <div class="tool-pill">Airtable</div>
+          <div class="tool-pill">Slack</div>
+          <div class="tool-pill">Shopify</div>
+          <div class="tool-pill">APIs</div>
+          <div class="tool-pill">Webhooks</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-box reveal">
+          <div class="avatar-box">
+            <div class="avatar-card">
+              <h3>Shazaib AI Studio</h3>
+              <p class="card-text">Independent AI automation studio focused on practical workflow systems for businesses.</p>
+              <div class="chips"><span class="chip">Automation</span><span class="chip">AI Agents</span><span class="chip">Operations</span></div>
             </div>
           </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="project-title">For agencies</div>
-            <div class="project-sub">
-              White-label delivery for multiple clients with consistent standards.
-            </div>
-            <div class="tagrow mb-3">
-              <span class="tag">White-label</span><span class="tag">Repeatable</span><span class="tag">SLA-style</span>
-            </div>
-            <div style="color:var(--muted);font-weight:700;">
-              If you have multiple accounts, we can standardize the setup and monitoring across them.
-            </div>
+          <div class="about-text">
+            <div class="section-kicker">About</div>
+            <h2>Practical AI systems, not random automation experiments.</h2>
+            <p>
+              Shazaib AI Studio helps businesses turn repetitive manual processes into connected AI workflows. The focus is simple: understand the task, map the logic, build the automation and make the system easy to use.
+            </p>
+            <p>
+              Services include n8n automation, AI email handling, document extraction, CRM workflows, Shopify operations and custom Python/API integrations.
+            </p>
+            <a class="btn btn-primary" href="#contact">Discuss a Workflow</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="mt-4 d-flex gap-2 flex-wrap">
-        <a class="btn btn-primary-accent js-demo" href="#" target="_blank" rel="noopener">Watch demo</a>
-        <a class="btn btn-ghost js-contact-cta" href="#">Email to book</a>
-        <a class="btn btn-ghost js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED DEMO -->
-  <section class="section-pad featured" id="featured">
-    <div class="container">
-      <div class="kicker">Demo</div>
-      <div class="section-title">CRM → Google Ads Revenue Tracking (demo)</div>
-      <p class="section-sub">
-        Demo walkthrough of the closed-won/offline conversion flow + monitoring concept.
-      </p>
-
-      <div class="row g-4 mt-4">
-        <div class="col-lg-8">
-          <div class="video-wrap">
-            <iframe
-              class="js-demo-iframe"
-              src="about:blank"
-              title="Demo video"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="mt-3 d-flex gap-2 flex-wrap">
-            <a class="btn btn-ghost js-demo" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
-            <a class="btn btn-primary-accent js-contact-cta" href="#">Discuss this sprint</a>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card-soft">
-            <div class="fw-bold mb-2">What this delivers</div>
-            <ul class="mb-0" style="color:var(--muted);font-weight:700;">
-              <li>Closed-won → Google Ads conversion upload</li>
-              <li>Clean mapping + validation</li>
-              <li>Basic monitoring + alerts</li>
-              <li>Clear handover notes</li>
-            </ul>
-          </div>
-
-          <div class="card-soft mt-3">
-            <div class="fw-bold mb-2">Stack</div>
-            <div style="color:var(--muted);font-weight:700;">
-              Python, CRM APIs/webhooks, Google Ads, logging/monitoring patterns.
-            </div>
-          </div>
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="section-kicker">Start a Project</div>
+          <h2>Have a workflow you want to automate?</h2>
+          <p>
+            Send your current process, the tools you use and what should happen automatically. I’ll help map the best automation setup before building.
+          </p>
+          <a class="btn btn-primary" href="mailto:your-email@example.com">Contact Shazaib</a>
+          <!-- Replace mailto above with your Fiverr, LinkedIn or email link. -->
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- CONTACT -->
-  <section class="section-pad" id="contact">
-    <div class="container">
-      <div class="kicker">Contact</div>
-      <div class="section-title">Book the sprint</div>
-      <p class="section-sub">
-        Email is best. Share CRM + lead source + what you currently track in Google Ads. I’ll reply with scope + start date.
-      </p>
-
-      <div class="row g-4 mt-2">
-        <div class="col-lg-7">
-          <div class="card-soft">
-            <div class="fw-bold mb-2" style="font-size:1.15rem;">Primary</div>
-            <a class="btn btn-primary-accent w-100 js-contact-cta" href="#">
-              Email me
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-5">
-          <div class="card-soft">
-            <div class="fw-bold mb-2" style="font-size:1.15rem;">Links</div>
-
-            <div style="color:var(--muted);font-weight:700;">
-              Email:<br>
-              <a class="js-email-direct" href="mailto:shazaibsolutions@gmail.com" style="font-weight:900;color:var(--ink);text-decoration:none;">
-                shazaibsolutions@gmail.com
-              </a>
-            </div>
-
-            <div style="margin-top:.85rem;color:var(--muted);font-weight:700;">
-              LinkedIn:<br>
-              <a class="js-linkedin" href="https://shorturl.at/nNl4z" target="_blank" rel="noopener" style="font-weight:900;color:var(--ink);text-decoration:none;">
-                https://shorturl.at/nNl4z
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer-min">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-2">
-      <div>
-        <div style="font-weight:900;color:var(--ink);font-family:Montserrat, sans-serif;">Shazaib Ali</div>
-        <div>Revenue Tracking • CRM → Google Ads • Monitoring</div>
-      </div>
-      <div class="d-flex gap-3">
-        <a href="#projects">Offer</a>
-        <a href="#featured">Demo</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Shazaib AI Studio. All rights reserved.</span>
+      <span>AI Workflow Automation • n8n • Python • OpenAI</span>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer crossorigin="anonymous"></script>
-
   <script>
-    (function(){
-      // ===== CONFIG =====
-      const CONFIG = {
-        name: "Shazaib Ali",
-        email: "shazaibsolutions@gmail.com",
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-        // NOTE: Replace this with your REAL LinkedIn URL when you have it:
-        // e.g. https://www.linkedin.com/in/yourname/
-        linkedin: "https://shorturl.at/nNl4z",
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
 
-        whatsappE164: "+923117335449",
-
-        // Updated to YOUR provided demo link:
-        demoYoutube: "https://youtu.be/wGyXq-WFigk"
-      };
-
-      // ===== HELPERS =====
-      const qsAll = (s) => Array.from(document.querySelectorAll(s));
-      const setHrefAll = (selector, href, openNew=true) => {
-        qsAll(selector).forEach(a => {
-          if (!a) return;
-          if (!href) {
-            a.classList.add("disabled");
-            a.setAttribute("aria-disabled","true");
-            a.removeAttribute("href");
-            return;
-          }
-          a.href = href;
-          if (openNew) { a.target = "_blank"; a.rel = "noopener"; }
-        });
-      };
-
-      // Gmail compose
-      const SUBJECT = "Revenue Tracking Sprint — CRM → Google Ads (Offline Conversions)";
-      const BODY =
-`Hi Shazaib,
-
-I want to set up CRM → Google Ads closed-won/offline conversion tracking.
-
-CRM:
-Lead source (forms/calls):
-What is considered Closed-Won (stage/event):
-Current Google Ads primary conversion:
-Rough monthly lead volume:
-Timeline:
-
-Thanks,`;
-
-      const gmail = "https://mail.google.com/mail/?view=cm&fs=1"
-        + "&to=" + encodeURIComponent(CONFIG.email)
-        + "&su=" + encodeURIComponent(SUBJECT)
-        + "&body=" + encodeURIComponent(BODY);
-
-      setHrefAll(".js-contact-cta", gmail, true);
-      setHrefAll(".js-linkedin", CONFIG.linkedin, true);
-      setHrefAll(".js-demo", CONFIG.demoYoutube, true);
-
-      // Demo iframe embed
-      const iframe = document.querySelector(".js-demo-iframe");
-      if (iframe && CONFIG.demoYoutube) {
-        const idMatch = CONFIG.demoYoutube.match(/(?:youtu\.be\/|v=)([a-zA-Z0-9_-]{6,})/);
-        const vid = idMatch ? idMatch[1] : null;
-        if (vid) iframe.src = "https://www.youtube-nocookie.com/embed/" + vid + "?rel=0";
-      }
-    })();
+    revealItems.forEach((item) => observer.observe(item));
   </script>
-
 </body>
 </html>
