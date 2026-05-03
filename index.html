@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shazaib AI Studio — AI Workflow Automation</title>
-  <meta name="description" content="Shazaib AI Studio builds AI workflow automation systems using n8n, Python, OpenAI and business tools." />
+  <title>Work — Shazaib AI Studio</title>
+  <meta name="description" content="Portfolio and work showcase for Shazaib AI Studio — AI workflow automation, n8n, Python, OpenAI and business systems." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,18 +13,14 @@
   <style>
     :root {
       --bg: #050606;
-      --bg-soft: #0b0d0c;
-      --card: #101311;
-      --card-2: #151915;
       --text: #f4f6ef;
       --muted: #9fa79d;
       --line: rgba(255, 255, 255, 0.10);
-      --line-strong: rgba(182, 255, 61, 0.28);
       --green: #b6ff3d;
       --green-2: #78ff8a;
       --green-soft: rgba(182, 255, 61, 0.12);
       --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-      --radius: 28px;
+      --radius: 30px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,9 +29,9 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(182, 255, 61, 0.12), transparent 32%),
-        radial-gradient(circle at 80% 6%, rgba(120, 255, 138, 0.07), transparent 26%),
-        var(--bg);
+        radial-gradient(circle at 12% 0%, rgba(182, 255, 61, 0.11), transparent 30%),
+        radial-gradient(circle at 88% 6%, rgba(120, 255, 138, 0.07), transparent 28%),
+        #050606;
       color: var(--text);
       overflow-x: hidden;
     }
@@ -101,13 +97,13 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
     .btn {
       display: inline-flex;
@@ -130,33 +126,15 @@
       box-shadow: 0 12px 50px rgba(182, 255, 61, 0.18);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 70px rgba(182, 255, 61, 0.26);
-    }
+    .btn-primary:hover { transform: translateY(-2px); }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.04);
       color: var(--text);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .hero {
-      min-height: calc(100vh - 78px);
-      display: grid;
-      align-items: center;
-      padding: 84px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 54px;
-      align-items: center;
+    .page-hero {
+      padding: 110px 0 64px;
     }
 
     .eyebrow {
@@ -182,11 +160,11 @@
     }
 
     h1 {
-      font-size: clamp(52px, 8vw, 104px);
+      font-size: clamp(58px, 9vw, 118px);
       line-height: 0.88;
-      letter-spacing: -0.085em;
+      letter-spacing: -0.09em;
       font-weight: 900;
-      max-width: 760px;
+      max-width: 1040px;
     }
 
     .gradient-text {
@@ -200,273 +178,96 @@
       color: var(--muted);
       font-size: 18px;
       line-height: 1.75;
-      max-width: 620px;
-      margin: 26px 0 32px;
+      max-width: 760px;
+      margin: 28px 0 34px;
     }
 
-    .hero-actions {
+    .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 42px;
+      gap: 10px;
+      padding-top: 18px;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      max-width: 620px;
-    }
-
-    .stat {
-      padding: 18px;
+    .filter-bar a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .stat strong {
-      font-size: 24px;
-      letter-spacing: -0.04em;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      font-size: 12px;
       color: var(--muted);
-      line-height: 1.45;
+      font-size: 12px;
+      font-weight: 900;
+      transition: 0.25s ease;
     }
 
-    .hero-visual {
-      position: relative;
-      min-height: 560px;
+    .filter-bar a:hover {
+      color: var(--green);
+      border-color: rgba(182,255,61,0.30);
+    }
+
+    .work-section {
+      padding: 56px 0;
+    }
+
+    .work-card {
       border-radius: 42px;
       border: 1px solid var(--line);
       background:
-        radial-gradient(circle at 50% 5%, rgba(182, 255, 61, 0.14), transparent 34%),
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+        radial-gradient(circle at 12% 0%, rgba(182,255,61,0.12), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      overflow: hidden;
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 560px;
-      object-fit: cover;
-      opacity: 0.96;
-    }
-
-    .section { padding: 110px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .section-kicker {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: clamp(36px, 5vw, 66px);
-      line-height: 0.96;
-      letter-spacing: -0.065em;
-      max-width: 820px;
-    }
-
-    .section-desc {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
-      max-width: 440px;
-    }
-
-    .services-grid {
+    .work-card-head {
+      padding: 38px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .service-card, .project-card, .process-card, .skill-work-card {
-      position: relative;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
-      border: 1px solid var(--line);
-      overflow: hidden;
-      transition: 0.3s ease;
-    }
-
-    .service-card { padding: 26px; }
-
-    .service-card:hover, .project-card:hover, .process-card:hover, .skill-work-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(182,255,61,0.32);
-    }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: var(--green-soft);
-      color: var(--green);
-      border: 1px solid rgba(182,255,61,0.25);
-      font-size: 22px;
-      margin-bottom: 36px;
-    }
-
-    h3 {
-      font-size: 23px;
-      line-height: 1.1;
-      letter-spacing: -0.045em;
-      margin-bottom: 14px;
-    }
-
-    .card-text {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      font-size: 11px;
-      font-weight: 900;
-      color: #dce7d4;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .featured-work-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .project-card { min-height: 410px; }
-
-    .project-image {
-      height: 245px;
-      background: #0f120f;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
       border-bottom: 1px solid var(--line);
-      position: relative;
-      overflow: hidden;
     }
 
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.94;
-    }
-
-    .image-placeholder {
-      height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 20% 18%, rgba(182,255,61,0.16), transparent 32%),
-        linear-gradient(135deg, #0d100d, #171d16);
-    }
-
-    .placeholder-flow {
-      width: 100%;
-      display: grid;
-      gap: 10px;
-    }
-
-    .placeholder-node {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 11px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-weight: 900;
-      font-size: 12px;
-    }
-
-    .placeholder-node span { color: var(--green); }
-
-    .project-content { padding: 24px; }
-
-    .project-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .work-meta {
       color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       font-size: 12px;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
       margin-bottom: 16px;
     }
 
-    .work-page {
-      padding-top: 120px;
-      border-top: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 70% 4%, rgba(182,255,61,0.10), transparent 28%),
-        transparent;
+    h2 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      margin-bottom: 20px;
     }
 
-    .work-hero {
-      display: grid;
-      grid-template-columns: 1fr 0.72fr;
-      gap: 40px;
-      align-items: end;
-      margin-bottom: 44px;
-    }
-
-    .work-hero p {
+    .work-desc {
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.75;
       font-size: 16px;
+      max-width: 560px;
     }
 
-    .skill-work-grid {
+    .details-grid {
       display: grid;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .skill-work-card {
-      display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: 0;
-      min-height: 430px;
+    .detail-box {
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      padding: 22px;
     }
 
-    .skill-info {
-      padding: 32px;
-      border-right: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .detail-box h3 {
+      font-size: 16px;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
     }
-
-    .skill-info h3 { font-size: 34px; }
 
     .feature-list {
       list-style: none;
@@ -475,7 +276,6 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.5;
-      margin: 22px 0;
     }
 
     .feature-list li {
@@ -495,28 +295,28 @@
       box-shadow: 0 0 16px var(--green);
     }
 
-    .skill-images {
-      padding: 18px;
+    .image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: stretch;
+      gap: 18px;
+      padding: 18px;
     }
 
-    .skill-img-box {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #0d100d;
-      min-height: 390px;
+    .image-card {
       position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 430px;
+      background: #0d100d;
+      border: 1px solid var(--line);
     }
 
-    .skill-img-box img {
+    .image-card img {
       width: 100%;
       height: 100%;
-      min-height: 390px;
+      min-height: 430px;
       object-fit: cover;
+      opacity: 0.96;
     }
 
     .asset-name {
@@ -526,116 +326,35 @@
       bottom: 14px;
       padding: 10px 12px;
       border-radius: 14px;
-      background: rgba(5,6,6,0.72);
+      background: rgba(5,6,6,0.74);
       border: 1px solid var(--line);
       color: var(--muted);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 900;
       backdrop-filter: blur(12px);
       overflow-wrap: anywhere;
     }
 
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-    }
-
-    .process-card {
-      padding: 24px;
-      min-height: 220px;
-    }
-
-    .step-num {
-      color: var(--green);
-      font-weight: 900;
-      font-size: 14px;
-      margin-bottom: 42px;
-    }
-
-    .tools-wrap {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .tool-pill {
-      min-height: 86px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.035);
+    .chips {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      font-size: 11px;
       font-weight: 900;
-      color: #e8ede3;
-      transition: 0.25s ease;
-    }
-
-    .tool-pill:hover {
-      color: var(--green);
-      border-color: rgba(182,255,61,0.3);
-      transform: translateY(-4px);
-    }
-
-    .about-box {
-      border-radius: 42px;
+      color: #dce7d4;
+      padding: 7px 10px;
+      border-radius: 999px;
       border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(182,255,61,0.12), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
-      padding: 54px;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 40px;
-      align-items: center;
-      box-shadow: var(--shadow);
+      background: rgba(255,255,255,0.04);
     }
 
-    .about-text p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 18px;
-      font-size: 16px;
+    .cta {
+      padding: 90px 0 70px;
     }
-
-    .avatar-box {
-      min-height: 420px;
-      border-radius: 34px;
-      background:
-        linear-gradient(180deg, rgba(182,255,61,0.10), transparent),
-        #0c0f0c;
-      border: 1px solid rgba(182,255,61,0.18);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .avatar-box::before {
-      content: "SA";
-      font-size: 150px;
-      font-weight: 900;
-      letter-spacing: -0.1em;
-      color: rgba(182,255,61,0.08);
-      position: absolute;
-    }
-
-    .avatar-card {
-      position: relative;
-      z-index: 2;
-      width: 78%;
-      border-radius: 28px;
-      padding: 26px;
-      background: rgba(5,6,6,0.72);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(14px);
-    }
-
-    .avatar-card h3 { font-size: 30px; }
-
-    .cta { padding: 120px 0 70px; }
 
     .cta-box {
       border-radius: 48px;
@@ -648,12 +367,12 @@
       box-shadow: var(--shadow);
     }
 
-    .cta-box h2 { margin: 0 auto; }
+    .cta-box h2 { margin: 0 auto 20px; }
 
     .cta-box p {
       color: var(--muted);
       max-width: 640px;
-      margin: 22px auto 30px;
+      margin: 0 auto 30px;
       line-height: 1.7;
     }
 
@@ -683,35 +402,16 @@
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
-      .about-box,
-      .work-hero,
-      .skill-work-card {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual { min-height: 420px; }
-      .hero-visual img { min-height: 420px; }
-      .skill-info { border-right: none; border-bottom: 1px solid var(--line); }
-      .services-grid, .featured-work-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid, .tools-wrap { grid-template-columns: repeat(2, 1fr); }
-      .section-head { display: block; }
-      .section-desc { margin-top: 18px; }
+      .work-card-head, .details-grid, .image-grid { grid-template-columns: 1fr; }
+      .image-card, .image-card img { min-height: 360px; }
     }
 
     @media (max-width: 700px) {
       .container { width: min(100% - 24px, 1180px); }
       .nav-links { display: none; }
-      .hero { padding-top: 54px; }
-      .stats,
-      .services-grid,
-      .featured-work-grid,
-      .process-grid,
-      .tools-wrap,
-      .skill-images { grid-template-columns: 1fr; }
-      .about-box, .cta-box { padding: 34px 22px; border-radius: 32px; }
-      .skill-info { padding: 26px; }
-      .skill-info h3 { font-size: 28px; }
+      .page-hero { padding-top: 72px; }
+      .work-card-head { padding: 26px; }
+      .cta-box { padding: 34px 22px; border-radius: 32px; }
     }
   </style>
 </head>
@@ -720,357 +420,283 @@
 
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Shazaib AI Studio home">
+      <a class="brand" href="index.html" aria-label="Shazaib AI Studio home">
         <span class="brand-mark">S</span>
         <span>Shazaib AI Studio</span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="work.html">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
-      <a class="btn btn-primary" href="#contact">Start a Project</a>
+      <a class="btn btn-primary" href="index.html#contact">Start a Project</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="dot"></span> AI Workflow Automation Studio</div>
-          <h1>Automation systems for <span class="gradient-text">real business</span> workflows.</h1>
-          <p class="hero-text">
-            Shazaib AI Studio builds practical AI automation systems using n8n, Python, OpenAI and business tools — helping teams reduce manual work, connect apps and keep operations moving.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">View Work</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>AI</strong><span>Email, document and workflow intelligence</span></div>
-            <div class="stat"><strong>n8n</strong><span>Clean, connected workflow automation</span></div>
-            <div class="stat"><strong>API</strong><span>Business tools connected with logic</span></div>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal" aria-label="AI automation workflow visual">
-          <img src="assets/hero-automation-visual.png" alt="AI automation network dashboard visual" />
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="eyebrow"><span class="dot"></span> Portfolio & Work</div>
+        <h1>Real workflow demos for <span class="gradient-text">AI automation</span> systems.</h1>
+        <p class="hero-text">
+          A detailed showcase of automation work by Shazaib AI Studio — including workflow screens, outputs, features, tools and business use-cases for each service.
+        </p>
+        <div class="filter-bar">
+          <a href="#n8n">n8n Workflows</a>
+          <a href="#email">Email Automation</a>
+          <a href="#documents">Document Extraction</a>
+          <a href="#crm">Lead & CRM</a>
+          <a href="#shopify">Shopify</a>
+          <a href="#agents">AI Agents</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="work-section" id="n8n">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Services</div>
-            <h2>Focused AI automation services that solve clear workflow problems.</h2>
-          </div>
-          <p class="section-desc">No generic AI promises. Each service is built around a practical business workflow: emails, documents, CRMs, Shopify operations and connected tools.</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <div class="service-icon">⚡</div>
-            <h3>n8n AI Workflow Automation</h3>
-            <p class="card-text">Custom n8n workflows that connect apps, move data, trigger actions and add AI where it actually helps.</p>
-            <div class="chips"><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">APIs</span></div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-icon">✉️</div>
-            <h3>AI Email Automation</h3>
-            <p class="card-text">Gmail or Outlook workflows that classify emails, extract details, draft replies, log data and send alerts.</p>
-            <div class="chips"><span class="chip">Gmail</span><span class="chip">n8n</span><span class="chip">Sheets</span></div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-icon">📄</div>
-            <h3>Document & Data Extraction</h3>
-            <p class="card-text">AI workflows that extract structured data from PDFs, invoices, forms, resumes and business documents.</p>
-            <div class="chips"><span class="chip">PDF</span><span class="chip">AI</span><span class="chip">Excel</span></div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-icon">🎯</div>
-            <h3>Lead & CRM Automation</h3>
-            <p class="card-text">Lead capture, AI qualification, CRM updates, follow-up reminders and team notifications in one workflow.</p>
-            <div class="chips"><span class="chip">CRM</span><span class="chip">Slack</span><span class="chip">AI Scoring</span></div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-icon">🛒</div>
-            <h3>Shopify Automation</h3>
-            <p class="card-text">Order tracking, inventory alerts, product data sync, sales reports and supplier notifications for e-commerce.</p>
-            <div class="chips"><span class="chip">Shopify</span><span class="chip">Inventory</span><span class="chip">Reports</span></div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-icon">🧠</div>
-            <h3>AI Agent Workflows</h3>
-            <p class="card-text">Task-specific AI agents for research, summaries, routing, decisions and multi-step business operations.</p>
-            <div class="chips"><span class="chip">Agents</span><span class="chip">LangGraph</span><span class="chip">CrewAI</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="featured">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Featured Work</div>
-            <h2>Selected workflow systems and automation demos.</h2>
-          </div>
-          <p class="section-desc">A quick preview of the main work categories. The full work page below shows every skill with two project image placeholders.</p>
-        </div>
-
-        <div class="featured-work-grid">
-          <article class="project-card reveal">
-            <div class="project-image"><img src="assets/ai-email-automation-01.png" alt="AI email automation workflow sample" /></div>
-            <div class="project-content">
-              <div class="project-meta"><span>Case Study</span><span>01</span></div>
-              <h3>AI Email Automation</h3>
-              <p class="card-text">Classifies emails, extracts details, creates reply drafts and sends team alerts.</p>
-              <div class="chips"><span class="chip">Gmail</span><span class="chip">n8n</span><span class="chip">OpenAI</span></div>
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 01 / n8n Automation</div>
+              <h2>n8n AI Workflow Automation</h2>
+              <p class="work-desc">Custom n8n workflows that connect apps, move data, trigger actions and add AI where it creates real value.</p>
+              <div class="chips"><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">APIs</span><span class="chip">Webhooks</span></div>
             </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-image"><img src="assets/document-extraction-01.png" alt="AI document extraction workflow sample" /></div>
-            <div class="project-content">
-              <div class="project-meta"><span>Workflow</span><span>02</span></div>
-              <h3>Document Extraction</h3>
-              <p class="card-text">Extracts useful information from PDFs, invoices and forms into structured outputs.</p>
-              <div class="chips"><span class="chip">PDF</span><span class="chip">AI</span><span class="chip">Sheets</span></div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-image"><img src="assets/shopify-automation-01.png" alt="Shopify automation workflow sample" /></div>
-            <div class="project-content">
-              <div class="project-meta"><span>Automation</span><span>03</span></div>
-              <h3>Shopify Automation</h3>
-              <p class="card-text">Connects orders, inventory sheets, reports and alerts for e-commerce operations.</p>
-              <div class="chips"><span class="chip">Shopify</span><span class="chip">Python</span><span class="chip">n8n</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section work-page" id="work">
-      <div class="container">
-        <div class="work-hero reveal">
-          <div>
-            <div class="section-kicker">Work Page</div>
-            <h2>Automation work organized by skill and business use-case.</h2>
-          </div>
-          <p>Each skill has two image placeholders so you can show a realistic workflow screen, result screen, dashboard, output table or before/after automation sample.</p>
-        </div>
-
-        <div class="skill-work-grid">
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 01</span><span>n8n</span></div>
-                <h3>n8n AI Workflow Automation</h3>
-                <p class="card-text">Custom workflows that connect apps, process data, trigger actions and add AI logic where needed.</p>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
                 <ul class="feature-list">
-                  <li>Multi-step n8n workflow design</li>
+                  <li>Multi-step workflow design</li>
+                  <li>Trigger, action and condition logic</li>
                   <li>OpenAI, webhook and API integrations</li>
-                  <li>Google Sheets, CRM, Slack and business tool syncing</li>
-                  <li>Error handling, testing and workflow walkthrough</li>
+                  <li>Testing, cleanup and walkthrough</li>
                 </ul>
               </div>
-              <div class="chips"><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">Webhooks</span><span class="chip">APIs</span></div>
-            </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/n8n-ai-workflow-01.png" alt="n8n AI workflow automation sample 1" /><div class="asset-name">assets/n8n-ai-workflow-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/n8n-ai-workflow-02.png" alt="n8n AI workflow automation sample 2" /><div class="asset-name">assets/n8n-ai-workflow-02.png</div></div>
-            </div>
-          </article>
-
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 02</span><span>Email</span></div>
-                <h3>AI Email Automation</h3>
-                <p class="card-text">Inbox workflows that classify messages, extract details, create reply drafts and notify the right team.</p>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
                 <ul class="feature-list">
-                  <li>Gmail or Outlook trigger workflows</li>
-                  <li>AI classification, summary and reply draft generation</li>
-                  <li>Lead/support email routing and follow-up reminders</li>
-                  <li>Google Sheets, Airtable, Slack or CRM logging</li>
+                  <li>Form to CRM automation</li>
+                  <li>Data routing and team alerts</li>
+                  <li>Report generation workflows</li>
+                  <li>Internal operations automation</li>
                 </ul>
               </div>
-              <div class="chips"><span class="chip">Gmail</span><span class="chip">OpenAI</span><span class="chip">Sheets</span><span class="chip">Slack</span></div>
             </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/ai-email-automation-01.png" alt="AI email automation sample 1" /><div class="asset-name">assets/ai-email-automation-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/ai-email-automation-02.png" alt="AI email automation sample 2" /><div class="asset-name">assets/ai-email-automation-02.png</div></div>
-            </div>
-          </article>
+          </div>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/n8n-ai-workflow-01.png" alt="n8n AI workflow automation sample 1" /><div class="asset-name">assets/n8n-ai-workflow-01.png</div></div>
+            <div class="image-card"><img src="assets/n8n-ai-workflow-02.png" alt="n8n AI workflow automation sample 2" /><div class="asset-name">assets/n8n-ai-workflow-02.png</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 03</span><span>Documents</span></div>
-                <h3>AI Document & Data Extraction</h3>
-                <p class="card-text">Document workflows that turn PDFs, invoices, forms and resumes into clean structured data.</p>
+    <section class="work-section" id="email">
+      <div class="container">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 02 / Email Automation</div>
+              <h2>AI Email Automation</h2>
+              <p class="work-desc">Inbox workflows that classify emails, extract useful details, create reply drafts, log data and notify the right team.</p>
+              <div class="chips"><span class="chip">Gmail</span><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">Sheets</span></div>
+            </div>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
                 <ul class="feature-list">
-                  <li>PDF, invoice and form data extraction</li>
-                  <li>Structured output to Excel or Google Sheets</li>
-                  <li>AI summarization and field detection</li>
-                  <li>Validation, cleanup and export workflows</li>
+                  <li>Gmail or Outlook automation</li>
+                  <li>AI classification and summaries</li>
+                  <li>Reply draft generation</li>
+                  <li>Slack, Sheets and CRM updates</li>
                 </ul>
               </div>
-              <div class="chips"><span class="chip">PDF</span><span class="chip">Invoices</span><span class="chip">Excel</span><span class="chip">AI</span></div>
-            </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/document-extraction-01.png" alt="AI document extraction sample 1" /><div class="asset-name">assets/document-extraction-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/document-extraction-02.png" alt="AI document extraction sample 2" /><div class="asset-name">assets/document-extraction-02.png</div></div>
-            </div>
-          </article>
-
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 04</span><span>CRM</span></div>
-                <h3>Lead & CRM Automation</h3>
-                <p class="card-text">Lead workflows that capture inquiries, qualify them with AI and move clean data into sales tools.</p>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
                 <ul class="feature-list">
-                  <li>Lead capture from forms, email or website sources</li>
-                  <li>AI lead scoring and category detection</li>
+                  <li>Client inquiry handling</li>
+                  <li>Support email routing</li>
+                  <li>Lead email qualification</li>
+                  <li>Follow-up reminders</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/ai-email-automation-01.png" alt="AI email automation sample 1" /><div class="asset-name">assets/ai-email-automation-01.png</div></div>
+            <div class="image-card"><img src="assets/ai-email-automation-02.png" alt="AI email automation sample 2" /><div class="asset-name">assets/ai-email-automation-02.png</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" id="documents">
+      <div class="container">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 03 / Data Extraction</div>
+              <h2>AI Document & Data Extraction</h2>
+              <p class="work-desc">Document workflows that convert PDFs, invoices, forms and resumes into clean structured data.</p>
+              <div class="chips"><span class="chip">PDF</span><span class="chip">Invoices</span><span class="chip">AI</span><span class="chip">Excel</span></div>
+            </div>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
+                <ul class="feature-list">
+                  <li>PDF and invoice field extraction</li>
+                  <li>Data cleanup and validation</li>
+                  <li>Excel or Google Sheets export</li>
+                  <li>AI summaries and structured output</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
+                <ul class="feature-list">
+                  <li>Invoice processing</li>
+                  <li>Resume parsing</li>
+                  <li>Form data extraction</li>
+                  <li>Document-to-database workflows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/document-extraction-01.png" alt="Document extraction automation sample 1" /><div class="asset-name">assets/document-extraction-01.png</div></div>
+            <div class="image-card"><img src="assets/document-extraction-02.png" alt="Document extraction automation sample 2" /><div class="asset-name">assets/document-extraction-02.png</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" id="crm">
+      <div class="container">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 04 / Lead & CRM</div>
+              <h2>Lead & CRM Automation</h2>
+              <p class="work-desc">Lead workflows that capture inquiries, qualify them with AI and move clean data into sales tools.</p>
+              <div class="chips"><span class="chip">CRM</span><span class="chip">AI Score</span><span class="chip">Follow-up</span><span class="chip">Slack</span></div>
+            </div>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
+                <ul class="feature-list">
+                  <li>Lead capture from email or forms</li>
+                  <li>AI lead scoring and categorization</li>
                   <li>CRM, Sheets or Airtable updates</li>
-                  <li>Sales follow-up tasks and Slack alerts</li>
+                  <li>Sales alerts and follow-up tasks</li>
                 </ul>
               </div>
-              <div class="chips"><span class="chip">CRM</span><span class="chip">Lead Score</span><span class="chip">Follow-up</span><span class="chip">Slack</span></div>
-            </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/lead-crm-automation-01.png" alt="Lead and CRM automation sample 1" /><div class="asset-name">assets/lead-crm-automation-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/lead-crm-automation-02.png" alt="Lead and CRM automation sample 2" /><div class="asset-name">assets/lead-crm-automation-02.png</div></div>
-            </div>
-          </article>
-
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 05</span><span>Shopify</span></div>
-                <h3>Shopify / E-commerce Automation</h3>
-                <p class="card-text">E-commerce workflows that connect orders, inventory, reports and alerts to reduce manual operations.</p>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
                 <ul class="feature-list">
-                  <li>Order data sync to Google Sheets or Airtable</li>
-                  <li>Low-stock and supplier notification workflows</li>
-                  <li>Daily sales reports and customer/order summaries</li>
-                  <li>Shopify, email, Sheets and webhook integrations</li>
+                  <li>Agency lead routing</li>
+                  <li>B2B inquiry management</li>
+                  <li>Sales pipeline updates</li>
+                  <li>High-intent lead alerts</li>
                 </ul>
               </div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/lead-crm-automation-01.png" alt="Lead and CRM automation sample 1" /><div class="asset-name">assets/lead-crm-automation-01.png</div></div>
+            <div class="image-card"><img src="assets/lead-crm-automation-02.png" alt="Lead and CRM automation sample 2" /><div class="asset-name">assets/lead-crm-automation-02.png</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" id="shopify">
+      <div class="container">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 05 / E-commerce</div>
+              <h2>Shopify / E-commerce Automation</h2>
+              <p class="work-desc">E-commerce workflows that connect orders, inventory, reports and alerts to reduce manual store operations.</p>
               <div class="chips"><span class="chip">Shopify</span><span class="chip">Inventory</span><span class="chip">Reports</span><span class="chip">Alerts</span></div>
             </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/shopify-automation-01.png" alt="Shopify automation sample 1" /><div class="asset-name">assets/shopify-automation-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/shopify-automation-02.png" alt="Shopify automation sample 2" /><div class="asset-name">assets/shopify-automation-02.png</div></div>
-            </div>
-          </article>
-
-          <article class="skill-work-card reveal">
-            <div class="skill-info">
-              <div>
-                <div class="project-meta"><span>Skill 06</span><span>Agents</span></div>
-                <h3>AI Agent Workflows</h3>
-                <p class="card-text">Task-specific AI agents for research, routing, summarization, decisions and business operations.</p>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
                 <ul class="feature-list">
-                  <li>Research, report and summary agents</li>
-                  <li>AI routing and decision workflows</li>
-                  <li>CrewAI, LangGraph or OpenAI-based logic</li>
-                  <li>Connected outputs to docs, sheets, CRM or alerts</li>
+                  <li>Order sync to Sheets or Airtable</li>
+                  <li>Low-stock alert workflows</li>
+                  <li>Daily sales reports</li>
+                  <li>Supplier and team notifications</li>
                 </ul>
               </div>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
+                <ul class="feature-list">
+                  <li>Inventory monitoring</li>
+                  <li>Order operation tracking</li>
+                  <li>Product data syncing</li>
+                  <li>Store performance reports</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/shopify-automation-01.png" alt="Shopify automation sample 1" /><div class="asset-name">assets/shopify-automation-01.png</div></div>
+            <div class="image-card"><img src="assets/shopify-automation-02.png" alt="Shopify automation sample 2" /><div class="asset-name">assets/shopify-automation-02.png</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section" id="agents">
+      <div class="container">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <div>
+              <div class="work-meta">Skill 06 / AI Agents</div>
+              <h2>AI Agent Workflows</h2>
+              <p class="work-desc">Task-specific AI agents for research, summarization, routing, decisions and business operations.</p>
               <div class="chips"><span class="chip">AI Agents</span><span class="chip">CrewAI</span><span class="chip">LangGraph</span><span class="chip">Reports</span></div>
             </div>
-            <div class="skill-images">
-              <div class="skill-img-box"><img src="assets/ai-agent-workflow-01.png" alt="AI agent workflow sample 1" /><div class="asset-name">assets/ai-agent-workflow-01.png</div></div>
-              <div class="skill-img-box"><img src="assets/ai-agent-workflow-02.png" alt="AI agent workflow sample 2" /><div class="asset-name">assets/ai-agent-workflow-02.png</div></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Process</div>
-            <h2>A clear build process from messy workflow to working automation.</h2>
-          </div>
-          <p class="section-desc">Every project starts by understanding the workflow first, then building only what is practical and useful.</p>
-        </div>
-
-        <div class="process-grid">
-          <article class="process-card reveal"><div class="step-num">01</div><h3>Discover</h3><p class="card-text">Understand the manual task, tools involved and what result should happen.</p></article>
-          <article class="process-card reveal"><div class="step-num">02</div><h3>Map</h3><p class="card-text">Turn the workflow into triggers, conditions, actions and outputs.</p></article>
-          <article class="process-card reveal"><div class="step-num">03</div><h3>Build</h3><p class="card-text">Create the n8n, Python and AI logic needed to connect everything.</p></article>
-          <article class="process-card reveal"><div class="step-num">04</div><h3>Test</h3><p class="card-text">Check real scenarios, data paths, errors and final outputs.</p></article>
-          <article class="process-card reveal"><div class="step-num">05</div><h3>Deliver</h3><p class="card-text">Provide the workflow, documentation and a simple walkthrough.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="section-kicker">Tool Stack</div><h2>Built with modern automation and AI tools.</h2></div>
-        </div>
-
-        <div class="tools-wrap reveal">
-          <div class="tool-pill">n8n</div>
-          <div class="tool-pill">Python</div>
-          <div class="tool-pill">OpenAI</div>
-          <div class="tool-pill">Gmail</div>
-          <div class="tool-pill">Google Sheets</div>
-          <div class="tool-pill">Airtable</div>
-          <div class="tool-pill">Slack</div>
-          <div class="tool-pill">Shopify</div>
-          <div class="tool-pill">APIs</div>
-          <div class="tool-pill">Webhooks</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="about-box reveal">
-          <div class="avatar-box">
-            <div class="avatar-card">
-              <h3>Shazaib AI Studio</h3>
-              <p class="card-text">Independent AI automation studio focused on practical workflow systems for businesses.</p>
-              <div class="chips"><span class="chip">Automation</span><span class="chip">AI Agents</span><span class="chip">Operations</span></div>
+            <div class="details-grid">
+              <div class="detail-box">
+                <h3>Features</h3>
+                <ul class="feature-list">
+                  <li>Research and report agents</li>
+                  <li>AI routing and decision logic</li>
+                  <li>CrewAI or LangGraph workflows</li>
+                  <li>Outputs to docs, sheets, CRM or alerts</li>
+                </ul>
+              </div>
+              <div class="detail-box">
+                <h3>Use Cases</h3>
+                <ul class="feature-list">
+                  <li>Market research summaries</li>
+                  <li>Internal business assistants</li>
+                  <li>Document review workflows</li>
+                  <li>Multi-step AI task execution</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="about-text">
-            <div class="section-kicker">About</div>
-            <h2>Practical AI systems, not random automation experiments.</h2>
-            <p>Shazaib AI Studio helps businesses turn repetitive manual processes into connected AI workflows. The focus is simple: understand the task, map the logic, build the automation and make the system easy to use.</p>
-            <p>Services include n8n automation, AI email handling, document extraction, CRM workflows, Shopify operations and custom Python/API integrations.</p>
-            <a class="btn btn-primary" href="#contact">Discuss a Workflow</a>
+          <div class="image-grid">
+            <div class="image-card"><img src="assets/ai-agent-workflow-01.png" alt="AI agent workflow sample 1" /><div class="asset-name">assets/ai-agent-workflow-01.png</div></div>
+            <div class="image-card"><img src="assets/ai-agent-workflow-02.png" alt="AI agent workflow sample 2" /><div class="asset-name">assets/ai-agent-workflow-02.png</div></div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <section class="cta" id="contact">
       <div class="container">
         <div class="cta-box reveal">
-          <div class="section-kicker">Start a Project</div>
+          <div class="eyebrow"><span class="dot"></span> Start a Project</div>
           <h2>Have a workflow you want to automate?</h2>
           <p>Send your current process, the tools you use and what should happen automatically. I’ll help map the best automation setup before building.</p>
           <a class="btn btn-primary" href="mailto:your-email@example.com">Contact Shazaib</a>
+          <a class="btn btn-secondary" href="index.html">Back to Home</a>
         </div>
       </div>
     </section>
@@ -1079,7 +705,7 @@
   <footer>
     <div class="container footer-inner">
       <span>© <span id="year"></span> Shazaib AI Studio. All rights reserved.</span>
-      <span>AI Workflow Automation • n8n • Python • OpenAI</span>
+      <span>Portfolio • AI Workflow Automation • n8n • Python • OpenAI</span>
     </div>
   </footer>
 
