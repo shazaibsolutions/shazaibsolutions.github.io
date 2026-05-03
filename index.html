@@ -464,21 +464,109 @@
     .pill.lime { background: var(--lime); color: var(--black); border-color: var(--lime); }
 
     .cta-section { padding: 100px 0; }
-    .cta-box {
+
+    .contact-panel {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: end;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 34px;
+      align-items: stretch;
       padding: 34px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .cta-box .btn {
+    .contact-copy {
+      background: var(--orange);
+      color: var(--white);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .contact-copy p {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    .contact-email-box {
+      margin-top: 30px;
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 18px;
+    }
+
+    .contact-email-box span {
+      display: block;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 8px;
+    }
+
+    .contact-email-box strong {
+      font-size: 18px;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      border: 1px solid var(--line);
+      padding: 32px;
+      background: #050505;
+      min-height: 420px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .field-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field-group label {
+      color: var(--gray-2);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .field-group input,
+    .field-group textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--black);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 15px;
+      padding: 15px 14px;
+      outline: none;
+    }
+
+    .field-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field-group input:focus,
+    .field-group textarea:focus {
+      border-color: var(--orange);
+    }
+
+    .form-note {
+      color: var(--gray);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .contact-form .btn {
       width: fit-content;
       min-width: 190px;
     }
-    .cta-box p { color: var(--gray); line-height: 1.7; max-width: 650px; margin-top: 18px; }
 
     footer {
       padding: 28px 0;
@@ -554,6 +642,8 @@
       .portfolio-image,
       .portfolio-image img { min-height: 340px; height: auto; }
       .profile-note { position: relative; left: auto; bottom: auto; width: 100%; }
+      .contact-panel { grid-template-columns: 1fr; }
+      .contact-form .btn { width: 100%; min-width: 0; }
       .cta-box .btn { width: 100%; min-width: 0; }
     }
   </style>
@@ -754,13 +844,47 @@
     </section>
 
     <section class="cta-section" id="contact">
-      <div class="page cta-box reveal">
-        <div>
-          <div class="section-label">Let's Work</div>
-          <h2>Have a workflow you want to automate?</h2>
-          <p>Send your current process, tools and desired output. I’ll help map the best automation setup before building.</p>
+      <div class="page contact-panel reveal">
+        <div class="contact-copy">
+          <div>
+            <div class="section-label" style="color:#fff;">Contact</div>
+            <h2>Send your workflow details directly.</h2>
+            <p>Share your current process, tools and what you want to automate. Your message will be sent to Shazaib AI Studio.</p>
+          </div>
+          <div class="contact-email-box">
+            <span>Email</span>
+            <strong>shazaibsolutions@gmail.com</strong>
+          </div>
         </div>
-        <a class="btn btn-orange email-link" href="mailto:shazaibsolutions@gmail.com?subject=AI%20Automation%20Project%20Inquiry&body=Hi%20Shazaib%2C%0A%0AI%20want%20to%20discuss%20an%20automation%20workflow%20for%20my%20business.%0A%0AMy%20current%20process%3A%0ATools%20I%20use%3A%0AWhat%20I%20want%20to%20automate%3A%0A%0AThanks.">Contact Shazaib</a>
+
+        <form class="contact-form" action="https://formsubmit.co/shazaibsolutions@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New AI Automation Project Inquiry" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
+          <div class="field-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="field-group">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="field-group">
+            <label for="service">Service Needed</label>
+            <input id="service" name="service" type="text" placeholder="Example: AI Email Automation, n8n Workflow, Shopify Automation" />
+          </div>
+
+          <div class="field-group">
+            <label for="message">Project Message</label>
+            <textarea id="message" name="message" placeholder="Tell me your current process, tools you use, and what you want to automate." required></textarea>
+          </div>
+
+          <p class="form-note">This form sends your message directly to shazaibsolutions@gmail.com.</p>
+          <button class="btn btn-orange" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
   </main>
