@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shazaib AI Studio — AI Automation Portfolio</title>
-  <meta name="description" content="Shazaib AI Studio builds AI workflow automation systems using n8n, Python, OpenAI, APIs, Gmail, Shopify and business tools." />
+  <title>Work — Shazaib AI Studio</title>
+  <meta name="description" content="Portfolio work page for Shazaib AI Studio — AI workflow automation, n8n, Python, OpenAI, APIs and business systems." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,24 +17,14 @@
       --gray: #888888;
       --gray-2: #b8b8b8;
       --line: #242424;
-      --card: #080808;
       --orange: #ff5722;
       --orange-dark: #d93d10;
       --lime: #ccff00;
-      --lime-dark: #9fd100;
-      --radius: 0px;
       --max: 1160px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -43,15 +33,8 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; }
 
     .page {
       width: min(var(--max), calc(100% - 34px));
@@ -62,7 +45,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(0, 0, 0, 0.86);
+      background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
@@ -80,7 +63,7 @@
       align-items: center;
       gap: 12px;
       font-weight: 900;
-      letter-spacing: -0.06em;
+      letter-spacing: -0.035em;
       text-transform: uppercase;
     }
 
@@ -106,9 +89,8 @@
       letter-spacing: 0.06em;
     }
 
-    .nav-links a:hover {
-      color: var(--white);
-    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--white); }
 
     .btn {
       display: inline-flex;
@@ -127,44 +109,23 @@
       transition: 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--white);
-    }
-
-    .btn-orange {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: var(--white);
-    }
-
-    .btn-orange:hover {
-      background: var(--orange-dark);
-      border-color: var(--orange-dark);
-    }
-
-    .btn-lime {
-      background: var(--lime);
-      border-color: var(--lime);
-      color: var(--black);
-    }
-
-    .section {
-      padding: 96px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--white); }
+    .btn-orange { background: var(--orange); border-color: var(--orange); color: var(--white); }
+    .btn-orange:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+    .btn-dark { color: var(--black); border-color: var(--black); }
 
     .hero {
-      padding: 64px 0 96px;
       min-height: calc(100vh - 76px);
+      padding: 72px 0 92px;
       display: grid;
       align-items: center;
+      border-bottom: 1px solid var(--line);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: 46px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
       align-items: center;
     }
 
@@ -189,35 +150,48 @@
     }
 
     h1 {
-      max-width: 780px;
-      font-size: clamp(54px, 8vw, 116px);
-      line-height: 0.82;
+      max-width: 840px;
+      font-size: clamp(54px, 8vw, 112px);
+      line-height: 0.92;
       font-weight: 900;
-      letter-spacing: -0.095em;
+      letter-spacing: -0.045em;
       text-transform: uppercase;
     }
 
-    .lime-text {
-      color: var(--lime);
+    h2 {
+      font-size: clamp(34px, 5vw, 70px);
+      line-height: 0.94;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
     }
 
-    .orange-text {
-      color: var(--orange);
+    h3 {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
     }
 
-    .hero-copy {
+    .orange-text { color: var(--orange); }
+    .lime-text { color: var(--lime); }
+
+    .hero-copy,
+    .section-desc,
+    .project-copy {
       color: var(--gray);
-      font-size: 17px;
-      line-height: 1.7;
-      max-width: 630px;
-      margin: 26px 0 30px;
+      font-size: 16px;
+      line-height: 1.72;
     }
+
+    .hero-copy { max-width: 650px; margin: 26px 0 30px; }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .hero-blocks {
@@ -235,15 +209,8 @@
       justify-content: space-between;
     }
 
-    .info-orange {
-      background: var(--orange);
-      color: var(--white);
-    }
-
-    .info-lime {
-      background: var(--lime);
-      color: var(--black);
-    }
+    .info-orange { background: var(--orange); color: var(--white); }
+    .info-lime { background: var(--lime); color: var(--black); }
 
     .info-block span {
       font-size: 11px;
@@ -254,17 +221,14 @@
     }
 
     .info-block strong {
-      font-size: 26px;
+      font-size: 25px;
       line-height: 1;
-      letter-spacing: -0.06em;
+      letter-spacing: -0.035em;
       text-transform: uppercase;
     }
 
-    .hero-visual-wrap {
-      position: relative;
-    }
-
-    .hero-visual-wrap::before {
+    .profile-visual-wrap { position: relative; }
+    .profile-visual-wrap::before {
       content: "";
       position: absolute;
       left: -14px;
@@ -274,8 +238,7 @@
       background: var(--orange);
       z-index: 0;
     }
-
-    .hero-visual-wrap::after {
+    .profile-visual-wrap::after {
       content: "";
       position: absolute;
       right: -14px;
@@ -286,7 +249,7 @@
       z-index: 0;
     }
 
-    .hero-visual {
+    .profile-visual {
       position: relative;
       z-index: 2;
       border: 1px solid var(--line);
@@ -295,57 +258,44 @@
       overflow: hidden;
     }
 
-    .hero-visual img {
+    .profile-visual img {
       height: 540px;
       object-fit: cover;
-      opacity: 0.96;
+      object-position: center top;
     }
 
-    .profile-card {
+    .profile-note {
       position: absolute;
       left: 18px;
       bottom: 18px;
-      z-index: 3;
-      width: 245px;
+      width: min(330px, calc(100% - 36px));
       background: var(--white);
       color: var(--black);
-      padding: 12px;
+      padding: 14px;
+      z-index: 3;
       border: 1px solid #dedede;
     }
 
-    .profile-card-inner {
+    .profile-note-inner {
       background: #e7e7e7;
       padding: 16px;
-      min-height: 140px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
-    .profile-card h3 {
+    .profile-note h3 {
       color: var(--black);
-      font-size: 18px;
-      line-height: 0.92;
-      text-transform: uppercase;
-      letter-spacing: -0.06em;
-      margin-bottom: 8px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .profile-card p {
-      color: #4a4a4a;
-      font-size: 11px;
-      line-height: 1.45;
-      margin-bottom: 12px;
+    .profile-note p {
+      color: #444;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
-    .profile-mini-btn {
-      width: fit-content;
-      background: var(--lime);
-      color: var(--black);
-      padding: 8px 10px;
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
+    .section {
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .section-head {
@@ -365,164 +315,6 @@
       margin-bottom: 16px;
     }
 
-    h2 {
-      font-size: clamp(34px, 5vw, 70px);
-      line-height: 0.88;
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
-    }
-
-    .section-desc {
-      color: var(--gray);
-      line-height: 1.72;
-      font-size: 16px;
-      max-width: 560px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-    }
-
-    .service-card {
-      min-height: 330px;
-      padding: 28px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--black);
-      transition: 0.2s ease;
-    }
-
-    .service-card:nth-child(3n) {
-      border-right: none;
-    }
-
-    .service-card:hover {
-      background: #070707;
-    }
-
-    .service-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 34px;
-    }
-
-    .service-num {
-      color: var(--gray);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-    }
-
-    .service-tag {
-      background: var(--lime);
-      color: var(--black);
-      padding: 7px 9px;
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .service-card h3 {
-      font-size: 28px;
-      line-height: 0.98;
-      text-transform: uppercase;
-      letter-spacing: -0.06em;
-      margin-bottom: 16px;
-    }
-
-    .service-card p {
-      color: var(--gray);
-      line-height: 1.65;
-      font-size: 14px;
-      margin-bottom: 26px;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      color: var(--gray-2);
-      font-size: 13px;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .feature-list li::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      background: var(--orange);
-      flex: 0 0 auto;
-    }
-
-    .projects-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .project-row {
-      display: grid;
-      grid-template-columns: 1fr 1.25fr 0.55fr;
-      gap: 26px;
-      padding: 30px 0;
-      border-bottom: 1px solid var(--line);
-      align-items: center;
-    }
-
-    .project-title {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -0.055em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .project-copy {
-      color: var(--gray);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .pill {
-      padding: 7px 9px;
-      border: 1px solid var(--line);
-      color: var(--gray-2);
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .pill.orange {
-      background: var(--orange);
-      color: var(--white);
-      border-color: var(--orange);
-    }
-
-    .pill.lime {
-      background: var(--lime);
-      color: var(--black);
-      border-color: var(--lime);
-    }
-
     .hero-image-section {
       display: grid;
       grid-template-columns: 0.75fr 1.25fr;
@@ -536,231 +328,143 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 420px;
+      min-height: 430px;
     }
 
-    .hero-image-copy h2 {
-      color: var(--white);
-      font-size: clamp(34px, 5vw, 62px);
-    }
-
-    .hero-image-copy p {
-      color: rgba(255,255,255,0.76);
-      line-height: 1.7;
-      margin-top: 18px;
-    }
+    .hero-image-copy h2 { color: var(--white); }
+    .hero-image-copy p { color: rgba(255,255,255,0.76); line-height: 1.7; margin-top: 18px; }
 
     .big-image {
       border: 1px solid var(--line);
-      min-height: 420px;
+      min-height: 430px;
       background: #050505;
       overflow: hidden;
     }
 
     .big-image img {
       height: 100%;
-      min-height: 420px;
-      object-fit: cover;
+      min-height: 430px;
+      object-fit: contain;
+      background: #050505;
     }
 
-    .stats-grid {
+    .portfolio-section {
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portfolio-card {
+      border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+
+    .portfolio-header {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--line);
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .detail-box {
       border: 1px solid var(--line);
+      padding: 22px;
+      background: #050505;
     }
 
-    .stat-box {
-      background: var(--black);
-      padding: 28px;
-      min-height: 170px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .stat-box strong {
-      font-size: 46px;
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-    }
-
-    .stat-box span {
-      color: var(--gray);
-      font-size: 12px;
-      font-weight: 800;
+    .detail-box h4 {
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--gray-2);
+      font-size: 13px;
       line-height: 1.45;
     }
 
-    .reviews-section {
-      background: var(--white);
-      color: var(--black);
-      padding: 96px 0;
-    }
-
-    .reviews-section .section-label {
-      color: var(--orange);
-    }
-
-    .reviews-section h2 {
-      color: var(--black);
-    }
-
-    .reviews-section .section-desc {
-      color: #555555;
-    }
-
-    .reviews-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 34px;
-    }
-
-    .review-controls {
+    .feature-list li {
       display: flex;
+      align-items: flex-start;
       gap: 10px;
     }
 
-    .review-btn {
-      width: 48px;
-      height: 48px;
-      border: 1px solid #dddddd;
-      background: var(--black);
-      color: var(--white);
-      font-weight: 900;
-      font-size: 20px;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .review-btn:hover {
+    .feature-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
       background: var(--orange);
-      border-color: var(--orange);
+      flex: 0 0 auto;
+      margin-top: 6px;
     }
 
-    .reviews-window {
-      overflow: hidden;
-    }
-
-    .reviews-track {
+    .portfolio-images {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: calc((100% - 36px) / 3);
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
-      transition: transform 0.45s ease;
     }
 
-    .review-card {
-      min-height: 335px;
-      border: 1px solid #e2e2e2;
-      background: #ffffff;
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .portfolio-image {
+      border: 1px solid var(--line);
+      background: #050505;
+      min-height: 420px;
+      overflow: hidden;
+      position: relative;
     }
 
-    .review-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: contain;
+      background: #050505;
     }
 
-    .stars {
-      color: var(--orange);
-      font-size: 13px;
-      letter-spacing: 0.08em;
+    .asset-name {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(0,0,0,0.76);
+      border: 1px solid var(--line);
+      color: var(--gray-2);
+      padding: 8px 10px;
+      font-size: 10px;
       font-weight: 900;
+      letter-spacing: 0.04em;
     }
 
-    .rating {
-      background: var(--lime);
-      color: var(--black);
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .pill {
       padding: 7px 9px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .review-card p {
-      color: #323232;
-      line-height: 1.72;
-      font-size: 15px;
-      margin-bottom: 26px;
-    }
-
-    .review-person {
-      display: grid;
-      gap: 5px;
-      border-top: 1px solid #e8e8e8;
-      padding-top: 18px;
-    }
-
-    .review-person b {
-      font-size: 15px;
-      letter-spacing: -0.03em;
-    }
-
-    .review-person span {
-      color: #777777;
-      font-size: 12px;
-      line-height: 1.45;
-    }
-
-    .review-skill {
-      width: fit-content;
-      margin-top: 14px;
-      padding: 7px 9px;
-      border: 1px solid #e3e3e3;
-      color: #444444;
+      border: 1px solid var(--line);
+      color: var(--gray-2);
       font-size: 10px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
-    .process-list {
-      border-top: 1px solid var(--line);
-    }
+    .pill.orange { background: var(--orange); color: var(--white); border-color: var(--orange); }
+    .pill.lime { background: var(--lime); color: var(--black); border-color: var(--lime); }
 
-    .process-item {
-      display: grid;
-      grid-template-columns: 120px 1fr 1.1fr;
-      gap: 26px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line);
-      align-items: start;
-    }
-
-    .process-num {
-      color: var(--orange);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-    }
-
-    .process-item h3 {
-      font-size: 28px;
-      text-transform: uppercase;
-      letter-spacing: -0.06em;
-      line-height: 1;
-    }
-
-    .process-item p {
-      color: var(--gray);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .cta-section {
-      padding: 110px 0;
-    }
-
+    .cta-section { padding: 100px 0; }
     .cta-box {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -770,17 +474,7 @@
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
-
-    .cta-box h2 {
-      max-width: 760px;
-    }
-
-    .cta-box p {
-      color: var(--gray);
-      line-height: 1.7;
-      max-width: 640px;
-      margin-top: 18px;
-    }
+    .cta-box p { color: var(--gray); line-height: 1.7; max-width: 650px; margin-top: 18px; }
 
     footer {
       padding: 28px 0;
@@ -790,138 +484,48 @@
       font-weight: 700;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 980px) {
       .hero-grid,
       .section-head,
       .hero-image-section,
-      .cta-box {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .service-card:nth-child(3n) {
-        border-right: 1px solid var(--line);
-      }
-
-      .service-card:nth-child(2n) {
-        border-right: none;
-      }
-
-      .project-row {
-        grid-template-columns: 1fr;
-      }
-
-      .project-meta {
-        justify-content: flex-start;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .reviews-track {
-        grid-auto-columns: calc((100% - 18px) / 2);
-      }
-
-      .process-item {
-        grid-template-columns: 90px 1fr;
-      }
-
-      .process-item p {
-        grid-column: 2;
-      }
+      .portfolio-header,
+      .cta-box { grid-template-columns: 1fr; }
+      .details-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
-      .page {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
+      .page { width: min(100% - 24px, var(--max)); }
+      .nav-links { display: none; }
       .hero-blocks,
-      .services-grid,
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        border-right: none !important;
-      }
-
-      .hero-visual,
-      .hero-visual img,
+      .portfolio-images { grid-template-columns: 1fr; }
+      .profile-visual,
+      .profile-visual img,
       .big-image,
-      .big-image img {
-        min-height: 360px;
-        height: 360px;
-      }
-
-      .profile-card {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-      }
-
-      .reviews-head {
-        grid-template-columns: 1fr;
-      }
-
-      .reviews-track {
-        grid-auto-columns: 100%;
-      }
-
-      .process-item {
-        grid-template-columns: 1fr;
-      }
-
-      .process-item p {
-        grid-column: auto;
-      }
+      .big-image img,
+      .portfolio-image,
+      .portfolio-image img { min-height: 340px; height: auto; }
+      .profile-note { position: relative; left: auto; bottom: auto; width: 100%; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="page nav">
-      <a href="#top" class="brand" aria-label="Shazaib AI Studio Home">
+      <a href="index.html" class="brand" aria-label="Shazaib AI Studio Home">
         <span class="brand-mark">S</span>
         <span>Shazaib AI Studio</span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="work.html">Work</a>
-        <a href="#reviews">Reviews</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="work.html">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -929,181 +533,37 @@
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
+  <main>
+    <section class="hero" id="top">
       <div class="page hero-grid">
         <div class="reveal">
-          <div class="eyebrow">AI Automation Portfolio</div>
-          <h1>AI systems for <span class="orange-text">business</span> workflows.</h1>
+          <div class="eyebrow">Portfolio Work</div>
+          <h1>Previous work & <span class="orange-text">automation</span> systems.</h1>
           <p class="hero-copy">
-            I build practical automation systems with n8n, Python, OpenAI and APIs — connecting emails, documents, CRMs, Shopify and internal tools into clean workflows that save time and reduce manual work.
+            A detailed work page for Shazaib AI Studio. Here you can showcase project images, workflow screens, results and the services behind each automation system.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-orange" href="work.html">View Work</a>
-            <a class="btn" href="#services">See Services</a>
+            <a class="btn btn-orange" href="#email">View Projects</a>
+            <a class="btn" href="index.html">Back Home</a>
           </div>
 
           <div class="hero-blocks">
-            <div class="info-block info-orange">
-              <span>Status</span>
-              <strong>Available for workflow builds</strong>
-            </div>
-            <div class="info-block info-lime">
-              <span>Focus</span>
-              <strong>n8n + AI automation</strong>
-            </div>
+            <div class="info-block info-orange"><span>Work Page</span><strong>Detailed portfolio showcase</strong></div>
+            <div class="info-block info-lime"><span>Image Slots</span><strong>2 visuals per skill</strong></div>
           </div>
         </div>
 
-        <div class="hero-visual-wrap reveal">
-          <div class="hero-visual">
-            <img src="assets/hero-automation-visual.png" alt="AI workflow automation hero visual" />
-            <div class="profile-card">
-              <div class="profile-card-inner">
-                <div>
-                  <h3>Workflow Automation</h3>
-                  <p>AI, n8n, Python and APIs connected into real business systems.</p>
-                </div>
-                <span class="profile-mini-btn">View systems</span>
+        <div class="profile-visual-wrap reveal">
+          <div class="profile-visual">
+            <img src="assets/shazaib-profile.png" alt="Shazaib profile picture" />
+            <div class="profile-note">
+              <div class="profile-note-inner">
+                <h3>Shazaib AI Studio</h3>
+                <p>AI workflow automation, n8n systems, Python logic and business tool integrations.</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="page">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-label">Services</div>
-            <h2>Automation services built around real business problems.</h2>
-          </div>
-          <p class="section-desc">
-            Each service is designed as a focused workflow offer: clear input, clean automation logic and measurable operational output.
-          </p>
-        </div>
-
-        <div class="services-grid reveal">
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">01</span><span class="service-tag">Core</span></div>
-              <h3>n8n AI Workflow Automation</h3>
-              <p>Custom workflows that connect tools, move data, trigger actions and add AI only where it helps.</p>
-            </div>
-            <ul class="feature-list">
-              <li>Multi-step n8n workflows</li>
-              <li>OpenAI, API and webhook logic</li>
-              <li>Testing and walkthrough</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">02</span><span class="service-tag">Inbox</span></div>
-              <h3>AI Email Automation</h3>
-              <p>Email workflows that classify messages, extract details, create reply drafts and send team alerts.</p>
-            </div>
-            <ul class="feature-list">
-              <li>Gmail / Outlook automation</li>
-              <li>AI summaries and replies</li>
-              <li>Sheets, Slack and CRM logging</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">03</span><span class="service-tag">Data</span></div>
-              <h3>Document Extraction</h3>
-              <p>AI workflows that turn PDFs, invoices, forms and resumes into structured tables and outputs.</p>
-            </div>
-            <ul class="feature-list">
-              <li>PDF / invoice extraction</li>
-              <li>Field detection and cleanup</li>
-              <li>Excel or Google Sheets export</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">04</span><span class="service-tag">Sales</span></div>
-              <h3>Lead & CRM Automation</h3>
-              <p>Lead capture, AI qualification, CRM updates, follow-up tasks and team notifications.</p>
-            </div>
-            <ul class="feature-list">
-              <li>Lead scoring and categorization</li>
-              <li>CRM and Sheets updates</li>
-              <li>Follow-up reminders</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">05</span><span class="service-tag">Store</span></div>
-              <h3>Shopify Automation</h3>
-              <p>E-commerce workflows for orders, inventory, low-stock alerts, reports and supplier updates.</p>
-            </div>
-            <ul class="feature-list">
-              <li>Order and inventory sync</li>
-              <li>Daily sales reports</li>
-              <li>Low-stock alerts</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div>
-              <div class="service-top"><span class="service-num">06</span><span class="service-tag">Agents</span></div>
-              <h3>AI Agent Workflows</h3>
-              <p>Task-specific AI agents for research, routing, summarization, decisions and business operations.</p>
-            </div>
-            <ul class="feature-list">
-              <li>Research and report agents</li>
-              <li>CrewAI / LangGraph workflows</li>
-              <li>Outputs to docs, CRM or alerts</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="page">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-label">Recent Projects</div>
-            <h2>Selected work previews.</h2>
-          </div>
-          <p class="section-desc">
-            Short previews of workflow systems. Detailed project images and service breakdowns are available on the full work page.
-          </p>
-        </div>
-
-        <div class="projects-list reveal">
-          <article class="project-row">
-            <h3 class="project-title">AI Email Automation</h3>
-            <p class="project-copy">Gmail workflow that classifies client inquiries, extracts details, creates reply drafts and sends Slack alerts.</p>
-            <div class="project-meta"><span class="pill orange">Gmail</span><span class="pill">OpenAI</span><span class="pill">n8n</span></div>
-          </article>
-          <article class="project-row">
-            <h3 class="project-title">Document Extraction</h3>
-            <p class="project-copy">Document workflow that extracts invoice and PDF fields into clean spreadsheet-ready output.</p>
-            <div class="project-meta"><span class="pill lime">PDF</span><span class="pill">AI</span><span class="pill">Sheets</span></div>
-          </article>
-          <article class="project-row">
-            <h3 class="project-title">Lead CRM Workflow</h3>
-            <p class="project-copy">AI lead qualification system that scores inquiries, updates sales records and triggers follow-up reminders.</p>
-            <div class="project-meta"><span class="pill orange">CRM</span><span class="pill">Lead Score</span><span class="pill">Slack</span></div>
-          </article>
-          <article class="project-row">
-            <h3 class="project-title">Shopify Operations</h3>
-            <p class="project-copy">E-commerce workflow for order sync, inventory monitoring, daily reports and low-stock notifications.</p>
-            <div class="project-meta"><span class="pill lime">Shopify</span><span class="pill">Inventory</span><span class="pill">Reports</span></div>
-          </article>
-        </div>
-
-        <div style="margin-top: 28px;" class="reveal">
-          <a class="btn btn-orange" href="work.html">Open Full Work Page</a>
         </div>
       </div>
     </section>
@@ -1112,91 +572,140 @@
       <div class="page hero-image-section reveal">
         <div class="hero-image-copy">
           <div>
-            <div class="section-label" style="color: #fff;">Hero Visual</div>
+            <div class="section-label" style="color:#fff;">Hero Automation Visual</div>
             <h2>Connected AI automation network.</h2>
-            <p>The hero image shows the core idea of the studio: n8n, OpenAI, Python, Gmail, Google Sheets, APIs and business tools connected into one automation system.</p>
+            <p>This visual explains the main studio idea: n8n, OpenAI, Python, Gmail, Google Sheets, APIs and business tools connected into one automated system.</p>
           </div>
-          <a class="btn" href="work.html">See Work</a>
+          <a class="btn" href="#n8n">See Systems</a>
         </div>
         <div class="big-image">
-          <img src="assets/hero-automation-visual.png" alt="Connected AI automation network hero image" />
+          <img src="assets/hero-automation-visual.png" alt="AI automation network dashboard visual" />
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="page">
-        <div class="section-head reveal">
+    <section class="portfolio-section" id="n8n">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
           <div>
-            <div class="section-label">Numbers</div>
-            <h2>Built for clean delivery and practical outcomes.</h2>
+            <div class="section-label">Work 01 / Core Automation</div>
+            <h2>n8n AI Workflow Automation</h2>
+            <p class="hero-copy">Custom n8n workflows that connect apps, APIs, webhooks and AI steps into reliable business automation systems.</p>
+            <div class="pills"><span class="pill orange">n8n</span><span class="pill">OpenAI</span><span class="pill">APIs</span><span class="pill">Webhooks</span></div>
           </div>
-          <p class="section-desc">Authority comes from clarity: clear workflow, clear output, clear handoff and systems that make sense after delivery.</p>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Multi-step workflow design</li><li>API, webhook and AI integrations</li><li>Google Sheets, CRM and Slack updates</li><li>Testing and workflow walkthrough</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Form to CRM automation</li><li>Data routing and team alerts</li><li>Report generation workflows</li><li>Internal operations automation</li></ul></div>
+          </div>
         </div>
-
-        <div class="stats-grid reveal">
-          <div class="stat-box"><strong>06</strong><span>Focused automation service areas</span></div>
-          <div class="stat-box"><strong>12</strong><span>Portfolio image slots across work page</span></div>
-          <div class="stat-box"><strong>05</strong><span>Step process from discovery to delivery</span></div>
-          <div class="stat-box"><strong>AI</strong><span>Used where it improves workflow output</span></div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/n8n-ai-workflow-01.png" alt="n8n AI workflow sample one" /><span class="asset-name">n8n-ai-workflow-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/n8n-ai-workflow-02.png" alt="n8n AI workflow sample two" /><span class="asset-name">n8n-ai-workflow-02.png</span></div>
         </div>
       </div>
     </section>
 
-    <section class="reviews-section" id="reviews">
-      <div class="page">
-        <div class="reviews-head reveal">
+    <section class="portfolio-section" id="email">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
           <div>
-            <div class="section-label">Client Feedback</div>
-            <h2>Reviews across workflow projects.</h2>
-            <p class="section-desc">Feedback from automation work across email, documents, CRM, Shopify, n8n and AI agent systems.</p>
+            <div class="section-label">Work 02 / Inbox Automation</div>
+            <h2>AI Email Automation</h2>
+            <p class="hero-copy">Inbox workflows that classify emails, extract useful details, create reply drafts, log data and notify the right team.</p>
+            <div class="pills"><span class="pill orange">Gmail</span><span class="pill">n8n</span><span class="pill">OpenAI</span><span class="pill">Sheets</span></div>
           </div>
-          <div class="review-controls">
-            <button class="review-btn" type="button" id="reviewPrev" aria-label="Previous reviews">←</button>
-            <button class="review-btn" type="button" id="reviewNext" aria-label="Next reviews">→</button>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Gmail or Outlook automation</li><li>AI classification and summaries</li><li>Reply draft generation</li><li>Slack, Sheets and CRM updates</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Client inquiry handling</li><li>Support email routing</li><li>Lead email qualification</li><li>Follow-up reminders</li></ul></div>
           </div>
         </div>
-
-        <div class="reviews-window reveal">
-          <div class="reviews-track" id="reviewsTrack">
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“Shazaib mapped our messy workflow clearly and rebuilt it into a clean n8n automation. The handoff was simple enough for our team to manage.”</p></div><div><div class="review-person"><b>Daniel Carter</b><span>Operations Manager, BrightPath Systems</span></div><div class="review-skill">n8n Workflow</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.9</span></div><p>“The automation connected our form submissions, Google Sheets and Slack alerts exactly the way we needed. It removed repeated admin work.”</p></div><div><div class="review-person"><b>Emily Foster</b><span>Founder, Northline Consulting</span></div><div class="review-skill">Google Sheets Automation</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.8</span></div><p>“He understood the tools quickly and created a workflow that was clean, documented and easy to test. The error handling was strong.”</p></div><div><div class="review-person"><b>Marcus Hill</b><span>Product Lead, ScaleBridge Labs</span></div><div class="review-skill">API Workflow</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“Our reporting workflow is much smoother now. Data moves automatically between tools and the team gets notified without manual checks.”</p></div><div><div class="review-person"><b>Rachel Kim</b><span>Business Analyst, VertexOps</span></div><div class="review-skill">Reporting Automation</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.9</span></div><p>“The Gmail automation classified client inquiries and saved the right details into our sheet. Inbox handling became much easier.”</p></div><div><div class="review-person"><b>Sarah Mitchell</b><span>Client Success Manager, Luma Services</span></div><div class="review-skill">AI Email Automation</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.7</span></div><p>“The reply draft workflow was useful. We still review messages before sending, but the first draft saves a lot of time.”</p></div><div><div class="review-person"><b>James Walker</b><span>Agency Owner, Walker Digital</span></div><div class="review-skill">Reply Drafts</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“We needed a way to identify urgent support emails. The workflow summarizes the issue, tags priority and sends an alert.”</p></div><div><div class="review-person"><b>Natalie Brooks</b><span>Support Lead, Helpwise Studio</span></div><div class="review-skill">Support Routing</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.8</span></div><p>“Long email threads are now turned into short summaries and action points. It made follow-ups clearer for our account team.”</p></div><div><div class="review-person"><b>Oliver Grant</b><span>Account Director, MavenWorks</span></div><div class="review-skill">Email Summary</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“The system extracts lead details from emails and saves them in our CRM format. The structure matched our sales process.”</p></div><div><div class="review-person"><b>Priya Shah</b><span>Sales Operations Specialist, OrbitEdge</span></div><div class="review-skill">CRM Automation</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.9</span></div><p>“Invoice data entry was taking too much time. The extraction workflow pulls the main fields and exports them into a clean spreadsheet.”</p></div><div><div class="review-person"><b>Michael Turner</b><span>Finance Coordinator, ClearLedger</span></div><div class="review-skill">Invoice Extraction</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.8</span></div><p>“The document workflow helped us process forms faster and reduced copy-paste mistakes. The sheet output was exactly what we needed.”</p></div><div><div class="review-person"><b>Amanda Lewis</b><span>Admin Manager, CarePoint Office</span></div><div class="review-skill">Forms to Sheets</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“He built a resume parsing workflow that extracted candidate details and organized them into a shortlist sheet.”</p></div><div><div class="review-person"><b>Hannah Reed</b><span>Recruitment Coordinator, TalentNest</span></div><div class="review-skill">Resume Parsing</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.9</span></div><p>“The lead qualification workflow helped us separate serious inquiries from general messages and create clean next-action reminders.”</p></div><div><div class="review-person"><b>Lucas Bennett</b><span>Sales Manager, Apex Growth Co.</span></div><div class="review-skill">Lead Scoring</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.8</span></div><p>“Leads now move from forms into HubSpot with a Slack alert when a high-intent inquiry comes in. Much cleaner than before.”</p></div><div><div class="review-person"><b>Isabella Morgan</b><span>Marketing Operations Lead, GrowthLane</span></div><div class="review-skill">HubSpot Workflow</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.7</span></div><p>“The Shopify workflow gave us a better view of daily orders and inventory changes. Low-stock alerts helped us catch issues early.”</p></div><div><div class="review-person"><b>Ryan Cole</b><span>E-commerce Manager, UrbanCart</span></div><div class="review-skill">Shopify Inventory</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">5.0</span></div><p>“We needed a lightweight research assistant workflow. It collects inputs, summarizes findings and sends a clean report to our workspace.”</p></div><div><div class="review-person"><b>Thomas Reed</b><span>Strategy Consultant, Signal Advisory</span></div><div class="review-skill">AI Research Agent</div></div></article>
-            <article class="review-card"><div><div class="review-top"><span class="stars">★★★★★</span><span class="rating">4.9</span></div><p>“The agent workflow was practical, not overcomplicated. It handled summarization, routing and output in a way our team could understand.”</p></div><div><div class="review-person"><b>Laura Stevens</b><span>Project Manager, InsightFlow</span></div><div class="review-skill">AI Agent Workflow</div></div></article>
-          </div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/ai-email-automation-01.png" alt="AI email automation sample one" /><span class="asset-name">ai-email-automation-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/ai-email-automation-02.png" alt="AI email automation sample two" /><span class="asset-name">ai-email-automation-02.png</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="process">
-      <div class="page">
-        <div class="section-head reveal">
+    <section class="portfolio-section" id="documents">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
           <div>
-            <div class="section-label">Process</div>
-            <h2>From workflow idea to working system.</h2>
+            <div class="section-label">Work 03 / Data Extraction</div>
+            <h2>AI Document & Data Extraction</h2>
+            <p class="hero-copy">Document workflows that turn PDFs, invoices, forms and resumes into clean structured data.</p>
+            <div class="pills"><span class="pill orange">PDF</span><span class="pill">Invoices</span><span class="pill">Excel</span><span class="pill">AI</span></div>
           </div>
-          <p class="section-desc">A clear delivery process keeps the project controlled, understandable and easy to manage after handoff.</p>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>PDF and invoice field extraction</li><li>AI summaries and field detection</li><li>Data cleanup and validation</li><li>Excel or Google Sheets export</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Invoice processing</li><li>Resume parsing</li><li>Form data extraction</li><li>Document-to-database workflows</li></ul></div>
+          </div>
         </div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/document-extraction-01.png" alt="Document extraction sample one" /><span class="asset-name">document-extraction-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/document-extraction-02.png" alt="Document extraction sample two" /><span class="asset-name">document-extraction-02.png</span></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="process-list reveal">
-          <div class="process-item"><div class="process-num">01</div><h3>Discover</h3><p>Understand your current manual process, tools, inputs, outputs and the exact action you want automated.</p></div>
-          <div class="process-item"><div class="process-num">02</div><h3>Map</h3><p>Convert the process into triggers, conditions, AI steps, integrations and final outputs before building.</p></div>
-          <div class="process-item"><div class="process-num">03</div><h3>Build</h3><p>Create the workflow using n8n, Python, OpenAI, APIs and the business tools needed for the system.</p></div>
-          <div class="process-item"><div class="process-num">04</div><h3>Test</h3><p>Run realistic test cases, check edge cases and make sure the workflow creates the expected result.</p></div>
-          <div class="process-item"><div class="process-num">05</div><h3>Deliver</h3><p>Provide the workflow, explain how it works and give a clear handoff so you can use it confidently.</p></div>
+    <section class="portfolio-section" id="crm">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
+          <div>
+            <div class="section-label">Work 04 / Sales Operations</div>
+            <h2>Lead & CRM Automation</h2>
+            <p class="hero-copy">Lead workflows that capture inquiries, qualify them with AI and move clean data into sales tools.</p>
+            <div class="pills"><span class="pill orange">CRM</span><span class="pill">Lead Score</span><span class="pill">Slack</span><span class="pill">Follow-up</span></div>
+          </div>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Lead capture from forms or email</li><li>AI lead scoring and category detection</li><li>CRM, Sheets or Airtable updates</li><li>Sales alerts and follow-up reminders</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Agency lead routing</li><li>B2B inquiry management</li><li>Sales pipeline updates</li><li>High-intent lead alerts</li></ul></div>
+          </div>
+        </div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/lead-crm-automation-01.png" alt="Lead CRM automation sample one" /><span class="asset-name">lead-crm-automation-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/lead-crm-automation-02.png" alt="Lead CRM automation sample two" /><span class="asset-name">lead-crm-automation-02.png</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="shopify">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
+          <div>
+            <div class="section-label">Work 05 / E-commerce</div>
+            <h2>Shopify / E-commerce Automation</h2>
+            <p class="hero-copy">E-commerce workflows that connect orders, inventory, reports and alerts to reduce manual store operations.</p>
+            <div class="pills"><span class="pill orange">Shopify</span><span class="pill">Inventory</span><span class="pill">Reports</span><span class="pill">Alerts</span></div>
+          </div>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Order sync to Sheets or Airtable</li><li>Low-stock alert workflows</li><li>Daily sales reports</li><li>Supplier and team notifications</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Inventory monitoring</li><li>Order operation tracking</li><li>Product data syncing</li><li>Store performance reports</li></ul></div>
+          </div>
+        </div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/shopify-automation-01.png" alt="Shopify automation sample one" /><span class="asset-name">shopify-automation-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/shopify-automation-02.png" alt="Shopify automation sample two" /><span class="asset-name">shopify-automation-02.png</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="agents">
+      <div class="page portfolio-card reveal">
+        <div class="portfolio-header">
+          <div>
+            <div class="section-label">Work 06 / AI Agents</div>
+            <h2>AI Agent Workflows</h2>
+            <p class="hero-copy">Task-specific AI agents for research, summarization, routing, reporting and multi-step business operations.</p>
+            <div class="pills"><span class="pill orange">AI Agents</span><span class="pill">CrewAI</span><span class="pill">LangGraph</span><span class="pill">Reports</span></div>
+          </div>
+          <div class="details-grid">
+            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Research and report agents</li><li>AI routing and decision logic</li><li>CrewAI or LangGraph workflows</li><li>Outputs to docs, sheets, CRM or alerts</li></ul></div>
+            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Market research summaries</li><li>Internal business assistants</li><li>Document review workflows</li><li>Multi-step AI task execution</li></ul></div>
+          </div>
+        </div>
+        <div class="portfolio-images">
+          <div class="portfolio-image"><img src="assets/ai-agent-workflow-01.png" alt="AI agent workflow sample one" /><span class="asset-name">ai-agent-workflow-01.png</span></div>
+          <div class="portfolio-image"><img src="assets/ai-agent-workflow-02.png" alt="AI agent workflow sample two" /><span class="asset-name">ai-agent-workflow-02.png</span></div>
         </div>
       </div>
     </section>
@@ -1208,7 +717,7 @@
           <h2>Have a workflow you want to automate?</h2>
           <p>Send your current process, tools and desired output. I’ll help map the best automation setup before building.</p>
         </div>
-        <a class="btn btn-orange" href="mailto:shazaibsolutions@gmail.com">Contact Shazaib</a>
+        <a class="btn btn-orange" href="mailto:shazaibsolutions@gmail.com?subject=AI%20Automation%20Project%20Inquiry&body=Hi%20Shazaib%2C%0A%0AI%20want%20to%20discuss%20an%20automation%20workflow%20for%20my%20business.%0A%0AMy%20current%20process%3A%0ATools%20I%20use%3A%0AWhat%20I%20want%20to%20automate%3A%0A%0AThanks.">Contact Shazaib</a>
       </div>
     </section>
   </main>
@@ -1216,7 +725,7 @@
   <footer>
     <div class="page footer-inner">
       <span>© <span id="year"></span> Shazaib AI Studio</span>
-      <span>AI Workflow Automation • n8n • Python • OpenAI</span>
+      <span>Portfolio • AI Workflow Automation • n8n • Python • OpenAI</span>
     </div>
   </footer>
 
@@ -1230,43 +739,6 @@
       });
     }, { threshold: 0.12 });
     revealItems.forEach((item) => observer.observe(item));
-
-    const track = document.getElementById("reviewsTrack");
-    const prev = document.getElementById("reviewPrev");
-    const next = document.getElementById("reviewNext");
-    let index = 0;
-
-    function perView() {
-      if (window.innerWidth <= 700) return 1;
-      if (window.innerWidth <= 980) return 2;
-      return 3;
-    }
-
-    function updateCarousel() {
-      if (!track || !track.children.length) return;
-      const max = Math.max(0, track.children.length - perView());
-      index = Math.min(Math.max(index, 0), max);
-      const gap = 18;
-      const step = track.children[0].offsetWidth + gap;
-      track.style.transform = `translateX(-${index * step}px)`;
-    }
-
-    if (track && prev && next) {
-      next.addEventListener("click", () => {
-        const max = Math.max(0, track.children.length - perView());
-        index = index >= max ? 0 : index + 1;
-        updateCarousel();
-      });
-
-      prev.addEventListener("click", () => {
-        const max = Math.max(0, track.children.length - perView());
-        index = index <= 0 ? max : index - 1;
-        updateCarousel();
-      });
-
-      window.addEventListener("resize", updateCarousel);
-      updateCarousel();
-    }
   </script>
 </body>
 </html>
