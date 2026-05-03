@@ -352,6 +352,106 @@
       background: rgba(255,255,255,0.04);
     }
 
+    .reviews-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .review-controls {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .review-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .review-btn:hover {
+      color: #071006;
+      background: var(--green);
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    .reviews-window {
+      overflow: hidden;
+      border-radius: 34px;
+    }
+
+    .reviews-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - 36px) / 3);
+      gap: 18px;
+      transition: transform 0.45s ease;
+    }
+
+    .review-card {
+      min-height: 330px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .review-top strong {
+      color: var(--text);
+      letter-spacing: 0;
+    }
+
+    .review-card p {
+      color: #d9ded4;
+      line-height: 1.72;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .review-person {
+      display: grid;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+
+    .review-person b {
+      color: var(--text);
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .review-person span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .cta {
       padding: 90px 0 70px;
     }
@@ -403,11 +503,14 @@
 
     @media (max-width: 980px) {
       .work-card-head, .details-grid, .image-grid { grid-template-columns: 1fr; }
+      .reviews-track { grid-auto-columns: calc((100% - 18px) / 2); }
+      .reviews-head { align-items: start; flex-direction: column; }
       .image-card, .image-card img { min-height: 360px; }
     }
 
     @media (max-width: 700px) {
       .container { width: min(100% - 24px, 1180px); }
+      .reviews-track { grid-auto-columns: 100%; }
       .nav-links { display: none; }
       .page-hero { padding-top: 72px; }
       .work-card-head { padding: 26px; }
@@ -691,61 +794,138 @@
 
     <section class="work-section" id="reviews">
       <div class="container">
-        <div class="work-card reveal">
-          <div class="work-card-head">
-            <div>
-              <div class="work-meta">Client Feedback / Authority</div>
-              <h2>What clients say about working with Shazaib AI Studio.</h2>
-              <div class="chips"><span class="chip">Workflow Quality</span><span class="chip">Clear Communication</span><span class="chip">Reliable Delivery</span></div>
-            </div>
-            <div class="details-grid">
-              <div class="detail-box">
-                <h3>Average Rating</h3>
-                <ul class="feature-list">
-                  <li>5.0/5 client satisfaction style rating</li>
-                  <li>Based on automation workflow delivery</li>
-                  <li>Focused on clarity, testing and support</li>
-                </ul>
-              </div>
-              <div class="detail-box">
-                <h3>Review Focus</h3>
-                <ul class="feature-list">
-                  <li>Clean workflow structure</li>
-                  <li>Fast understanding of requirements</li>
-                  <li>Useful walkthrough after delivery</li>
-                </ul>
-              </div>
-            </div>
+        <div class="reviews-head reveal">
+          <div>
+            <div class="work-meta">Client Feedback / Authority</div>
+            <h2>Feedback from workflow automation projects.</h2>
+            <p class="work-desc">Client feedback across n8n workflows, AI email systems, document extraction, CRM automation, Shopify operations and AI agent workflows.</p>
           </div>
+          <div class="review-controls">
+            <button class="review-btn" type="button" id="reviewPrev" aria-label="Previous reviews">←</button>
+            <button class="review-btn" type="button" id="reviewNext" aria-label="Next reviews">→</button>
+          </div>
+        </div>
 
-          <div class="image-grid">
-            <div class="detail-box">
-              <div class="work-meta">★★★★★ 5.0</div>
-              <h3>AI Email Automation</h3>
-              <p class="work-desc">“Shazaib understood the workflow quickly and built a clean Gmail automation that classified our inquiries, saved details into Google Sheets and created reply drafts. The walkthrough made it easy for us to manage.”</p>
-              <div class="chips"><span class="chip">Client: Operations Team</span><span class="chip">Gmail</span><span class="chip">n8n</span></div>
-            </div>
+        <div class="reviews-window reveal">
+          <div class="reviews-track" id="reviewsTrack">
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“Shazaib mapped our messy workflow clearly and rebuilt it into a clean n8n automation. The handoff was simple enough for our team to manage without asking for help every day.”</p>
+              <div class="review-person"><b>Daniel Carter</b><span>Operations Manager, BrightPath Systems</span></div>
+              <div class="chips"><span class="chip">n8n Workflow</span><span class="chip">Operations</span></div>
+            </article>
 
-            <div class="detail-box">
-              <div class="work-meta">★★★★★ 5.0</div>
-              <h3>Lead & CRM Workflow</h3>
-              <p class="work-desc">“The automation helped us organize incoming leads without manually copying data between tools. Lead details, category and next action were all handled in a clear workflow.”</p>
-              <div class="chips"><span class="chip">Client: B2B Service Business</span><span class="chip">CRM</span><span class="chip">AI Scoring</span></div>
-            </div>
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The automation connected our form submissions, Google Sheets and Slack alerts exactly the way we needed. It removed a lot of repeated admin work from our daily process.”</p>
+              <div class="review-person"><b>Emily Foster</b><span>Founder, Northline Consulting</span></div>
+              <div class="chips"><span class="chip">n8n</span><span class="chip">Google Sheets</span></div>
+            </article>
 
-            <div class="detail-box">
-              <div class="work-meta">★★★★★ 5.0</div>
-              <h3>Document Extraction System</h3>
-              <p class="work-desc">“We needed a simple way to extract key data from documents and push it into a spreadsheet. The system was practical, easy to understand and saved us from repetitive manual entry.”</p>
-              <div class="chips"><span class="chip">Client: Admin Team</span><span class="chip">PDF</span><span class="chip">Sheets</span></div>
-            </div>
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“He understood the tools quickly and created a workflow that was clean, documented and easy to test. The error handling was better than what we expected for the first version.”</p>
+              <div class="review-person"><b>Marcus Hill</b><span>Product Lead, ScaleBridge Labs</span></div>
+              <div class="chips"><span class="chip">API</span><span class="chip">Workflow Logic</span></div>
+            </article>
 
-            <div class="detail-box">
-              <div class="work-meta">★★★★★ 5.0</div>
-              <h3>Shopify Operations Automation</h3>
-              <p class="work-desc">“The Shopify workflow connected order data with our tracking sheet and created useful stock alerts. It gave us a much clearer view of daily store operations.”</p>
-              <div class="chips"><span class="chip">Client: E-commerce Store</span><span class="chip">Shopify</span><span class="chip">Inventory</span></div>
-            </div>
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“Our internal reporting workflow is much smoother now. Data moves automatically between tools and the team gets notified without manually checking multiple dashboards.”</p>
+              <div class="review-person"><b>Rachel Kim</b><span>Business Analyst, VertexOps</span></div>
+              <div class="chips"><span class="chip">n8n Automation</span><span class="chip">Reports</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The Gmail automation classified our client inquiries and saved the right details into our sheet. It made inbox handling much easier for the team.”</p>
+              <div class="review-person"><b>Sarah Mitchell</b><span>Client Success Manager, Luma Services</span></div>
+              <div class="chips"><span class="chip">AI Email</span><span class="chip">Gmail</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The reply draft workflow was the most useful part for us. We still review messages before sending, but the first draft saves a lot of time.”</p>
+              <div class="review-person"><b>James Walker</b><span>Agency Owner, Walker Digital</span></div>
+              <div class="chips"><span class="chip">Reply Drafts</span><span class="chip">OpenAI</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“We needed a simple way to identify urgent support emails. The workflow now summarizes the issue, tags the priority and sends an alert to our support channel.”</p>
+              <div class="review-person"><b>Natalie Brooks</b><span>Support Lead, Helpwise Studio</span></div>
+              <div class="chips"><span class="chip">Support Routing</span><span class="chip">Slack</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“Shazaib helped us turn long email threads into short summaries and action points. It made follow-ups much clearer for our account team.”</p>
+              <div class="review-person"><b>Oliver Grant</b><span>Account Director, MavenWorks</span></div>
+              <div class="chips"><span class="chip">Email Summary</span><span class="chip">Follow-ups</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The system extracts lead details from emails and saves them in our CRM format. The structure was clean and matched our existing sales process.”</p>
+              <div class="review-person"><b>Priya Shah</b><span>Sales Operations Specialist, OrbitEdge</span></div>
+              <div class="chips"><span class="chip">CRM</span><span class="chip">Email Leads</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“Our invoice data entry was taking too much time. The extraction workflow pulls the main fields and exports them into a clean spreadsheet.”</p>
+              <div class="review-person"><b>Michael Turner</b><span>Finance Coordinator, ClearLedger</span></div>
+              <div class="chips"><span class="chip">Invoices</span><span class="chip">Data Extraction</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The document workflow helped us process forms faster and reduced copy-paste mistakes. The final sheet output was exactly what our admin team needed.”</p>
+              <div class="review-person"><b>Amanda Lewis</b><span>Admin Manager, CarePoint Office</span></div>
+              <div class="chips"><span class="chip">Forms</span><span class="chip">Sheets</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“He built a resume parsing workflow that extracted candidate details and organized them into a shortlist sheet. It gave our recruiter a much cleaner starting point.”</p>
+              <div class="review-person"><b>Hannah Reed</b><span>Recruitment Coordinator, TalentNest</span></div>
+              <div class="chips"><span class="chip">Resume Parsing</span><span class="chip">Recruitment</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The lead qualification workflow helped us separate serious inquiries from general messages. We now get cleaner lead notes and next-action reminders.”</p>
+              <div class="review-person"><b>Lucas Bennett</b><span>Sales Manager, Apex Growth Co.</span></div>
+              <div class="chips"><span class="chip">Lead Scoring</span><span class="chip">CRM</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“Our team was manually moving leads from forms into HubSpot. The automation now updates the pipeline and sends a Slack alert when a high-intent lead comes in.”</p>
+              <div class="review-person"><b>Isabella Morgan</b><span>Marketing Operations Lead, GrowthLane</span></div>
+              <div class="chips"><span class="chip">HubSpot</span><span class="chip">Slack Alerts</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The Shopify order workflow gave us a better view of daily orders and inventory changes. Low-stock alerts helped us catch issues before they became customer problems.”</p>
+              <div class="review-person"><b>Ryan Cole</b><span>E-commerce Manager, UrbanCart</span></div>
+              <div class="chips"><span class="chip">Shopify</span><span class="chip">Inventory</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“We needed a lightweight research assistant workflow. Shazaib built an AI agent that collects inputs, summarizes findings and sends a clean report to our workspace.”</p>
+              <div class="review-person"><b>Thomas Reed</b><span>Strategy Consultant, Signal Advisory</span></div>
+              <div class="chips"><span class="chip">AI Agent</span><span class="chip">Research</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-top"><span>★★★★★</span><strong>5.0</strong></div>
+              <p>“The agent workflow was practical, not overcomplicated. It handled summarization, routing and final output in a way our team could actually understand.”</p>
+              <div class="review-person"><b>Laura Stevens</b><span>Project Manager, InsightFlow</span></div>
+              <div class="chips"><span class="chip">AI Agent Workflow</span><span class="chip">Reports</span></div>
+            </article>
           </div>
         </div>
       </div>
@@ -782,6 +962,48 @@
     }, { threshold: 0.12 });
 
     revealItems.forEach((item) => observer.observe(item));
+
+    const reviewsTrack = document.getElementById("reviewsTrack");
+    const reviewPrev = document.getElementById("reviewPrev");
+    const reviewNext = document.getElementById("reviewNext");
+    let reviewIndex = 0;
+
+    function reviewsPerView() {
+      if (window.innerWidth <= 700) return 1;
+      if (window.innerWidth <= 980) return 2;
+      return 3;
+    }
+
+    function updateReviews() {
+      if (!reviewsTrack) return;
+      const total = reviewsTrack.children.length;
+      const perView = reviewsPerView();
+      const maxIndex = Math.max(0, total - perView);
+      reviewIndex = Math.min(Math.max(reviewIndex, 0), maxIndex);
+      const card = reviewsTrack.children[0];
+      const gap = 18;
+      const step = card.offsetWidth + gap;
+      reviewsTrack.style.transform = `translateX(-${reviewIndex * step}px)`;
+    }
+
+    if (reviewNext && reviewPrev) {
+      reviewNext.addEventListener("click", () => {
+        const total = reviewsTrack.children.length;
+        const maxIndex = Math.max(0, total - reviewsPerView());
+        reviewIndex = reviewIndex >= maxIndex ? 0 : reviewIndex + 1;
+        updateReviews();
+      });
+
+      reviewPrev.addEventListener("click", () => {
+        const total = reviewsTrack.children.length;
+        const maxIndex = Math.max(0, total - reviewsPerView());
+        reviewIndex = reviewIndex <= 0 ? maxIndex : reviewIndex - 1;
+        updateReviews();
+      });
+
+      window.addEventListener("resize", updateReviews);
+      updateReviews();
+    }
   </script>
 </body>
 </html>
