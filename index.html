@@ -463,6 +463,131 @@
     .pill.orange { background: var(--orange); color: var(--white); border-color: var(--orange); }
     .pill.lime { background: var(--lime); color: var(--black); border-color: var(--lime); }
 
+
+
+    .reviews-section {
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .reviews-wrap {
+      display: grid;
+      gap: 28px;
+    }
+
+    .reviews-top {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .reviews-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .review-nav {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .review-nav:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .reviews-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 18px;
+      transition: transform 0.45s ease;
+      will-change: transform;
+    }
+
+    .review-card {
+      flex: 0 0 calc((100% - 36px) / 3);
+      min-width: calc((100% - 36px) / 3);
+      background: var(--white);
+      color: var(--black);
+      border: 1px solid #e8e8e8;
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+      min-height: 290px;
+    }
+
+    .review-rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .review-stars {
+      color: var(--orange);
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .review-score {
+      color: #444;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .review-text {
+      color: #303030;
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .review-person {
+      padding-top: 14px;
+      border-top: 1px solid #e7e7e7;
+      display: grid;
+      gap: 4px;
+    }
+
+    .review-person strong {
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .review-role {
+      color: #555;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+    }
+
+    .review-meta {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
     .cta-section { padding: 100px 0; }
 
     .contact-panel {
@@ -626,7 +751,9 @@
       .section-head,
       .hero-image-section,
       .portfolio-header,
+      .reviews-top,
       .cta-box { grid-template-columns: 1fr; }
+      .review-card { flex-basis: calc((100% - 18px) / 2); min-width: calc((100% - 18px) / 2); }
       .details-grid { grid-template-columns: 1fr; }
     }
 
@@ -635,6 +762,8 @@
       .nav-links { display: none; }
       .hero-blocks,
       .portfolio-images { grid-template-columns: 1fr; }
+      .reviews-controls { justify-content: flex-start; }
+      .review-card { flex-basis: 100%; min-width: 100%; min-height: 0; }
       .profile-visual,
       .profile-visual img,
       .big-image,
@@ -843,6 +972,144 @@
       </div>
     </section>
 
+
+
+    <section class="reviews-section" id="reviews">
+      <div class="page reviews-wrap reveal">
+        <div class="reviews-top">
+          <div>
+            <div class="section-label">Feedback / Workflow Highlights</div>
+            <h2>What teams value in these automation systems.</h2>
+          </div>
+          <div>
+            <p class="section-desc">A carousel of workflow feedback highlights covering AI automation, Google Sheets systems, CRM routing, document extraction, support automation and Shopify operations.</p>
+            <div class="reviews-controls" aria-label="Review carousel controls">
+              <button class="review-nav" id="reviewsPrev" type="button" aria-label="Previous reviews">&#8592;</button>
+              <button class="review-nav" id="reviewsNext" type="button" aria-label="Next reviews">&#8594;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-viewport" aria-live="polite">
+          <div class="reviews-track" id="reviewsTrack">
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.9 / 5.0</div></div>
+              <p class="review-text">The Google Sheets and CRM workflow removed a lot of repetitive manual updates from our lead process. Everything was structured clearly and the automation made day-to-day follow-up much easier for our team.</p>
+              <div class="review-person"><strong>Operations Lead</strong><span class="review-role">B2B Services Team</span><span class="review-meta">Lead &amp; CRM Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">5.0 / 5.0</div></div>
+              <p class="review-text">Our support tickets were being handled in too many places before. The workflow helped us log tickets, summarize them with AI and route the right issue to the right person without confusion.</p>
+              <div class="review-person"><strong>Support Manager</strong><span class="review-role">SaaS Operations Team</span><span class="review-meta">Support Ticket Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.7 / 5.0</div></div>
+              <p class="review-text">The document extraction setup saved us time on invoice handling and sheet entry. Data came out in a cleaner format and the workflow was easier for our staff to review than our old manual process.</p>
+              <div class="review-person"><strong>Finance Coordinator</strong><span class="review-role">Accounts Processing Team</span><span class="review-meta">AI Document Extraction</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.8 / 5.0</div></div>
+              <p class="review-text">The email automation was set up in a practical way and focused on actual workflow needs, not just flashy AI. It helped us organize inquiries, classify messages and keep our team updated faster.</p>
+              <div class="review-person"><strong>Client Success Lead</strong><span class="review-role">Digital Agency Team</span><span class="review-meta">AI Email Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">5.0 / 5.0</div></div>
+              <p class="review-text">The Shopify inventory workflow gave us a much clearer view of product movement and low-stock alerts. It connected our sheet tracking with store activity and reduced the back-and-forth for our team.</p>
+              <div class="review-person"><strong>E-commerce Operations Lead</strong><span class="review-role">Retail Workflow Team</span><span class="review-meta">Shopify Inventory Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.6 / 5.0</div></div>
+              <p class="review-text">We needed an internal workflow that could move form data into sheets, score leads and notify the team. The final setup was clean and practical and matched our process well.</p>
+              <div class="review-person"><strong>Growth Coordinator</strong><span class="review-role">Marketing Operations Team</span><span class="review-meta">Lead Qualification Workflow</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.9 / 5.0</div></div>
+              <p class="review-text">The automation logic was explained clearly and the workflow was easy for our team to understand after delivery. It felt like a system built around real use, not a template copied from somewhere else.</p>
+              <div class="review-person"><strong>Project Coordinator</strong><span class="review-role">Operations Improvement Team</span><span class="review-meta">n8n Workflow Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.8 / 5.0</div></div>
+              <p class="review-text">The AI document workflow helped us structure resume and intake data more efficiently. It reduced manual review time and made it easier to move important details into our tracking sheet.</p>
+              <div class="review-person"><strong>Recruitment Coordinator</strong><span class="review-role">Hiring Support Team</span><span class="review-meta">Resume &amp; Data Extraction</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.7 / 5.0</div></div>
+              <p class="review-text">Our Slack notifications and CRM tasks now happen in a more organized way. The workflow made internal handoff smoother and gave us better visibility into the next action for each lead.</p>
+              <div class="review-person"><strong>Sales Operations Specialist</strong><span class="review-role">Pipeline Management Team</span><span class="review-meta">CRM Routing Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">5.0 / 5.0</div></div>
+              <p class="review-text">The multi-step AI agent workflow was useful for turning unstructured tasks into a repeatable process. It was especially helpful for summarization and routing tasks that used to depend on manual review.</p>
+              <div class="review-person"><strong>Research Operations Lead</strong><span class="review-role">Internal Strategy Team</span><span class="review-meta">AI Agent Workflows</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.8 / 5.0</div></div>
+              <p class="review-text">We liked that the automation was connected directly to the tools we already used. The Google Sheets, Gmail and AI pieces worked together in a way that felt practical for day-to-day work.</p>
+              <div class="review-person"><strong>Workflow Analyst</strong><span class="review-role">Process Improvement Team</span><span class="review-meta">Sheets + Gmail Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.9 / 5.0</div></div>
+              <p class="review-text">The setup for handling inbound form responses was much cleaner than our earlier process. Data moved into sheets properly, AI checks were useful and our team stopped missing key follow-ups.</p>
+              <div class="review-person"><strong>Inbound Operations Manager</strong><span class="review-role">Lead Handling Team</span><span class="review-meta">Form to CRM Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.6 / 5.0</div></div>
+              <p class="review-text">The workflow made it easier to keep our support process consistent. Ticket information was logged clearly, AI summaries were useful and the team no longer had to rewrite the same internal notes.</p>
+              <div class="review-person"><strong>Service Operations Lead</strong><span class="review-role">Customer Support Team</span><span class="review-meta">AI Ticket Handling</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">5.0 / 5.0</div></div>
+              <p class="review-text">Inventory tracking became far more usable after the workflow connected product changes, sheet updates and alert logic in one place. The result felt organized and suitable for real operational use.</p>
+              <div class="review-person"><strong>Store Operations Coordinator</strong><span class="review-role">E-commerce Inventory Team</span><span class="review-meta">Inventory Sync Workflow</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.7 / 5.0</div></div>
+              <p class="review-text">The project focused on workflow clarity first, which mattered a lot to us. The system was understandable, well-structured and didn’t feel overcomplicated for the people actually using it.</p>
+              <div class="review-person"><strong>Operations Administrator</strong><span class="review-role">Internal Systems Team</span><span class="review-meta">Business Workflow Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.9 / 5.0</div></div>
+              <p class="review-text">The document-to-sheet workflow gave us more consistency in how data was captured from files. It also reduced the amount of checking we needed to do before using the information downstream.</p>
+              <div class="review-person"><strong>Data Processing Lead</strong><span class="review-role">Documentation Team</span><span class="review-meta">AI Extraction Pipeline</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">4.8 / 5.0</div></div>
+              <p class="review-text">The email and inquiry routing workflow helped our team respond in a more organized way. We were able to reduce confusion around who should handle what and which messages mattered most.</p>
+              <div class="review-person"><strong>Communications Manager</strong><span class="review-role">Client Response Team</span><span class="review-meta">Inbox Automation</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★☆</div><div class="review-score">4.7 / 5.0</div></div>
+              <p class="review-text">We needed an automation that connected multiple steps without becoming difficult to maintain. The final workflow was reliable, neatly structured and useful for both operations and reporting.</p>
+              <div class="review-person"><strong>Systems Coordinator</strong><span class="review-role">Workflow Delivery Team</span><span class="review-meta">n8n + AI Integrations</span></div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating-row"><div class="review-stars">★★★★★</div><div class="review-score">5.0 / 5.0</div></div>
+              <p class="review-text">The AI routing setup helped us sort tasks faster and gave our team a better process for follow-up. It was especially useful where we had repeated steps that previously depended on manual checks.</p>
+              <div class="review-person"><strong>Automation Lead</strong><span class="review-role">Business Systems Team</span><span class="review-meta">AI Routing Workflow</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-section" id="contact">
       <div class="page contact-panel reveal">
         <div class="contact-copy">
@@ -945,6 +1212,54 @@
         window.location.href = link.href;
       });
     });
+
+    const reviewsTrack = document.getElementById("reviewsTrack");
+    const reviewsPrev = document.getElementById("reviewsPrev");
+    const reviewsNext = document.getElementById("reviewsNext");
+
+    if (reviewsTrack && reviewsPrev && reviewsNext) {
+      const reviewCards = Array.from(reviewsTrack.children);
+      let currentIndex = 0;
+      let perView = window.innerWidth <= 700 ? 1 : window.innerWidth <= 980 ? 2 : 3;
+
+      function getCardStep() {
+        if (!reviewCards.length) return 0;
+        const gap = 18;
+        return reviewCards[0].getBoundingClientRect().width + gap;
+      }
+
+      function clampIndex() {
+        const maxIndex = Math.max(0, reviewCards.length - perView);
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        if (currentIndex < 0) currentIndex = 0;
+        return maxIndex;
+      }
+
+      function updateReviewCarousel() {
+        perView = window.innerWidth <= 700 ? 1 : window.innerWidth <= 980 ? 2 : 3;
+        const maxIndex = clampIndex();
+        reviewsTrack.style.transform = `translateX(-${currentIndex * getCardStep()}px)`;
+        reviewsPrev.disabled = currentIndex === 0;
+        reviewsNext.disabled = currentIndex >= maxIndex;
+        reviewsPrev.style.opacity = currentIndex === 0 ? '0.45' : '1';
+        reviewsNext.style.opacity = currentIndex >= maxIndex ? '0.45' : '1';
+        reviewsPrev.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+        reviewsNext.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+      }
+
+      reviewsPrev.addEventListener("click", () => {
+        currentIndex -= 1;
+        updateReviewCarousel();
+      });
+
+      reviewsNext.addEventListener("click", () => {
+        currentIndex += 1;
+        updateReviewCarousel();
+      });
+
+      window.addEventListener("resize", updateReviewCarousel);
+      updateReviewCarousel();
+    }
   </script>
 </body>
 </html>
