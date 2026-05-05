@@ -422,7 +422,7 @@
       display: block;
       border: 1px solid var(--line);
       background: #050505;
-      min-height: 420px;
+      min-height: 340px;
       overflow: hidden;
       position: relative;
       cursor: zoom-in;
@@ -438,7 +438,7 @@
     .portfolio-image img {
       width: 100%;
       height: 100%;
-      min-height: 420px;
+      min-height: 340px;
       object-fit: contain;
       background: #050505;
     }
@@ -588,6 +588,101 @@
       line-height: 1.5;
     }
 
+
+    .pricing-section {
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--line);
+      background: #050505;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 420px;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 1px rgba(255, 87, 34, 0.35) inset;
+    }
+
+    .pricing-card-top {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pricing-kicker {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .pricing-card h3 {
+      font-size: 28px;
+      line-height: 0.98;
+    }
+
+    .price-range {
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--lime);
+    }
+
+    .pricing-copy {
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .pricing-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      color: var(--gray-2);
+      font-size: 13px;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    .pricing-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .pricing-list li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      flex: 0 0 auto;
+      margin-top: 6px;
+    }
+
+    .pricing-note {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      padding: 18px;
+      color: var(--gray-2);
+      font-size: 13px;
+      line-height: 1.65;
+      background: #050505;
+    }
+
     .cta-section { padding: 100px 0; }
 
     .contact-panel {
@@ -607,7 +702,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 420px;
+      min-height: 340px;
     }
 
     .contact-copy p {
@@ -642,7 +737,7 @@
       border: 1px solid var(--line);
       padding: 32px;
       background: #050505;
-      min-height: 420px;
+      min-height: 340px;
       display: grid;
       gap: 18px;
     }
@@ -752,6 +847,7 @@
       .hero-image-section,
       .portfolio-header,
       .reviews-top,
+      .pricing-grid,
       .cta-box { grid-template-columns: 1fr; }
       .review-card { flex-basis: calc((100% - 18px) / 2); min-width: calc((100% - 18px) / 2); }
       .details-grid { grid-template-columns: 1fr; }
@@ -789,7 +885,8 @@
         <a href="index.html">Home</a>
         <a class="active" href="work.html">Work</a>
         <a href="index.html#services">Services</a>
-        <a href="index.html#reviews">Reviews</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -802,9 +899,9 @@
       <div class="page hero-grid">
         <div class="reveal">
           <div class="eyebrow">Portfolio Work</div>
-          <h1>Previous work & <span class="orange-text">automation</span> systems.</h1>
+          <h1>AI workflow <span class="orange-text">automation</span> systems.</h1>
           <p class="hero-copy">
-            A detailed work page for Shazaib AI Studio. Here you can showcase project images, workflow screens, results and the services behind each automation system.
+            A focused portfolio of backend automation workflows built around Google Sheets, CRMs, email, Shopify, n8n, Python, OpenAI and business operations.
           </p>
 
           <div class="hero-actions">
@@ -813,8 +910,8 @@
           </div>
 
           <div class="hero-blocks">
-            <div class="info-block info-orange"><span>Work Page</span><strong>Detailed portfolio showcase</strong></div>
-            <div class="info-block info-lime"><span>Image Slots</span><strong>2 visuals per skill</strong></div>
+            <div class="info-block info-orange"><span>Focus</span><strong>White-label workflow delivery</strong></div>
+            <div class="info-block info-lime"><span>Systems</span><strong>CRM, Sheets, email & Shopify</strong></div>
           </div>
         </div>
 
@@ -823,8 +920,8 @@
             <img src="assets/shazaib-profile.png" alt="" />
             <div class="profile-note">
               <div class="profile-note-inner">
-                <h3>Shazaib AI Studio</h3>
-                <p>AI workflow automation, n8n systems, Python logic and business tool integrations.</p>
+                <h3>Shazaib Ali</h3>
+                <p>AI workflow automation specialist building n8n, Python and OpenAI systems for business operations.</p>
               </div>
             </div>
           </div>
@@ -836,11 +933,11 @@
       <div class="page hero-image-section reveal">
         <div class="hero-image-copy">
           <div>
-            <div class="section-label" style="color:#fff;">Hero Automation Visual</div>
-            <h2>Connected AI automation network.</h2>
-            <p>This visual explains the main studio idea: n8n, OpenAI, Python, Gmail, Google Sheets, APIs and business tools connected into one automated system.</p>
+            <div class="section-label" style="color:#fff;">Automation System Map</div>
+            <h2>Connected workflow infrastructure.</h2>
+            <p>A visual overview of how forms, inboxes, spreadsheets, CRMs, APIs and AI steps can connect into one reliable business workflow.</p>
           </div>
-          <a class="btn" href="#n8n">See Systems</a>
+          <a class="btn" href="#n8n">View Workflows</a>
         </div>
         <a class="big-image image-open" href="assets/hero-automation-visual.png"><img src="assets/hero-automation-visual.png" alt="" /></a>
       </div>
@@ -850,9 +947,9 @@
       <div class="page portfolio-card reveal">
         <div class="portfolio-header">
           <div>
-            <div class="section-label">Work 01 / Core Automation</div>
-            <h2>n8n AI Workflow Automation</h2>
-            <p class="hero-copy">Custom n8n workflows that connect apps, APIs, webhooks and AI steps into reliable business automation systems.</p>
+            <div class="section-label">Work 01 / Workflow Infrastructure</div>
+            <h2>n8n Workflow Automation</h2>
+            <p class="hero-copy">Backend workflows that connect forms, sheets, CRMs, APIs, email tools and AI steps into one reliable automation system.</p>
             <div class="pills"><span class="pill orange">n8n</span><span class="pill">OpenAI</span><span class="pill">APIs</span><span class="pill">Webhooks</span></div>
           </div>
           <div class="details-grid">
@@ -888,32 +985,12 @@
       </div>
     </section>
 
-    <section class="portfolio-section" id="documents">
-      <div class="page portfolio-card reveal">
-        <div class="portfolio-header">
-          <div>
-            <div class="section-label">Work 03 / Data Extraction</div>
-            <h2>AI Document & Data Extraction</h2>
-            <p class="hero-copy">Document workflows that turn PDFs, invoices, forms and resumes into clean structured data.</p>
-            <div class="pills"><span class="pill orange">PDF</span><span class="pill">Invoices</span><span class="pill">Excel</span><span class="pill">AI</span></div>
-          </div>
-          <div class="details-grid">
-            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>PDF and invoice field extraction</li><li>AI summaries and field detection</li><li>Data cleanup and validation</li><li>Excel or Google Sheets export</li></ul></div>
-            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Invoice processing</li><li>Resume parsing</li><li>Form data extraction</li><li>Document-to-database workflows</li></ul></div>
-          </div>
-        </div>
-        <div class="portfolio-images">
-          <a class="portfolio-image image-open" href="assets/document-extraction-01.png"><img src="assets/document-extraction-01.png" alt="" /></a>
-          <a class="portfolio-image image-open" href="assets/document-extraction-02.png"><img src="assets/document-extraction-02.png" alt="" /></a>
-        </div>
-      </div>
-    </section>
 
     <section class="portfolio-section" id="crm">
       <div class="page portfolio-card reveal">
         <div class="portfolio-header">
           <div>
-            <div class="section-label">Work 04 / Sales Operations</div>
+            <div class="section-label">Work 03 / Sales Operations</div>
             <h2>Lead & CRM Automation</h2>
             <p class="hero-copy">Lead workflows that capture inquiries, qualify them with AI and move clean data into sales tools.</p>
             <div class="pills"><span class="pill orange">CRM</span><span class="pill">Lead Score</span><span class="pill">Slack</span><span class="pill">Follow-up</span></div>
@@ -934,7 +1011,7 @@
       <div class="page portfolio-card reveal">
         <div class="portfolio-header">
           <div>
-            <div class="section-label">Work 05 / E-commerce</div>
+            <div class="section-label">Work 04 / E-commerce</div>
             <h2>Shopify / E-commerce Automation</h2>
             <p class="hero-copy">E-commerce workflows that connect orders, inventory, reports and alerts to reduce manual store operations.</p>
             <div class="pills"><span class="pill orange">Shopify</span><span class="pill">Inventory</span><span class="pill">Reports</span><span class="pill">Alerts</span></div>
@@ -951,26 +1028,6 @@
       </div>
     </section>
 
-    <section class="portfolio-section" id="agents">
-      <div class="page portfolio-card reveal">
-        <div class="portfolio-header">
-          <div>
-            <div class="section-label">Work 06 / AI Agents</div>
-            <h2>AI Agent Workflows</h2>
-            <p class="hero-copy">Task-specific AI agents for research, summarization, routing, reporting and multi-step business operations.</p>
-            <div class="pills"><span class="pill orange">AI Agents</span><span class="pill">CrewAI</span><span class="pill">LangGraph</span><span class="pill">Reports</span></div>
-          </div>
-          <div class="details-grid">
-            <div class="detail-box"><h4>Features</h4><ul class="feature-list"><li>Research and report agents</li><li>AI routing and decision logic</li><li>CrewAI or LangGraph workflows</li><li>Outputs to docs, sheets, CRM or alerts</li></ul></div>
-            <div class="detail-box"><h4>Use Cases</h4><ul class="feature-list"><li>Market research summaries</li><li>Internal business assistants</li><li>Document review workflows</li><li>Multi-step AI task execution</li></ul></div>
-          </div>
-        </div>
-        <div class="portfolio-images">
-          <a class="portfolio-image image-open" href="assets/ai-agent-workflow-01.png"><img src="assets/ai-agent-workflow-01.png" alt="" /></a>
-          <a class="portfolio-image image-open" href="assets/ai-agent-workflow-02.png"><img src="assets/ai-agent-workflow-02.png" alt="" /></a>
-        </div>
-      </div>
-    </section>
 
 
 
@@ -982,7 +1039,7 @@
             <h2>What teams value in these automation systems.</h2>
           </div>
           <div>
-            <p class="section-desc">A carousel of workflow feedback highlights covering AI automation, Google Sheets systems, CRM routing, document extraction, support automation and Shopify operations.</p>
+            <p class="section-desc">Feedback themes from workflow projects focused on cleaner handoffs, fewer manual updates, better routing and more organized business operations.</p>
             <div class="reviews-controls" aria-label="Review carousel controls">
               <button class="review-nav" id="reviewsPrev" type="button" aria-label="Previous reviews">&#8592;</button>
               <button class="review-nav" id="reviewsNext" type="button" aria-label="Next reviews">&#8594;</button>
@@ -1110,13 +1167,82 @@
       </div>
     </section>
 
+
+    <section class="pricing-section" id="pricing">
+      <div class="page reveal">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Rate Card / Core Offers</div>
+            <h2>Focused automation services for client workflows.</h2>
+          </div>
+          <p class="section-desc">
+            Simple starting ranges for white-label partners, agencies and business teams. Final pricing depends on tools, access, workflow complexity and testing requirements.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card featured">
+            <div class="pricing-card-top">
+              <div class="pricing-kicker">Offer 01</div>
+              <h3>Lead & CRM Automation</h3>
+              <div class="price-range">$150–$350</div>
+              <p class="pricing-copy">For agencies and service businesses that need form leads, inquiries and follow-ups organized automatically.</p>
+            </div>
+            <ul class="pricing-list">
+              <li>Form or email lead capture</li>
+              <li>Google Sheets or CRM update</li>
+              <li>AI summary or lead category</li>
+              <li>Email / Slack follow-up alert</li>
+              <li>Basic testing and workflow walkthrough</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-kicker">Offer 02</div>
+              <h3>Shopify Operations Workflow</h3>
+              <div class="price-range">$200–$450</div>
+              <p class="pricing-copy">For Shopify teams that want cleaner inventory, order tracking, low-stock alerts and reporting workflows.</p>
+            </div>
+            <ul class="pricing-list">
+              <li>Shopify order or inventory sync</li>
+              <li>Google Sheets / Airtable tracking</li>
+              <li>Low-stock or status alerts</li>
+              <li>Daily or weekly report workflow</li>
+              <li>Documentation for handover</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-card-top">
+              <div class="pricing-kicker">Offer 03</div>
+              <h3>AI Email & Support Workflow</h3>
+              <div class="price-range">$150–$400</div>
+              <p class="pricing-copy">For teams handling inquiries, support messages or internal requests through inboxes and forms.</p>
+            </div>
+            <ul class="pricing-list">
+              <li>Email or form intake workflow</li>
+              <li>AI summary and classification</li>
+              <li>Ticket sheet or CRM logging</li>
+              <li>Team assignment and alert logic</li>
+              <li>Testing, fixes and delivery walkthrough</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pricing-note">
+          For white-label agency work, the partner can keep the client relationship and set their own margin. I handle the backend workflow build, testing and delivery support.
+        </div>
+      </div>
+    </section>
+
     <section class="cta-section" id="contact">
       <div class="page contact-panel reveal">
         <div class="contact-copy">
           <div>
             <div class="section-label" style="color:#fff;">Contact</div>
-            <h2>Send your workflow details directly.</h2>
-            <p>Share your current process, tools and what you want to automate. Your message will be sent to Shazaib AI Studio.</p>
+            <h2>Send the workflow you want to automate.</h2>
+            <p>Share the manual process, tools involved and the result you want. I’ll review the workflow and suggest the cleanest automation approach.</p>
           </div>
           <div class="contact-email-box">
             <span>Email</span>
@@ -1141,7 +1267,7 @@
 
           <div class="field-group">
             <label for="service">Service Needed</label>
-            <input id="service" name="service" type="text" placeholder="Example: AI Email Automation, n8n Workflow, Shopify Automation" />
+            <input id="service" name="service" type="text" placeholder="Example: Lead CRM automation, Shopify workflow, email routing" />
           </div>
 
           <div class="field-group">
@@ -1149,7 +1275,7 @@
             <textarea id="message" name="message" placeholder="Tell me your current process, tools you use, and what you want to automate." required></textarea>
           </div>
 
-          <p class="form-note">This form sends your message directly to shazaibsolutions@gmail.com.</p>
+          <p class="form-note">Your message goes directly to shazaibsolutions@gmail.com.</p>
           <button class="btn btn-orange" type="submit">Send Message</button>
         </form>
       </div>
